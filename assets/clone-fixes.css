@@ -62,8 +62,11 @@ html, body{ background:var(--s-bg) !important; color:var(--s-ink); }
 [class*="text-slave-blue"]{ color:var(--s-ink) !important; }
 .glass-morphism{ border-color:var(--s-line) !important; background:rgba(250,246,239,.82) !important; }
 .language-toggle{ background:rgba(58,46,32,.05) !important; border-color:var(--s-line) !important; }
-.language-toggle button{ color:var(--s-ink) !important; }
-.language-toggle button.active{ background:var(--s-accent) !important; color:#fff !important; box-shadow:none !important; }
+.language-toggle button{ color:var(--s-ink); }
+
+/* tinted chips/badges (bg-[#color]/NN): light tint background + readable ink text */
+[class*="bg-[#0055A4]/"],[class*="bg-[#003D6B]/"],[class*="bg-[#0E5A9C]/"]{ background-color:rgba(58,46,32,.06) !important; color:var(--s-ink) !important; }
+[class*="bg-[#EF4444]/"],[class*="bg-[#DC2626]/"],[class*="bg-[#D85D28]/"],[class*="bg-[#8B5CF6]/"]{ background-color:rgba(192,105,63,.12) !important; color:var(--s-ink) !important; }
 
 /* hero rgba navy overlay -> warm espresso */
 [class*="from-[rgba(0,61,107"]{ background-image:linear-gradient(to bottom, rgba(42,32,23,.92), rgba(42,32,23,.78), rgba(30,22,14,.96)) !important; }

@@ -9,8 +9,8 @@
     var target = (t==='FR') ? (inFr ? file : 'fr/'+file) : (inFr ? '../'+file : file);
     var active = (t==='FR')===inFr;
     b.style.cursor='pointer';
-    if(active){ b.style.background='#C0452A'; b.style.color='#fff'; b.style.borderRadius='8px'; b.style.padding='3px 9px'; }
-    else { b.style.background='transparent'; b.style.color='#1C1A17'; }
+    if(active){ b.style.background='#A8552F'; b.style.color='#fff'; b.style.borderRadius='8px'; b.style.padding='3px 10px'; }
+    else { b.style.background='transparent'; b.style.color='#3A2E20'; }
     b.addEventListener('click', function(e){ e.preventDefault(); location.href = target; });
   });
 })();
