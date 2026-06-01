@@ -31,7 +31,7 @@ function wireProjectsMenu(b){
 }
 document.querySelectorAll('button').forEach(function(b){
   var t=(b.textContent||'').trim().replace(/\s+/g,' ');
-  if(t==='Projects'||/^Projects\b/.test(t)) wireProjectsMenu(b);
+  if(/^(Projects|Projets)\b/.test(t)) wireProjectsMenu(b);
 });
 
 // --- Mobile menu toggle ---
