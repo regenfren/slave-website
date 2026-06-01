@@ -109,7 +109,8 @@ header [class*="space-x-8"] a, header [class*="space-x-8"] button, header nav a,
 @media(max-width:560px){ .slave-pillars-grid{ grid-template-columns:repeat(2,1fr); } }
 .slave-person{ background:var(--s-card); border:1px solid var(--s-line); border-radius:1rem; padding:1.5rem 1rem; text-align:center; transition:transform .2s ease, border-color .2s ease; }
 .slave-person:hover{ transform:translateY(-4px); border-color:var(--s-accent); }
-.slave-person .avatar{ width:88px; height:88px; border-radius:50%; margin:0 auto 1rem; background:var(--s-bg2); border:1px solid var(--s-line); display:flex; align-items:center; justify-content:center; color:var(--s-accent); font-family:'Fraunces',serif; font-size:1.4rem; }
+.slave-person .avatar{ width:92px; height:92px; border-radius:50%; margin:0 auto 1rem; overflow:hidden; background:var(--s-bg2); border:1px solid var(--s-line); display:flex; align-items:center; justify-content:center; color:var(--s-accent); font-family:'Fraunces',serif; font-size:1.4rem; }
+.slave-person .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
 .slave-person .nm{ font-weight:600; color:var(--s-ink); line-height:1.3; }
 .slave-person .rl{ font-size:.82rem; color:var(--s-muted); margin-top:.3rem; line-height:1.4; }
 
