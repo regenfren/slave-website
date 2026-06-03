@@ -116,3 +116,8 @@ header [class*="space-x-8"] a, header [class*="space-x-8"] button, header nav a,
 
 /* pulse-glow keyframe paints a blue box-shadow -> warm terracotta glow (!important beats the animation) */
 .animate-pulse-glow{ box-shadow:0 10px 40px -6px rgba(192,105,63,.42) !important; }
+
+/* Team group photo: warm brown duotone + soft veil (tune values to taste) */
+.slave-teamphoto{ position:relative; border-radius:1.5rem; overflow:hidden; box-shadow:0 18px 44px -20px rgba(58,46,32,.45); }
+.slave-teamphoto img{ display:block; width:100%; filter:sepia(.34) saturate(.88) contrast(.96) brightness(.99); }
+.slave-teamphoto::after{ content:""; position:absolute; inset:0; background:linear-gradient(165deg, rgba(74,52,30,.16), rgba(42,32,23,.36)); mix-blend-mode:multiply; pointer-events:none; }
