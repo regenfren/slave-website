@@ -106,7 +106,7 @@ header [class*="space-x-8"] a, header [class*="space-x-8"] button, header nav a,
 .slave-pillar p{ color:var(--s-muted); font-size:.92rem; line-height:1.6; margin:0; }
 .slave-pillars-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:1.1rem; }
 @media(max-width:920px){ .slave-pillars-grid{ grid-template-columns:repeat(3,1fr); } }
-@media(max-width:560px){ .slave-pillars-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:640px){ .slave-pillars-grid{ grid-template-columns:1fr; max-width:340px; margin-left:auto; margin-right:auto; } }
 .slave-person{ background:var(--s-card); border:1px solid var(--s-line); border-radius:1rem; padding:1.5rem 1rem; text-align:center; transition:transform .2s ease, border-color .2s ease; }
 .slave-person:hover{ transform:translateY(-4px); border-color:var(--s-accent); }
 .slave-person .avatar{ width:92px; height:92px; border-radius:50%; margin:0 auto 1rem; overflow:hidden; background:var(--s-bg2); border:1px solid var(--s-line); display:flex; align-items:center; justify-content:center; color:var(--s-accent); font-family:'Fraunces',serif; font-size:1.4rem; }
@@ -125,3 +125,18 @@ header [class*="space-x-8"] a, header [class*="space-x-8"] button, header nav a,
 /* Objective cards: 2 per row (bigger blocks) */
 .slave-obj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; max-width:900px; margin:0 auto; }
 @media(max-width:680px){ .slave-obj-grid{ grid-template-columns:1fr; } }
+
+/* smooth anchor scroll */
+html{ scroll-behavior:smooth; }
+/* Rails project Team/Advisors: flex so the last row centers; 3 per row on mobile */
+.slave-people-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.4rem; max-width:1000px; margin:0 auto; }
+.slave-people-grid > *{ flex:0 0 160px; }
+@media(max-width:680px){ .slave-people-grid{ gap:.7rem; } .slave-people-grid > *{ flex:0 0 calc(33.333% - .5rem); } }
+
+/* mobile: shrink project people cards so 3 fit per row */
+@media(max-width:680px){
+  .slave-people-grid .slave-person{ padding:.85rem .4rem; }
+  .slave-people-grid .slave-person .avatar{ width:60px; height:60px; font-size:1rem; margin-bottom:.6rem; }
+  .slave-people-grid .slave-person .nm{ font-size:.8rem; }
+  .slave-people-grid .slave-person .rl{ font-size:.7rem; }
+}
