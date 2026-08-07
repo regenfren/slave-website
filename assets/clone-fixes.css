@@ -140,3 +140,5 @@ html{ scroll-behavior:smooth; }
   .slave-people-grid .slave-person .nm{ font-size:.8rem; }
   .slave-people-grid .slave-person .rl{ font-size:.7rem; }
 }
+
+.slave-logo-chip img { height:56px; width:auto; max-width:230px; object-fit:contain; display:block; }
