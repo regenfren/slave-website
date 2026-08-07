@@ -90,7 +90,7 @@ header [class*="space-x-8"] a, header [class*="space-x-8"] button, header nav a,
 
 /* components */
 @keyframes slave-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.slave-marquee-mask { overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+.slave-marquee-mask { overflow:hidden; padding:10px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
 .slave-marquee-track { display:flex; align-items:center; gap:2rem; width:max-content; animation:slave-marquee 38s linear infinite; }
 .slave-marquee-mask:hover .slave-marquee-track { animation-play-state:paused; }
 .slave-logo-chip { display:flex; align-items:center; justify-content:center; height:92px; min-width:200px; padding:0 1.6rem; background:var(--s-card); border:1px solid var(--s-line); border-radius:14px; color:var(--s-ink); font-weight:600; font-size:.95rem; text-align:center; text-decoration:none; transition:transform .25s ease, border-color .2s ease, color .2s ease; }
