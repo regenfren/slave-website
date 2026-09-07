@@ -63,6 +63,9 @@ html, body{ background:var(--s-bg) !important; color:var(--s-ink); }
 .glass-morphism{ border-color:var(--s-line) !important; background:rgba(250,246,239,.82) !important; }
 .language-toggle{ background:rgba(58,46,32,.05) !important; border-color:var(--s-line) !important; }
 .language-toggle button{ color:var(--s-ink); }
+/* the globe button has no handler and the EN/FR toggle already shows on phones; together they
+   pushed the burger 23px past the viewport and gave every page a sideways scroll on mobile */
+header button[title="Toggle Language"]{ display:none !important; }
 
 /* tinted chips/badges (bg-[#color]/NN): light tint background + readable ink text */
 [class*="bg-[#0055A4]/"],[class*="bg-[#003D6B]/"],[class*="bg-[#0E5A9C]/"]{ background-color:rgba(58,46,32,.06) !important; color:var(--s-ink) !important; }

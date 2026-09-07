@@ -42,6 +42,50 @@ cd 04_build
 python3 -m http.server 8099   # then open http://localhost:8099/index.html
 ```
 
+## Student films (`films.html`, `fr/films.html`) - added 2026-09-07
+
+**Hosting decision:** the films live on YouTube as *unlisted* videos on the association's own
+channel (`asso.slave@gmail.com`), never in this repo. Reasons, in order: GitHub Pages cannot serve
+them (the 12 originals are 2 GB and 2.2 GB per cohort, the repo limit is 1 GB and a single file is
+capped at 100 MB); YouTube transcodes to adaptive quality for free, so a 970 MB 1080p original plays
+on a phone in Dax without buffering; unlisted keeps them off YouTube search but embeddable; and it is
+the one option Daria can operate alone without an account Tim owns. Self-hosting on a CDN (Bunny,
+Cloudflare Stream) was considered and rejected: a paid account and a transcoding step that would land
+back on Tim at every handover.
+
+**How the page works.** One JSON file, `assets/films.json`, is the whole database: one entry per film
+with school, term, course, team, YouTube id, optional poster and synopsis. `assets/films.js` fetches
+it and renders one block per school + term, each a horizontally scrolling row of posters. Nothing
+from YouTube loads until a poster is clicked; then a `youtube-nocookie.com` iframe is injected into a
+`<dialog>` (no cookies and no third-party request before the click, which is what makes the page
+fast and keeps the RGPD footprint at zero until the visitor acts). Left/right arrows and keyboard
+step through the films. Deep link: `films.html#film=<id>`.
+
+**Rules the JS enforces.**
+- A film is shown only when it has a `youtube` id. Add `?preview=1` to the URL to see every entry,
+  including the ones still waiting for an upload (they carry a "Coming soon" tag).
+- No `poster`? The YouTube thumbnail is used. The committed posters in `assets/films/` are frames
+  pulled from the originals with ffmpeg (960 px wide, 30 to 160 KB each).
+- On `localhost` a film with a `file` field plays the original from `media/<file>`. `media/` is a
+  gitignored folder of symlinks to the Dropbox originals under `../00_intake/dropbox-dump/`, so the
+  whole page can be reviewed before anything is uploaded.
+
+**Adding a film:** `AJOUTER-UN-FILM.md` (French, written for Daria). Upload to YouTube, paste one
+block into `films.json` on github.com, commit. Under five minutes.
+
+**Regenerating the pages:** `python3 tools/films-pages.py`. It rebuilds `films.html` and
+`fr/films.html` from the header, head and footer of `projects.html` / `fr/projects.html`, and
+(idempotently) keeps the "Student films" link in the Projects dropdown and footer of every page plus
+the mobile menu in `clone.js`. Edit the copy in the `LANGS` dict at the top of that script, not in
+the generated HTML.
+
+**Known gaps in the source material (2026-09-07):** the CNAM *Limitless* file in Daria's Dropbox is
+truncated (no moov atom, will not play or upload; ask the team for the original); *Nova Night* is
+still the 8-second teaser; the BDX Consulting film exists only as a 360p upload on a student's
+YouTube channel (id `Nv8xsx0MZLw`), so it should be re-uploaded to the association channel once the
+team sends the original. Both Dropbox folders download without a login by appending `&dl=1` to the
+shared link (`VIDEO PREMAL FALL 2025.zip`, `VIDEO CNAM SPRING 2026.zip`).
+
 ## Edits applied (near-term — Daria 2026-05-28)
 **Home:** removed hero trust-chips (Since 2007 / 6 Partner Universities / Creative Projects / Cultural
 Dialogue); About grid reworked into **5 Core Pillars** (Savoir·Science, Langue, Art, Voyage, Échange)

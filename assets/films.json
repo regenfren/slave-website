@@ -1,0 +1,331 @@
+{
+  "_readme": "One entry per film. A film appears on the site as soon as it has a `youtube` id (the part after v= in the YouTube link). Everything else is optional. Full instructions: AJOUTER-UN-FILM.md at the root of this repo.",
+  "schools": {
+    "kedge": {
+      "name": "KEDGE Business School",
+      "city": "Bordeaux"
+    },
+    "cnam": {
+      "name": "CNAM Nouvelle-Aquitaine",
+      "city": "Dax"
+    },
+    "iae": {
+      "name": "IAE Bordeaux",
+      "city": "Bordeaux"
+    },
+    "ubm": {
+      "name": "Université Bordeaux Montaigne",
+      "city": "Bordeaux"
+    },
+    "cafa": {
+      "name": "CAFA",
+      "city": "Beijing"
+    }
+  },
+  "terms": {
+    "2025-fall": {
+      "en": "Fall 2025",
+      "fr": "Automne 2025"
+    },
+    "2026-spring": {
+      "en": "Spring 2026",
+      "fr": "Printemps 2026"
+    },
+    "2026-fall": {
+      "en": "Fall 2026",
+      "fr": "Automne 2026"
+    }
+  },
+  "films": [
+    {
+      "id": "aurelia",
+      "title": "Aurelia",
+      "tagline": {
+        "en": "Power your play. Protect our planet.",
+        "fr": "Power your play. Protect our planet."
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "Aurelia",
+      "language": "en",
+      "duration": 387,
+      "youtube": "",
+      "poster": "assets/films/aurelia.jpg",
+      "file": "GR1 aurelia (aurelia O.G(1.1).mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "bdx-consulting",
+      "title": "BDX Consulting",
+      "tagline": {
+        "en": "Sustainable growth: together we can!",
+        "fr": "Sustainable growth: together we can!"
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "BDX Consulting",
+      "language": "en",
+      "duration": 270,
+      "youtube": "Nv8xsx0MZLw",
+      "poster": "assets/films/bdx-consulting.jpg",
+      "file": "",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "gfb",
+      "title": "GFB, Global Fashion Bridge",
+      "tagline": {
+        "en": "Made fair. Made green. Made to last.",
+        "fr": "Made fair. Made green. Made to last."
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "GFB",
+      "language": "en",
+      "duration": 254,
+      "youtube": "",
+      "poster": "assets/films/gfb.jpg",
+      "file": "GR3 GFB.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "habitat",
+      "title": "Habitat",
+      "tagline": {
+        "en": "Find your home in Habitat.",
+        "fr": "Find your home in Habitat."
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "Habitat",
+      "language": "en",
+      "duration": 421,
+      "youtube": "",
+      "poster": "assets/films/habitat.jpg",
+      "file": "GR4 HABITAT video_final.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "waste-no-more",
+      "title": "Waste No More",
+      "tagline": {
+        "en": "From students, for students. From waste to hope.",
+        "fr": "From students, for students. From waste to hope."
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "Waste No More",
+      "language": "en",
+      "duration": 299,
+      "youtube": "",
+      "poster": "assets/films/waste-no-more.jpg",
+      "file": "GR5 WASTE NO MORE Final Video.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "liveco",
+      "title": "Liveco",
+      "tagline": {
+        "en": "Where innovation meets nature.",
+        "fr": "Where innovation meets nature."
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "Liveco",
+      "language": "en",
+      "duration": 385,
+      "youtube": "",
+      "poster": "assets/films/liveco.jpg",
+      "file": "GR7 LIVICO Leadership.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "leauve",
+      "title": "L'Eauve",
+      "tagline": {
+        "en": "Pure water for all.",
+        "fr": "Pure water for all."
+      },
+      "school": "kedge",
+      "term": "2025-fall",
+      "course": {
+        "en": "Promoting Responsible Management & Leadership",
+        "fr": "Promoting Responsible Management & Leadership"
+      },
+      "team": "L'Eauve",
+      "language": "en",
+      "duration": 354,
+      "youtube": "",
+      "poster": "assets/films/leauve.jpg",
+      "file": "GR8 L'eauve Q&A.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "apex",
+      "title": "Apex",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cnam",
+      "term": "2026-spring",
+      "course": {
+        "en": "Communication commerciale et business english",
+        "fr": "Communication commerciale et business english"
+      },
+      "team": "Apex",
+      "language": "fr",
+      "duration": 264,
+      "youtube": "",
+      "poster": "assets/films/apex.jpg",
+      "file": "APEX.mov",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "elofit",
+      "title": "Elofit",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cnam",
+      "term": "2026-spring",
+      "course": {
+        "en": "Communication commerciale et business english",
+        "fr": "Communication commerciale et business english"
+      },
+      "team": "Elofit",
+      "language": "fr",
+      "duration": 298,
+      "youtube": "",
+      "poster": "assets/films/elofit.jpg",
+      "file": "ELOFIT.mov",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "limitless",
+      "title": "Limitless",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cnam",
+      "term": "2026-spring",
+      "course": {
+        "en": "Communication commerciale et business english",
+        "fr": "Communication commerciale et business english"
+      },
+      "team": "Alizée, Jade, Tiffany",
+      "language": "fr",
+      "duration": 0,
+      "youtube": "",
+      "poster": "",
+      "file": "Limitless Alizée - Jade - Tiffany VF.MOV",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      },
+      "_note": "The file in the Dropbox folder is truncated (no moov atom, 640 MB): it cannot play or be uploaded. Ask the team for the original."
+    },
+    {
+      "id": "maison-mamma-mia",
+      "title": "Maison Mamma Mia",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cnam",
+      "term": "2026-spring",
+      "course": {
+        "en": "Communication commerciale et business english",
+        "fr": "Communication commerciale et business english"
+      },
+      "team": "Maison Mamma Mia",
+      "language": "fr",
+      "duration": 342,
+      "youtube": "",
+      "poster": "assets/films/maison-mamma-mia.jpg",
+      "file": "MAISON MAMMA MIA.mov",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "nova-night",
+      "title": "Nova Night",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cnam",
+      "term": "2026-spring",
+      "course": {
+        "en": "Communication commerciale et business english",
+        "fr": "Communication commerciale et business english"
+      },
+      "team": "Nova Night",
+      "language": "fr",
+      "duration": 8,
+      "youtube": "",
+      "poster": "assets/films/nova-night.jpg",
+      "file": "NOVA NIGHT VF.mov",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      },
+      "_note": "Dropbox only holds the 8-second teaser; the full film has not been received (asked Daria 2026-08-07)."
+    }
+  ]
+}

@@ -1,1 +1,4 @@
 .DS_Store
+
+# local preview only: symlinks to the original films, never committed
+media/
