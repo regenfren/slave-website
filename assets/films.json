@@ -77,13 +77,14 @@
       "team": "BDX Consulting",
       "language": "en",
       "duration": 270,
-      "youtube": "Nv8xsx0MZLw",
+      "youtube": "puf1OuZIKvY",
       "poster": "assets/films/bdx-consulting.jpg",
-      "file": "",
+      "file": "GR2 BDX Consulting Interview.mp4",
       "synopsis": {
         "en": "",
         "fr": ""
-      }
+      },
+      "_note": "Original never received; this is the student's own YouTube upload (Nv8xsx0MZLw, 640x360) downloaded 2026-09-07 and re-hosted on the association channel. Ask the team for the source file to replace it."
     },
     {
       "id": "gfb",
@@ -125,7 +126,7 @@
       "team": "Habitat",
       "language": "en",
       "duration": 421,
-      "youtube": "",
+      "youtube": "HpxjKJexuys",
       "poster": "assets/films/habitat.jpg",
       "file": "GR4 HABITAT video_final.mp4",
       "synopsis": {
@@ -149,7 +150,7 @@
       "team": "Waste No More",
       "language": "en",
       "duration": 299,
-      "youtube": "",
+      "youtube": "LU7eqEXtL3E",
       "poster": "assets/films/waste-no-more.jpg",
       "file": "GR5 WASTE NO MORE Final Video.mp4",
       "synopsis": {
@@ -173,7 +174,7 @@
       "team": "Liveco",
       "language": "en",
       "duration": 385,
-      "youtube": "",
+      "youtube": "EaxjhRF982k",
       "poster": "assets/films/liveco.jpg",
       "file": "GR7 LIVICO Leadership.mp4",
       "synopsis": {
@@ -221,7 +222,7 @@
       "team": "Apex",
       "language": "fr",
       "duration": 264,
-      "youtube": "",
+      "youtube": "WAbCHQtZMY8",
       "poster": "assets/films/apex.jpg",
       "file": "APEX.mov",
       "synopsis": {
@@ -245,7 +246,7 @@
       "team": "Elofit",
       "language": "fr",
       "duration": 298,
-      "youtube": "",
+      "youtube": "TYcYBOWEIJg",
       "poster": "assets/films/elofit.jpg",
       "file": "ELOFIT.mov",
       "synopsis": {
@@ -295,7 +296,7 @@
       "team": "Maison Mamma Mia",
       "language": "fr",
       "duration": 342,
-      "youtube": "",
+      "youtube": "cOX3m2csq1A",
       "poster": "assets/films/maison-mamma-mia.jpg",
       "file": "MAISON MAMMA MIA.mov",
       "synopsis": {
