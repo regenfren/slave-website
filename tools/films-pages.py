@@ -22,6 +22,7 @@ LANGS = {
         "title": "Student films - ASSO S.L.A.V.É.",
         "description": "Short films made in class by students at KEDGE, the CNAM and our other partner universities, as part of Rails of Time.",
         "h1": "Student films",
+        "h2": "Films by school and cohort",
         "lede": "Short films made in class at our partner universities, as part of Rails of Time. Each cohort builds a scenario over a term, then shoots and edits it themselves.",
     },
     "fr": {
@@ -29,6 +30,7 @@ LANGS = {
         "title": "Films des étudiants - ASSO S.L.A.V.É.",
         "description": "Des courts-métrages réalisés en cours par les étudiants de KEDGE, du CNAM et de nos autres universités partenaires, dans le cadre des Rails du Temps.",
         "h1": "Les films des étudiants",
+        "h2": "Les films par école et promotion",
         "lede": "Des courts-métrages réalisés en cours dans nos universités partenaires, dans le cadre des Rails du Temps. Chaque promotion construit un scénario sur un semestre, puis tourne et monte elle-même.",
     },
 }
@@ -82,6 +84,8 @@ def build(lang: str) -> Path:
     head = re.sub(r'(<meta name="twitter:title" content=")[^"]*(")', lambda m: m.group(1) + L["title"] + m.group(2), head, count=1)
     head = re.sub(r'(<meta name="twitter:description" content=")[^"]*(")', lambda m: m.group(1) + L["description"] + m.group(2), head, count=1)
     head = re.sub(r'(<meta property="og:url" content=")[^"]*(")', lambda m: m.group(1) + "https://railsoftime.fr/" + L["dir"] + "films.html" + m.group(2), head, count=1)
+    # canonical + hreflang are lifted from projects.html: repoint them at this page
+    head = head.replace("https://railsoftime.fr/projects.html", "https://railsoftime.fr/films.html").replace("https://railsoftime.fr/fr/projects.html", "https://railsoftime.fr/fr/films.html")
     head = head.replace(
         f'<link rel="stylesheet" href="{L["assets"]}clone-fixes.css">',
         f'<link rel="stylesheet" href="{L["assets"]}clone-fixes.css">\n    <link rel="stylesheet" href="{L["assets"]}films.css">',
@@ -99,7 +103,7 @@ def build(lang: str) -> Path:
   <p>{L['lede']}</p>
   <p class="films-count" id="films-count"></p>
 </div></section>
-<div id="films" class="container mx-auto px-4 md:px-8"></div>
+<div id="films" class="container mx-auto px-4 md:px-8"><h2 class="films-sr">{L['h2']}</h2></div>
 """
     out = f'<!DOCTYPE html><html lang="{lang}">' + head + "<body>" + header + body + footer + \
         f'<script src="{L["assets"]}clone.js"></script><script src="{L["assets"]}films.js" data-assets="{L["assets"]}"></script></body></html>\n'

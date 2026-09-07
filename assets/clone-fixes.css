@@ -2,7 +2,7 @@
    SLAVÉ — warm minimal design layer
    Ivory · Espresso · soft Terracotta. Namespaced --s-* tokens.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+/* fonts: see assets/fonts.css (self-hosted) */
 
 :root{
   --s-bg:#FAF6EF; --s-bg2:#F3ECDD; --s-card:#FFFFFF;
