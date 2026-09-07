@@ -276,7 +276,8 @@
         "en": "",
         "fr": ""
       },
-      "_note": "The file in the Dropbox folder is truncated (no moov atom, 640 MB): it cannot play or be uploaded. Ask the team for the original."
+      "_note": "The file in the Dropbox folder is truncated (no moov atom, 640 MB): it cannot play or be uploaded. Ask the team for the original.",
+      "hold": true
     },
     {
       "id": "maison-mamma-mia",
@@ -325,7 +326,8 @@
         "en": "",
         "fr": ""
       },
-      "_note": "Dropbox only holds the 8-second teaser; the full film has not been received (asked Daria 2026-08-07)."
+      "_note": "Dropbox only holds the 8-second teaser; the full film has not been received (asked Daria 2026-08-07).",
+      "hold": true
     }
   ]
 }
