@@ -58,7 +58,7 @@ Ce que veut dire chaque champ :
 | `file` | laissez vide (nom du fichier d'origine, pour les archives) |
 | `synopsis` | le résumé du film, facultatif, dans les deux langues |
 
-Le film apparaît sur https://regenfren.github.io/slave-website/films.html, dans le bloc
+Le film apparaît sur https://railsoftime.fr/films.html, dans le bloc
 de son école et de son semestre. Il apparaît aussi sur la version française sans rien faire
 de plus.
 
