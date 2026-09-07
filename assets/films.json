@@ -27,13 +27,17 @@
       "en": "Fall 2025",
       "fr": "Automne 2025"
     },
+    "2026-fall": {
+      "en": "Fall 2026",
+      "fr": "Automne 2026"
+    },
     "2026-spring": {
       "en": "Spring 2026",
       "fr": "Printemps 2026"
     },
-    "2026-fall": {
-      "en": "Fall 2026",
-      "fr": "Automne 2026"
+    "2026-summer": {
+      "en": "Summer 2026",
+      "fr": "Été 2026"
     }
   },
   "films": [
@@ -329,6 +333,246 @@
       },
       "_note": "Dropbox only holds the 8-second teaser; the full film has not been received (asked Daria 2026-08-07).",
       "hold": true
+    },
+    {
+      "id": "creative-lab",
+      "title": "Creative Lab",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Creative Lab, class 1",
+      "language": "",
+      "duration": 334,
+      "youtube": "g5SzL4oGh8I",
+      "poster": "assets/films/creative-lab.jpg",
+      "file": "G1 - SG1 Creative Lab.mp4",
+      "synopsis": {
+        "en": "The film opens on the team's daily work, client meetings and lifestyle, and asks each member what the team means to them. It then turns to the collaboration with AFFIF, the workplace in 2043 and the studio's design project: the S.E.N.S.E OS multisensory viewing system and the pilot film Mirror City, co-created with AFFIF and the fragrance brand Documents.",
+        "fr": "Le film s'ouvre sur le quotidien de l'équipe, ses réunions clients et son mode de vie, et demande à chacun ce que l'équipe représente pour lui. Il passe ensuite à la collaboration avec l'AFFIF, à l'atelier en 2043 et au projet de design du studio : le système de visionnage multisensoriel S.E.N.S.E OS et le film pilote Mirror City, co-créés avec l'AFFIF et la marque de parfum Documents."
+      }
+    },
+    {
+      "id": "silk-reborn",
+      "title": "When Silk Reborn Meets Paris Fashion Week",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Silk Reborn, class 1",
+      "language": "",
+      "duration": 311,
+      "youtube": "3LSTf0TEBy8",
+      "poster": "assets/films/silk-reborn.jpg",
+      "file": "G1 - SG2 SILK REBORN.mp4",
+      "synopsis": {
+        "en": "The team shows how it works and how it collaborates with its French partners, then presents its plan for 2043, Dream Runway: a virtual fashion city where anyone, anywhere, can join Paris-level fashion shows without travelling. AI avatars, virtual try-on and real-time translation connect designers and audiences, while traditional crafts such as Chinese embroidery are preserved in digital archives.",
+        "fr": "L'équipe montre sa façon de travailler et sa collaboration avec ses partenaires français, puis présente son projet pour 2043, Dream Runway : une ville de mode virtuelle où chacun, où qu'il soit, assiste à des défilés de niveau parisien sans voyager. Avatars IA, essayage virtuel et traduction en temps réel relient créateurs et publics, tandis que des savoir-faire traditionnels comme la broderie chinoise sont préservés dans des archives numériques."
+      }
+    },
+    {
+      "id": "artinnovators",
+      "title": "Journey of Artinnovators",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Artinnovators, class 1",
+      "language": "",
+      "duration": 390,
+      "youtube": "BfeCV5GiieI",
+      "poster": "assets/films/artinnovators.jpg",
+      "file": "G1 - SG3 ARTINNOVATORS.mov",
+      "synopsis": {
+        "en": "The team takes Louis Vuitton suitcases along the historical Maritime Silk Road to discover the culture and crafts of each city, with three stops: Quanzhou, Guangzhou and Shanghai. The film introduces the products designed for each, the local exhibitions and the educational activities, and imagines a Mobile Museum, a huge steamship that keeps travelling.",
+        "fr": "L'équipe emmène des malles Louis Vuitton sur la route maritime de la soie pour découvrir la culture et l'artisanat de chaque ville, en trois étapes : Quanzhou, Guangzhou et Shanghai. Le film présente les produits conçus pour chacune, les expositions locales et les activités pédagogiques, et imagine un musée mobile, un immense navire à vapeur qui poursuit le voyage."
+      }
+    },
+    {
+      "id": "fusion",
+      "title": "Studio Fusion: Behind the Walls",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Studio Fusion, class 1",
+      "language": "",
+      "duration": 300,
+      "youtube": "dVV07Fp8Ys4",
+      "poster": "assets/films/fusion.jpg",
+      "file": "G1 - SG4 FUSION.mp4",
+      "synopsis": {
+        "en": "Studio Fusion's collaboration with the Musée Guimet to bring the immersive exhibition Ritual · Echoes from concept to reality. Set in a fictional future, the film records remote teamwork across time zones, cultural adaptation and coordination, and the role of HR management in cross-cultural creative projects. All fourteen members of the studio play their assigned roles.",
+        "fr": "La collaboration de Studio Fusion avec le musée Guimet pour faire passer l'exposition immersive Ritual · Echoes du concept à la réalité. Dans un futur fictif, le film suit le travail à distance entre fuseaux horaires, l'adaptation culturelle et la coordination de l'équipe, et le rôle de la gestion des ressources humaines dans les projets créatifs interculturels. Les quatorze membres du studio jouent leur propre rôle."
+      }
+    },
+    {
+      "id": "light-weavers",
+      "title": "Light Weavers",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Light Weavers, class 1",
+      "language": "",
+      "duration": 335,
+      "youtube": "",
+      "poster": "assets/films/light-weavers.jpg",
+      "file": "G1 - SG5 LIGHT WEAVERS.MOV",
+      "synopsis": {
+        "en": "Four banana mascots are sent by the team's home-built, Chinese-style time machine to inspect the studio in 2043, and get stranded when it breaks down. They find generic foreign work dominating the industry, original Chinese light-and-shadow creation forgotten and the staff gone. The bananas bring the former employees back; the full team restores the venue, produces a hit original light exhibition and earns enough to repair the machine.",
+        "fr": "Quatre mascottes bananes sont envoyées par la machine à remonter le temps de l'équipe, de style chinois et faite maison, inspecter le studio en 2043, et s'y retrouvent coincées quand la machine tombe en panne. Elles découvrent une industrie dominée par des œuvres étrangères génériques, la création chinoise de lumière et d'ombre oubliée et le personnel parti. Les bananes ramènent les anciens employés ; l'équipe au complet restaure le lieu, monte une exposition de lumière originale qui fait salle comble et gagne de quoi réparer la machine."
+      }
+    },
+    {
+      "id": "yummy",
+      "title": "The Dual-Gaze Film Lab",
+      "tagline": {
+        "en": "One story, two perspectives",
+        "fr": "One story, two perspectives"
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Yummy, class 2",
+      "language": "",
+      "duration": 361,
+      "youtube": "",
+      "poster": "assets/films/yummy.jpg",
+      "file": "G2 - SG1 Yummy.mp4",
+      "synopsis": {
+        "en": "A cross-cultural film project between Yummy and Cannes: Chinese and French creators film the same cultural story while keeping two distinct viewpoints, the Chinese gaze and the French gaze. Field research, shooting and interviews run remotely on a shared AI-assisted workspace, with human creators in charge of the storylines and of cultural balance, and the finished shorts are screened at festivals, schools and online.",
+        "fr": "Un projet de cinéma interculturel entre Yummy et Cannes : des créateurs chinois et français filment la même histoire culturelle en gardant deux regards distincts, le regard chinois et le regard français. Recherche de terrain, tournage et entretiens se font à distance sur un espace de travail partagé assisté par l'IA, les créateurs gardant la main sur les récits et l'équilibre culturel, et les courts-métrages finis sont projetés en festivals, dans les écoles et en ligne."
+      }
+    },
+    {
+      "id": "momos",
+      "title": "Momo's",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Momo's, class 2",
+      "language": "",
+      "duration": 425,
+      "youtube": "",
+      "poster": "assets/films/momos.jpg",
+      "file": "G2 - SG2 MOMO's - 副本.mp4",
+      "synopsis": {
+        "en": "Paris, 2043. Virtual consumption dominates fashion and the last Sézane physical store is about to close. A Sino-French creative team rebuilds the dying shop as a Cross-Cultural Living Room, through shared aesthetics, traditional craft and face-to-face exchange. In an AI-driven world, the film argues, what makes a physical space irreplaceable is not merchandise but real human encounter.",
+        "fr": "Paris, 2043. La consommation virtuelle domine la mode et la dernière boutique physique Sézane est sur le point de fermer. Une équipe créative franco-chinoise transforme l'espace condamné en un salon interculturel, par l'esthétique partagée, l'artisanat traditionnel et l'échange en face à face. Dans un monde piloté par l'IA, dit le film, ce qui rend un lieu physique irremplaçable n'est pas la marchandise mais la rencontre humaine."
+      }
+    },
+    {
+      "id": "well",
+      "title": "WELL#",
+      "tagline": {
+        "en": "Stay well. Go to the well.",
+        "fr": "Stay well. Go to the well."
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "WELL#, class 2",
+      "language": "",
+      "duration": 358,
+      "youtube": "",
+      "poster": "assets/films/well.jpg",
+      "file": "G2 - SG3 WELL.mov",
+      "synopsis": {
+        "en": "A cross-cultural project on Chinese heritage, well-being and public cultural space, set in the Jardin des Tuileries in Paris. Tai chi, calligraphy, ink painting, seal carving, flower arrangement and seasonal cooking become immersive yaji gatherings: a healing space where Chinese and French cultures meet and participants slow down and experience heritage as a living practice.",
+        "fr": "Un projet interculturel sur le patrimoine chinois, le bien-être et l'espace culturel public, situé au jardin des Tuileries à Paris. Tai-chi, calligraphie, peinture à l'encre, gravure de sceaux, art floral et cuisine de saison deviennent des rencontres yaji immersives : un espace apaisant où les cultures chinoise et française se rencontrent et où les participants ralentissent et vivent le patrimoine comme une pratique vivante."
+      }
+    },
+    {
+      "id": "stage-echo",
+      "title": "Stage Echo",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Stage Echo, class 2",
+      "language": "",
+      "duration": 439,
+      "youtube": "",
+      "poster": "assets/films/stage-echo.jpg",
+      "file": "G2 - SG4 stage echo.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "future",
+      "title": "Future",
+      "tagline": {
+        "en": "",
+        "fr": ""
+      },
+      "school": "cafa",
+      "term": "2026-summer",
+      "course": {
+        "en": "HR and Team Management in Creative Industries",
+        "fr": "HR and Team Management in Creative Industries"
+      },
+      "team": "Future, class 2",
+      "language": "",
+      "duration": 431,
+      "youtube": "",
+      "poster": "assets/films/future.jpg",
+      "file": "G5 - SG5 Future.mp4",
+      "synopsis": {
+        "en": "",
+        "fr": ""
+      }
     }
   ]
 }
