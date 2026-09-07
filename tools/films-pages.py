@@ -81,6 +81,7 @@ def build(lang: str) -> Path:
     head = re.sub(r'(<meta property="og:description" content=")[^"]*(")', lambda m: m.group(1) + L["description"] + m.group(2), head, count=1)
     head = re.sub(r'(<meta name="twitter:title" content=")[^"]*(")', lambda m: m.group(1) + L["title"] + m.group(2), head, count=1)
     head = re.sub(r'(<meta name="twitter:description" content=")[^"]*(")', lambda m: m.group(1) + L["description"] + m.group(2), head, count=1)
+    head = re.sub(r'(<meta property="og:url" content=")[^"]*(")', lambda m: m.group(1) + "https://railsoftime.fr/" + L["dir"] + "films.html" + m.group(2), head, count=1)
     head = head.replace(
         f'<link rel="stylesheet" href="{L["assets"]}clone-fixes.css">',
         f'<link rel="stylesheet" href="{L["assets"]}clone-fixes.css">\n    <link rel="stylesheet" href="{L["assets"]}films.css">',
