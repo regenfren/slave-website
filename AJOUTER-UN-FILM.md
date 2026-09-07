@@ -8,7 +8,9 @@ fichier : `assets/films.json`.
 
 1. Connectez-vous à YouTube avec le compte de l'association (`asso.slave@gmail.com`).
 2. Cliquez sur **Créer → Importer une vidéo**, choisissez le fichier.
-3. Titre : le nom du film. Visibilité : **Non répertoriée**.
+3. Titre, toujours sur ce modèle : **`Nom du film - Rails of Time - ÉCOLE ANNÉE cohort`**, par
+   exemple `Aurelia - Rails of Time - KEDGE 2025 cohort` ou `Apex - Rails of Time - CNAM 2026 cohort`
+   (l'année est celle de la promotion). Visibilité : **Non répertoriée**.
 4. Une fois l'import terminé, copiez le lien. L'identifiant est ce qui suit `v=` :
    dans `https://www.youtube.com/watch?v=Nv8xsx0MZLw`, l'identifiant est `Nv8xsx0MZLw`
    (11 caractères).
