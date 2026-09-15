@@ -16,9 +16,10 @@ Newest first. One entry per shipped change; the commit says how, this says what 
 - **Nav, second pass the same day:** two entries, Asso and Projects; Projects is a dropdown with
   Rails of Time, Right to Dignity and Films; Contact stays a button. `tools/nav.py` is the one
   writer of every header and footer nav from now on.
-- **School selector** on the home stage and the films page: one card per school with logo, full
-  name, city, film count and a one-line tagline (from `films.json`, `schools`), plus an
-  "All schools" card. Rule: every school with a published film carries logo + tagline in both
+- **School picker** on the home stage and the films page: one block, the selected school's
+  details on the left (logo, full name, city, film count, one-line tagline from `films.json`,
+  `schools`) and a compact name-only list on the right that drives it. On the home it is the top
+  band of the stage box, not a separate element (Tim's second-pass correction, same day). Rule: every school with a published film carries logo + tagline in both
   languages; `tools/films-pages.py` refuses to build without them. CAFA's logo is the 194x70 png
   from cafa.edu.cn, the only one that is not retina-sharp.
 - **Hero polish:** the fade under every hero photo ended on `#F8F7F4`, one shade off the cream,

@@ -105,7 +105,7 @@
       T: { all: T.all, allTag: T.allTag, films: T.films, label: T.schools },
       onSelect: function (id) { school = id; applyFilter(); }
     });
-    stage.parentNode.insertBefore(picker.el, stage);
+    stage.insertBefore(picker.el, stage.firstChild);  // top band of the stage box, spanning both columns
     var search = el('input', { type: 'search', placeholder: T.search, 'aria-label': T.search, autocomplete: 'off' });
     var count = el('p', { 'class': 'rot-count', 'aria-live': 'polite' });
     var queue = el('ol', { 'class': 'rot-queue', 'aria-label': T.queue });

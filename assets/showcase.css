@@ -18,7 +18,7 @@
 
 /* the box: reserve the height before films.json arrives, so the sections below do not jump */
 .rot-stage{
-  display:grid; grid-template-columns:minmax(0,1fr) 360px; align-items:stretch;
+  display:grid; grid-template-columns:minmax(0,1fr) 360px; grid-template-rows:auto 1fr; align-items:stretch;
   background:var(--s-espresso2); color:#F3ECDD; border-radius:1.5rem; overflow:hidden;
   box-shadow:0 40px 90px -40px rgba(30,22,14,.6); min-height:clamp(420px, 44vw, 640px);
 }

@@ -1,29 +1,43 @@
 /* ============================================================
-   School selector cards (home stage + films page). Tokens from clone-fixes.css.
-   Desktop: one row of equal cards. Phone: a snap-scrolling row that bleeds right.
+   School picker (home stage + films page): one block, two panes.
+   Left: the selected school's details. Right: a compact list that drives it.
+   On the home page the block is the top band of the stage box (same columns as the
+   player + queue below it); on the films page it stands alone as a light box.
+   Tokens from clone-fixes.css.
    ============================================================ */
-.schools{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:.9rem; margin:0 0 1.75rem; }
-.school-card{
-  appearance:none; font-family:inherit; text-align:left; cursor:pointer; color:var(--s-ink);
-  display:flex; flex-direction:column; gap:.25rem; min-height:100%; padding:1rem 1.1rem 1.1rem;
-  background:var(--s-card); border:1px solid var(--s-line); border-radius:1rem;
-  box-shadow:0 10px 26px -22px rgba(58,46,32,.4);
-  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+.schools{
+  display:grid; grid-template-columns:minmax(0,1fr) 360px; align-items:stretch;
+  background:var(--s-card); color:var(--s-ink); border:1px solid var(--s-line); border-radius:1.25rem; overflow:hidden;
+  box-shadow:0 20px 50px -40px rgba(58,46,32,.5); margin:0 0 2.25rem;
 }
-.school-card:hover{ border-color:var(--s-accent-soft); transform:translateY(-2px); box-shadow:0 16px 30px -22px rgba(58,46,32,.5); }
-.school-card[aria-pressed="true"]{ border-color:var(--s-accent); box-shadow:0 0 0 1px var(--s-accent), 0 16px 30px -22px rgba(58,46,32,.5); }
-.school-card:focus-visible{ outline:3px solid var(--s-accent); outline-offset:3px; }
-.school-logo{ display:flex; align-items:center; height:48px; margin-bottom:.55rem; }
-.school-logo img{ max-height:40px; max-width:150px; width:auto; height:auto; object-fit:contain; display:block; }
-.school-logo-all{ color:var(--s-accent); }
-.school-logo-all svg{ width:36px; height:36px; }
-.school-mono{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:.6rem; background:var(--s-bg2); font-family:'Fraunces', Georgia, serif; font-size:1.3rem; color:var(--s-ink); }
-.school-name{ font-family:'Fraunces', Georgia, serif; font-size:1.12rem; line-height:1.2; color:var(--s-ink); }
-.school-meta{ font-size:.82rem; color:var(--s-muted); }
-.school-tag{ font-size:.9rem; line-height:1.45; color:#5C5044; margin-top:.35rem; }
-@media(max-width:760px){
-  .schools{ display:flex; gap:.75rem; overflow-x:auto; scroll-snap-type:x mandatory; margin-right:calc(50% - 50vw); padding:.25rem 1.25rem .75rem 0; scrollbar-width:none; }
-  .schools::-webkit-scrollbar{ display:none; }
-  .school-card{ flex:0 0 76vw; max-width:320px; scroll-snap-align:start; min-height:0; }
+.rot-stage > .schools{ grid-column:1 / -1; margin:0; border:0; border-radius:0; box-shadow:none; border-bottom:1px solid rgba(30,22,14,.12); }
+
+.schools-detail{ padding:1.6rem 1.9rem 1.7rem; min-width:0; display:flex; flex-direction:column; align-items:flex-start; }
+.schools-logo{ height:48px; display:flex; align-items:center; margin:0 0 .8rem; color:var(--s-accent); }
+.schools-logo img{ max-height:44px; max-width:180px; width:auto; height:auto; object-fit:contain; display:block; }
+.schools-logo-all svg{ width:40px; height:40px; }
+.schools-name{ font-size:clamp(1.35rem,2.2vw,1.75rem); line-height:1.15; margin:0 0 .25rem; color:var(--s-ink); }
+.schools-meta{ margin:0; font-size:.88rem; color:var(--s-muted); }
+.schools-tag{ margin:.7rem 0 0; font-size:1.02rem; line-height:1.55; color:#5C5044; max-width:58ch; }
+
+.schools-list{ list-style:none; margin:0; padding:.6rem; border-left:1px solid var(--s-line); background:var(--s-bg); display:flex; flex-direction:column; gap:.15rem; justify-content:center; }
+.schools-list button{
+  appearance:none; width:100%; display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  padding:.7rem .95rem; border:0; border-radius:.7rem; background:transparent; color:var(--s-ink); font-family:inherit;
+  font-size:.95rem; font-weight:600; text-align:left; cursor:pointer; transition:background .15s ease, color .15s ease;
 }
-@media(prefers-reduced-motion:reduce){ .school-card{ transition:none; } .school-card:hover{ transform:none; } }
+.schools-list-n{ color:var(--s-muted); font-weight:500; font-size:.82rem; flex-shrink:0; font-variant-numeric:tabular-nums; }
+.schools-list button:hover{ background:rgba(58,46,32,.06); }
+.schools-list button[aria-pressed="true"]{ background:var(--s-card); color:var(--s-accent2); box-shadow:inset 3px 0 0 var(--s-accent), 0 8px 18px -14px rgba(58,46,32,.5); }
+.schools-list button[aria-pressed="true"] .schools-list-n{ color:var(--s-accent2); }
+.schools-list button:focus-visible{ outline:3px solid var(--s-accent); outline-offset:-3px; }
+
+@media(max-width:960px){
+  .schools{ grid-template-columns:1fr; }
+  .schools-list{ border-left:0; border-top:1px solid var(--s-line); flex-direction:row; flex-wrap:wrap; justify-content:flex-start; gap:.35rem; padding:.75rem .9rem; }
+  .schools-list li{ flex:0 1 auto; }
+  .schools-list button{ width:auto; padding:.5rem .85rem; border-radius:9999px; border:1px solid var(--s-line); font-size:.88rem; }
+  .schools-list button[aria-pressed="true"]{ box-shadow:none; border-color:var(--s-accent); }
+  .schools-detail{ padding:1.25rem 1.2rem 1.3rem; }
+}
+@media(prefers-reduced-motion:reduce){ .schools-list button{ transition:none; } }

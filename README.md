@@ -82,8 +82,8 @@ team, school, course; prev/next; keyboard up/down in the list). Nothing from You
 first play; after that, picking another film plays it straight away. `/#film=<id>` selects a film.
 
 **Navigation:** `python3 tools/nav.py` rewrites the header nav (Asso, Projects dropdown) and the footer
-quick links on every page; edit `NAV` in that script, never a page. The school selector cards on the home
-and films pages are `assets/schools.js` + `schools.css`, fed by `schools` in `films.json` (logo + tagline
+quick links on every page; edit `NAV` in that script, never a page. The school picker (details pane + compact list, the top
+band of the stage on the home, a standalone box on the films page) is `assets/schools.js` + `schools.css`, fed by `schools` in `films.json` (logo + tagline
 required, checked by films-pages.py).
 
 **Regenerating the films pages:** `python3 tools/films-pages.py`. It rebuilds `films/index.html` and
