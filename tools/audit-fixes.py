@@ -13,16 +13,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 HOST = "https://railsoftime.fr/"
-PAGES = ["index.html", "association.html", "projects.html", "dignity.html", "contact.html", "films.html", "404.html"]
-SITEMAP_PAGES = [p for p in PAGES if p != "404.html"]
+# folder-per-page since 2026-09-15: "" is the Rails of Time home, the rest are <dir>/index.html
+PAGE_DIRS = ["", "asso/", "films/", "dignity/", "contact/"]
+PAGES = [d + "index.html" for d in PAGE_DIRS] + ["404.html"]
+SITEMAP_PAGES = PAGE_DIRS
 
 
 def canon(dirprefix: str, page: str) -> str:
-    return HOST + dirprefix + ("" if page == "index.html" else page)
+    return HOST + dirprefix + page.replace("index.html", "")
 
 
 def fix_page(path: Path, dirprefix: str) -> list[str]:
-    a = "../assets/" if dirprefix else "assets/"
+    a = "/assets/"
     s = path.read_text(encoding="utf-8")
     orig = s
     done = []

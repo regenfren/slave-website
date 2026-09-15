@@ -60,9 +60,9 @@ Ce que veut dire chaque champ :
 | `file` | laissez vide (nom du fichier d'origine, pour les archives) |
 | `synopsis` | le résumé du film, facultatif, dans les deux langues |
 
-Le film apparaît sur https://railsoftime.fr/films.html, dans le bloc
-de son école et de son semestre. Il apparaît aussi sur la version française sans rien faire
-de plus.
+Le film apparaît sur https://railsoftime.fr/films/, dans le bloc de son école et de son
+semestre, et dans la liste de la page d'accueil https://railsoftime.fr/. Il apparaît aussi sur la
+version française sans rien faire de plus.
 
 ## Si ça ne marche pas
 

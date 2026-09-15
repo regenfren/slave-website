@@ -5,9 +5,12 @@ Static clone of the live site (`https://asso-slave.netlify.app/`, a Vite+React S
 and `../decisions.md`.
 
 ## What this is
-- **Bilingual** — English at the root, French under `fr/`. Each page exists in both: `index.html` (home),
-  `association.html`, `projects.html` (Rails of Time), `dignity.html` (Right to Dignity), `contact.html`,
-  `404.html`. The header **EN / FR** buttons switch between a page and its counterpart.
+- **Bilingual** — English at the root, French under `fr/`. Each page exists in both, one folder per page
+  so URLs carry no `.html` (since 2026-09-15): `/` (Rails of Time, the home), `/films/`, `/asso/` (the
+  association: old home + old association page merged), `/dignity/`, `/contact/`, plus `404.html`. The old
+  `*.html` addresses are redirect stubs (`association.html`, `projects.html`, `films.html`, `dignity.html`,
+  `contact.html`, and the same under `fr/`); do not delete them, they keep shared links alive. The header
+  **EN / FR** buttons switch between a page and its `/fr/` counterpart. Asset paths are absolute (`/assets/...`).
 - **`assets/`** — `site.css` (the live site's original compiled Tailwind CSS, reused verbatim for
   pixel-fidelity), `clone-fixes.css` (forces JS-revealed content visible + marquee/featured-card styles),
   `clone.js` (language switcher, Projects-dropdown, mobile-menu toggle, form guard), `logo.png`,
@@ -39,10 +42,10 @@ Nav has no redundant links (single Contact CTA; the two projects live only under
 ## Run it
 ```
 cd 04_build
-python3 -m http.server 8099   # then open http://localhost:8099/index.html
+python3 -m http.server 8099   # then open http://localhost:8099/
 ```
 
-## Student films (`films.html`, `fr/films.html`) - added 2026-09-07
+## Student films (`films/`, `fr/films/`) - added 2026-09-07
 
 **Hosting decision:** the films live on YouTube as *unlisted* videos on the association's own
 channel (`asso.slave@gmail.com`), never in this repo. Reasons, in order: GitHub Pages cannot serve
@@ -59,7 +62,7 @@ it and renders one block per school + term, each a horizontally scrolling row of
 from YouTube loads until a poster is clicked; then a `youtube-nocookie.com` iframe is injected into a
 `<dialog>` (no cookies and no third-party request before the click, which is what makes the page
 fast and keeps the RGPD footprint at zero until the visitor acts). Left/right arrows and keyboard
-step through the films. Deep link: `films.html#film=<id>`.
+step through the films. Deep link: `/films/#film=<id>` (the old `films.html#film=<id>` still redirects there).
 
 **Rules the JS enforces.**
 - A film is shown only when it has a `youtube` id. Add `?preview=1` to the URL to see every entry,
@@ -73,10 +76,14 @@ step through the films. Deep link: `films.html#film=<id>`.
 **Adding a film:** `AJOUTER-UN-FILM.md` (French, written for Daria). Upload to YouTube, paste one
 block into `films.json` on github.com, commit. Under five minutes.
 
-**Regenerating the pages:** `python3 tools/films-pages.py`. It rebuilds `films.html` and
-`fr/films.html` from the header, head and footer of `projects.html` / `fr/projects.html`, and
-(idempotently) keeps the "Student films" link in the Projects dropdown and footer of every page plus
-the mobile menu in `clone.js`. Edit the copy in the `LANGS` dict at the top of that script, not in
+**The home page stage (`assets/showcase.js` + `showcase.css`, added 2026-09-15):** `/` carries the
+same manifest as one big player + a searchable queue (filter chips per school, search over title,
+team, school, course; prev/next; keyboard up/down in the list). Nothing from YouTube loads before the
+first play; after that, picking another film plays it straight away. `/#film=<id>` selects a film.
+
+**Regenerating the films pages:** `python3 tools/films-pages.py`. It rebuilds `films/index.html` and
+`fr/films/index.html` from the header, head and footer of `index.html` / `fr/index.html`, and
+marks Films as the active nav item. Edit the copy in the `LANGS` dict at the top of that script, not in
 the generated HTML.
 
 **Known gaps in the source material (2026-09-07):** the CNAM *Limitless* file in Daria's Dropbox is

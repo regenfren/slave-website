@@ -2,6 +2,22 @@
 
 Newest first. One entry per shipped change; the commit says how, this says what and why.
 
+## 2026-09-15
+
+- **Rails of Time is the home page.** `/` is the old Rails of Time page, with a "Student films"
+  stage under the hero: one big player, a queue filtered by school and searchable by title, team,
+  school or course, prev/next, and a "See all films" link to `/films/`. Same manifest
+  (`assets/films.json`), same no-YouTube-before-play rule as the films page.
+- **Asso page.** The old home and the old association page are one page at `/asso/`: the About
+  block now holds the association's two intro paragraphs, the team photo and a collapsible
+  "History & Values" (native `<details>`); pillars, featured projects, team, partners and
+  the community block stay. The association page's motto band was dropped (its quote is already
+  the hero line). Nav is flat: Rails of Time, Films, Asso, Right to Dignity, Contact.
+- **Clean URLs.** One folder per page (`/films/`, `/asso/`, `/dignity/`, `/contact/`, and under
+  `/fr/`), absolute asset paths, canonical + hreflang + sitemap on the new addresses. Every old
+  `*.html` address is a redirect stub that keeps the hash, so `films.html#film=apex` still opens
+  Apex. `/index.html` is rewritten to `/` in the address bar.
+
 ## 2026-09-07
 
 - **Site audit fixes.** Fonts self-hosted (`assets/fonts.css`, latin + latin-ext of Fraunces,
