@@ -15,7 +15,7 @@
 
   var T = {
     en: {
-      all: 'All schools', watch: 'Watch on YouTube', close: 'Close', prev: 'Previous film', next: 'Next film',
+      all: 'All schools', allTag: 'Every cohort, newest first.', schools: 'Choose a school', watch: 'Watch on YouTube', close: 'Close', prev: 'Previous film', next: 'Next film',
       scrollPrev: 'Scroll back', scrollNext: 'Scroll forward',
       soon: 'This film is being uploaded. Check back soon.', soonTag: 'Coming soon',
       empty: 'No films published yet.', loadError: 'The film list could not be loaded.',
@@ -23,7 +23,7 @@
       minutes: function (m) { return m + ' min'; }
     },
     fr: {
-      all: 'Toutes les écoles', watch: 'Voir sur YouTube', close: 'Fermer', prev: 'Film précédent', next: 'Film suivant',
+      all: 'Toutes les écoles', allTag: 'Toutes les promotions, les plus récentes d’abord.', schools: 'Choisir une école', watch: 'Voir sur YouTube', close: 'Fermer', prev: 'Film précédent', next: 'Film suivant',
       scrollPrev: 'Défiler vers l’arrière', scrollNext: 'Défiler vers l’avant',
       soon: 'Ce film est en cours de mise en ligne. Revenez bientôt.', soonTag: 'Bientôt',
       empty: 'Aucun film publié pour le moment.', loadError: 'La liste des films n’a pas pu être chargée.',
@@ -93,19 +93,12 @@
     // school filter, only when there is more than one school
     var schoolsPresent = schoolOrder.filter(function (s) { return ordered.some(function (g) { return g.school === s; }); });
     if (schoolsPresent.length > 1) {
-      var filters = el('div', { 'class': 'films-filters', role: 'group' });
-      var all = el('button', { type: 'button', 'aria-pressed': 'true', 'data-school': '', text: T.all });
-      filters.appendChild(all);
-      schoolsPresent.forEach(function (s) {
-        filters.appendChild(el('button', { type: 'button', 'aria-pressed': 'false', 'data-school': s, text: (schools[s] && schools[s].name) || s }));
-      });
-      filters.addEventListener('click', function (e) {
-        var b = e.target.closest('button'); if (!b) return;
-        var s = b.getAttribute('data-school');
-        filters.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-        root.querySelectorAll('.films-group').forEach(function (sec) { sec.hidden = !!s && sec.getAttribute('data-school') !== s; });
-      });
-      root.appendChild(filters);
+      var counts = {}; films.forEach(function (f) { counts[f.school] = (counts[f.school] || 0) + 1; });
+      root.appendChild(window.RoTSchools.render({
+        schools: schools, order: schoolsPresent, counts: counts, total: films.length, lang: lang,
+        T: { all: T.all, allTag: T.allTag, films: T.count, label: T.schools },
+        onSelect: function (s) { root.querySelectorAll('.films-group').forEach(function (sec) { sec.hidden = !!s && sec.getAttribute('data-school') !== s; }); }
+      }).el);
     }
 
     ordered.forEach(function (g) {
@@ -233,7 +226,7 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); open(current + 1); }
     });
 
-    // deep link: films.html#film=<id>
+    // deep link: /films/#film=<id>
     var m = /film=([\w-]+)/.exec(location.hash);
     if (m) { var idx = flat.findIndex(function (f) { return f.id === m[1]; }); if (idx >= 0) open(idx); }
   }

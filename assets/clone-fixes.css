@@ -118,7 +118,9 @@ header [class*="space-x-8"] a, header [class*="space-x-8"] button, header nav a,
 .slave-person .rl{ font-size:.82rem; color:var(--s-muted); margin-top:.3rem; line-height:1.4; }
 
 /* pulse-glow keyframe paints a blue box-shadow -> warm terracotta glow (!important beats the animation) */
-.animate-pulse-glow{ box-shadow:0 10px 40px -6px rgba(192,105,63,.42) !important; }
+.animate-pulse-glow{ box-shadow:0 8px 20px -10px rgba(30,22,14,.45) !important; animation:none !important; }
+/* hero photos fade into the page: the compiled gradient ended on #F8F7F4, one shade off the cream, which read as a pale band */
+.to-\[\#F8F7F4\]{ --tw-gradient-to:var(--s-bg) var(--tw-gradient-to-position) !important; }
 
 /* Team group photo: warm brown duotone + soft veil (tune values to taste) */
 .slave-teamphoto{ position:relative; border-radius:1.5rem; overflow:hidden; box-shadow:0 18px 44px -20px rgba(58,46,32,.45); }

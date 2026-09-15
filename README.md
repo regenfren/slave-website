@@ -81,6 +81,11 @@ same manifest as one big player + a searchable queue (filter chips per school, s
 team, school, course; prev/next; keyboard up/down in the list). Nothing from YouTube loads before the
 first play; after that, picking another film plays it straight away. `/#film=<id>` selects a film.
 
+**Navigation:** `python3 tools/nav.py` rewrites the header nav (Asso, Projects dropdown) and the footer
+quick links on every page; edit `NAV` in that script, never a page. The school selector cards on the home
+and films pages are `assets/schools.js` + `schools.css`, fed by `schools` in `films.json` (logo + tagline
+required, checked by films-pages.py).
+
 **Regenerating the films pages:** `python3 tools/films-pages.py`. It rebuilds `films/index.html` and
 `fr/films/index.html` from the header, head and footer of `index.html` / `fr/index.html`, and
 marks Films as the active nav item. Edit the copy in the `LANGS` dict at the top of that script, not in

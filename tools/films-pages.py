@@ -7,9 +7,13 @@ Idempotent. The head, header and footer are lifted from index.html and fr/index.
 of Time home) at build time, so nav changes made there carry over automatically. Edit the copy in
 the LANGS dict below, not in the generated HTML.
 """
+import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import nav  # noqa: E402  (tools/nav.py: the one source of truth for the header + footer links)
 
 ROOT = Path(__file__).resolve().parent.parent
 HOST = "https://railsoftime.fr/"
@@ -55,16 +59,10 @@ def build(lang: str) -> Path:
     head = re.sub(r'<link rel="alternate" hreflang="fr" href="[^"]*">', f'<link rel="alternate" hreflang="fr" href="{HOST}fr/films/">', head, count=1)
     head = re.sub(r'<link rel="alternate" hreflang="x-default" href="[^"]*">', f'<link rel="alternate" hreflang="x-default" href="{HOST}films/">', head, count=1)
     head = head.replace('<link rel="stylesheet" href="/assets/showcase.css">', '<link rel="stylesheet" href="/assets/films.css">')
+    if "schools.css" not in head:
+        head = head.replace('<link rel="stylesheet" href="/assets/films.css">', '<link rel="stylesheet" href="/assets/schools.css">\n    <link rel="stylesheet" href="/assets/films.css">')
     if "films.css" not in head:
         head = head.replace("</head>", '    <link rel="stylesheet" href="/assets/films.css">\n</head>')
-
-    # active nav item: Films instead of Rails of Time
-    active_home = re.search(r'<a (class="[^"]*after:w-full")( href="' + re.escape(pre) + r'/")', header)
-    assert active_home, "active home link not found in header"
-    idle_cls = re.search(r'<a (class="[^"]*after:w-0[^"]*") href="' + re.escape(pre) + r'/films/"', header)
-    assert idle_cls, "films link not found in header"
-    header = header.replace(f'<a {active_home.group(1)}{active_home.group(2)}', f'<a {idle_cls.group(1)}{active_home.group(2)}', 1)
-    header = header.replace(f'<a {idle_cls.group(1)} href="{pre}/films/"', f'<a {active_home.group(1)} href="{pre}/films/"', 1)
 
     body = f"""
 <section class="films-hero"><div class="container mx-auto px-4 md:px-8">
@@ -75,14 +73,33 @@ def build(lang: str) -> Path:
 <div id="films" class="container mx-auto px-4 md:px-8"><h2 class="films-sr">{L['h2']}</h2></div>
 """
     out = f'<!DOCTYPE html><html lang="{lang}">' + head + "<body>" + header + body + footer + \
-        '<script src="/assets/clone.js"></script><script src="/assets/films.js" data-assets="/assets/"></script></body></html>\n'
+        '<script src="/assets/clone.js"></script><script src="/assets/schools.js"></script><script src="/assets/films.js" data-assets="/assets/"></script></body></html>\n'
+    out = nav.apply(out, lang, "films/")
     dest = ROOT / L["dir"] / "films" / "index.html"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(out, encoding="utf-8")
     return dest
 
 
+def check_schools():
+    """Rule (Tim, 2026-09-15): every school that has a published film carries a logo and a tagline in
+    both languages, because the site shows them as the school selector. Fails loudly."""
+    d = json.loads((ROOT / "assets" / "films.json").read_text(encoding="utf-8"))
+    used = {f["school"] for f in d.get("films", []) if f.get("youtube")}
+    bad = []
+    for sid in sorted(used):
+        s = d["schools"].get(sid, {})
+        tag = s.get("tagline") or {}
+        missing = [k for k, ok in (("name", bool(s.get("name"))), ("city", bool(s.get("city"))), ("logo", bool(s.get("logo")) and (ROOT / s.get("logo", "")).exists()),
+                                    ("tagline.en", bool(tag.get("en"))), ("tagline.fr", bool(tag.get("fr")))) if not ok]
+        if missing:
+            bad.append(f"{sid}: missing {', '.join(missing)}")
+    if bad:
+        sys.exit("films.json schools rule broken (name, city, logo file, tagline en+fr for every school with a published film):\n  " + "\n  ".join(bad))
+
+
 def main():
+    check_schools()
     for lang in LANGS:
         print("wrote", build(lang).relative_to(ROOT))
     for lang, L in LANGS.items():

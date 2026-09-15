@@ -1,0 +1,29 @@
+/* ============================================================
+   School selector cards (home stage + films page). Tokens from clone-fixes.css.
+   Desktop: one row of equal cards. Phone: a snap-scrolling row that bleeds right.
+   ============================================================ */
+.schools{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:.9rem; margin:0 0 1.75rem; }
+.school-card{
+  appearance:none; font-family:inherit; text-align:left; cursor:pointer; color:var(--s-ink);
+  display:flex; flex-direction:column; gap:.25rem; min-height:100%; padding:1rem 1.1rem 1.1rem;
+  background:var(--s-card); border:1px solid var(--s-line); border-radius:1rem;
+  box-shadow:0 10px 26px -22px rgba(58,46,32,.4);
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.school-card:hover{ border-color:var(--s-accent-soft); transform:translateY(-2px); box-shadow:0 16px 30px -22px rgba(58,46,32,.5); }
+.school-card[aria-pressed="true"]{ border-color:var(--s-accent); box-shadow:0 0 0 1px var(--s-accent), 0 16px 30px -22px rgba(58,46,32,.5); }
+.school-card:focus-visible{ outline:3px solid var(--s-accent); outline-offset:3px; }
+.school-logo{ display:flex; align-items:center; height:48px; margin-bottom:.55rem; }
+.school-logo img{ max-height:40px; max-width:150px; width:auto; height:auto; object-fit:contain; display:block; }
+.school-logo-all{ color:var(--s-accent); }
+.school-logo-all svg{ width:36px; height:36px; }
+.school-mono{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:.6rem; background:var(--s-bg2); font-family:'Fraunces', Georgia, serif; font-size:1.3rem; color:var(--s-ink); }
+.school-name{ font-family:'Fraunces', Georgia, serif; font-size:1.12rem; line-height:1.2; color:var(--s-ink); }
+.school-meta{ font-size:.82rem; color:var(--s-muted); }
+.school-tag{ font-size:.9rem; line-height:1.45; color:#5C5044; margin-top:.35rem; }
+@media(max-width:760px){
+  .schools{ display:flex; gap:.75rem; overflow-x:auto; scroll-snap-type:x mandatory; margin-right:calc(50% - 50vw); padding:.25rem 1.25rem .75rem 0; scrollbar-width:none; }
+  .schools::-webkit-scrollbar{ display:none; }
+  .school-card{ flex:0 0 76vw; max-width:320px; scroll-snap-align:start; min-height:0; }
+}
+@media(prefers-reduced-motion:reduce){ .school-card{ transition:none; } .school-card:hover{ transform:none; } }

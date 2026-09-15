@@ -1,25 +1,50 @@
 {
-  "_readme": "One entry per film. A film appears on the site as soon as it has a `youtube` id (the part after v= in the YouTube link). Everything else is optional. Full instructions: AJOUTER-UN-FILM.md at the root of this repo.",
+  "_readme": "One entry per film. A film appears on the site as soon as it has a `youtube` id (the part after v= in the YouTube link). Everything else is optional. Full instructions: AJOUTER-UN-FILM.md at the root of this repo. Every school in `schools` carries name, city, logo and a tagline in both languages: the site shows them as the school selector.",
   "schools": {
     "kedge": {
       "name": "KEDGE Business School",
-      "city": "Bordeaux"
+      "city": "Bordeaux",
+      "logo": "assets/partners/kedge.edu.png",
+      "tagline": {
+        "en": "One of France's leading business schools, with campuses in Bordeaux, Marseille and Paris.",
+        "fr": "L'une des grandes écoles de management françaises, avec des campus à Bordeaux, Marseille et Paris."
+      }
     },
     "cnam": {
       "name": "CNAM Nouvelle-Aquitaine",
-      "city": "Dax"
+      "city": "Dax",
+      "logo": "assets/partners/cnam-nouvelle-aquitaine.fr.png",
+      "tagline": {
+        "en": "The Conservatoire national des arts et métiers, France's public school for learning alongside a career, on its Dax campus.",
+        "fr": "Le Conservatoire national des arts et métiers, l'établissement public de la formation tout au long de la vie, sur son campus de Dax."
+      }
     },
     "iae": {
       "name": "IAE Bordeaux",
-      "city": "Bordeaux"
+      "city": "Bordeaux",
+      "logo": "assets/partners/iae-bordeaux.fr.png",
+      "tagline": {
+        "en": "The University of Bordeaux's public school of management.",
+        "fr": "L'école universitaire de management de l'Université de Bordeaux."
+      }
     },
     "ubm": {
       "name": "Université Bordeaux Montaigne",
-      "city": "Bordeaux"
+      "city": "Bordeaux",
+      "logo": "assets/partners/u-bordeaux-montaigne.fr.png",
+      "tagline": {
+        "en": "Bordeaux's university of arts, languages and humanities, where the association was founded in 2007.",
+        "fr": "L'université bordelaise des arts, des langues et des sciences humaines, où l'association est née en 2007."
+      }
     },
     "cafa": {
-      "name": "CAFA",
-      "city": "Beijing"
+      "name": "Central Academy of Fine Arts (CAFA)",
+      "city": "Beijing",
+      "logo": "assets/partners/cafa.edu.cn.png",
+      "tagline": {
+        "en": "Beijing's Central Academy of Fine Arts, China's foremost art academy.",
+        "fr": "L'Académie centrale des beaux-arts de Pékin, la première école d'art de Chine."
+      }
     }
   },
   "terms": {

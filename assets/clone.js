@@ -26,6 +26,18 @@
     if(brand){ brand.style.cursor='pointer'; brand.setAttribute('aria-label', inFr ? 'Accueil' : 'Home'); brand.addEventListener('click',function(e){ e.preventDefault(); location.href=home; }); }
   }
 
+  // --- Top-nav "Projects/Projets" dropdown ---
+  document.querySelectorAll('header nav button').forEach(function(b){
+    var wrap=b.parentElement, menu=wrap&&wrap.querySelector(':scope > div'); if(!menu) return;
+    var show=function(){menu.classList.remove('opacity-0','scale-95','pointer-events-none');menu.classList.add('opacity-100','scale-100');menu.style.pointerEvents='auto';b.setAttribute('aria-expanded','true');};
+    var hide=function(){menu.classList.add('opacity-0','scale-95','pointer-events-none');menu.classList.remove('opacity-100','scale-100');menu.style.pointerEvents='';b.setAttribute('aria-expanded','false');};
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();menu.classList.contains('opacity-0')?show():hide();});
+    wrap.addEventListener('mouseenter',show); wrap.addEventListener('mouseleave',hide);
+    wrap.addEventListener('focusout',function(e){ if(!wrap.contains(e.relatedTarget)) hide(); });
+    document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) hide(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  });
+
   // --- Mobile menu (a panel built from the nav links + Contact; wired to the burger) ---
   if(header){
     var burger=[].slice.call(header.querySelectorAll('button')).find(function(b){ return b.querySelector('.lucide-menu'); });

@@ -13,6 +13,17 @@ Newest first. One entry per shipped change; the commit says how, this says what 
   "History & Values" (native `<details>`); pillars, featured projects, team, partners and
   the community block stay. The association page's motto band was dropped (its quote is already
   the hero line). Nav is flat: Rails of Time, Films, Asso, Right to Dignity, Contact.
+- **Nav, second pass the same day:** two entries, Asso and Projects; Projects is a dropdown with
+  Rails of Time, Right to Dignity and Films; Contact stays a button. `tools/nav.py` is the one
+  writer of every header and footer nav from now on.
+- **School selector** on the home stage and the films page: one card per school with logo, full
+  name, city, film count and a one-line tagline (from `films.json`, `schools`), plus an
+  "All schools" card. Rule: every school with a published film carries logo + tagline in both
+  languages; `tools/films-pages.py` refuses to build without them. CAFA's logo is the 194x70 png
+  from cafa.edu.cn, the only one that is not retina-sharp.
+- **Hero polish:** the fade under every hero photo ended on `#F8F7F4`, one shade off the cream,
+  which read as a pale band; it lands on the page colour now. The pulse glow on hero buttons is
+  gone, shadows are quieter, the home CTA has room above it.
 - **Clean URLs.** One folder per page (`/films/`, `/asso/`, `/dignity/`, `/contact/`, and under
   `/fr/`), absolute asset paths, canonical + hreflang + sitemap on the new addresses. Every old
   `*.html` address is a redirect stub that keeps the hash, so `films.html#film=apex` still opens

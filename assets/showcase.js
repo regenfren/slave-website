@@ -12,19 +12,21 @@
 
   var T = {
     en: {
-      all: 'All schools', play: 'Play', prev: 'Previous film', next: 'Next film', watch: 'Watch on YouTube',
+      all: 'All schools', allTag: 'Every cohort, newest first.', schools: 'Choose a school', play: 'Play', prev: 'Previous film', next: 'Next film', watch: 'Watch on YouTube',
       queue: 'Film list', search: stage.getAttribute('data-search') || 'Search',
       soon: 'This film is being uploaded. Check back soon.',
       empty: 'No film matches that.', loadError: 'The films could not be loaded.',
       count: function (n, t) { return n === t ? t + ' films' : n + ' of ' + t + ' films'; },
+      films: function (n) { return n === 1 ? '1 film' : n + ' films'; },
       minutes: function (m) { return m + ' min'; }
     },
     fr: {
-      all: 'Toutes les écoles', play: 'Lire', prev: 'Film précédent', next: 'Film suivant', watch: 'Voir sur YouTube',
+      all: 'Toutes les écoles', allTag: 'Toutes les promotions, les plus récentes d’abord.', schools: 'Choisir une école', play: 'Lire', prev: 'Film précédent', next: 'Film suivant', watch: 'Voir sur YouTube',
       queue: 'Liste des films', search: stage.getAttribute('data-search') || 'Chercher',
       soon: 'Ce film est en cours de mise en ligne. Revenez bientôt.',
       empty: 'Aucun film ne correspond.', loadError: 'Les films n’ont pas pu être chargés.',
       count: function (n, t) { return n === t ? t + ' films' : n + ' sur ' + t + ' films'; },
+      films: function (n) { return n === 1 ? '1 film' : n + ' films'; },
       minutes: function (m) { return m + ' min'; }
     }
   }[lang];
@@ -96,15 +98,19 @@
     ]);
 
     // ---- queue ----
-    var chips = el('div', { 'class': 'rot-chips', role: 'group' });
     var present = schoolOrder.filter(function (s) { return films.some(function (f) { return f.school === s; }); });
-    chips.appendChild(el('button', { type: 'button', 'aria-pressed': 'true', 'data-school': '', text: T.all }));
-    present.forEach(function (s) { chips.appendChild(el('button', { type: 'button', 'aria-pressed': 'false', 'data-school': s, text: (schools[s] && schools[s].name) || s })); });
+    var counts = {}; films.forEach(function (f) { counts[f.school] = (counts[f.school] || 0) + 1; });
+    var picker = window.RoTSchools.render({
+      schools: schools, order: present, counts: counts, total: films.length, lang: lang,
+      T: { all: T.all, allTag: T.allTag, films: T.films, label: T.schools },
+      onSelect: function (id) { school = id; applyFilter(); }
+    });
+    stage.parentNode.insertBefore(picker.el, stage);
     var search = el('input', { type: 'search', placeholder: T.search, 'aria-label': T.search, autocomplete: 'off' });
     var count = el('p', { 'class': 'rot-count', 'aria-live': 'polite' });
     var queue = el('ol', { 'class': 'rot-queue', 'aria-label': T.queue });
     var list = el('aside', { 'class': 'rot-list' }, [el('div', { 'class': 'rot-list-inner' }, [
-      el('div', { 'class': 'rot-tools' }, [chips, el('label', { 'class': 'rot-search', html: ICON.search }, [search]), count]),
+      el('div', { 'class': 'rot-tools' }, [el('label', { 'class': 'rot-search', html: ICON.search }, [search]), count]),
       queue
     ])]);
     stage.appendChild(player); stage.appendChild(list);
@@ -183,12 +189,6 @@
     playBtn.addEventListener('click', function () { if (current) mount(current); });
     prevBtn.addEventListener('click', function () { step(-1); });
     nextBtn.addEventListener('click', function () { step(1); });
-    chips.addEventListener('click', function (e) {
-      var b = e.target.closest('button'); if (!b) return;
-      school = b.getAttribute('data-school');
-      chips.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      applyFilter();
-    });
     search.addEventListener('input', function () { q = search.value; applyFilter(); });
     queue.addEventListener('keydown', function (e) {
       if (['ArrowDown', 'ArrowUp', 'Home', 'End'].indexOf(e.key) < 0) return;

@@ -75,10 +75,26 @@ version française sans rien faire de plus.
 
 ## Pour une nouvelle école
 
-En haut du fichier, section `schools`, ajoutez une ligne sur le modèle des autres :
+En haut du fichier, section `schools`, ajoutez un bloc sur le modèle des autres. **Règle (depuis le
+15 septembre 2026) : chaque école a un nom complet, une ville, un logo et une phrase de présentation
+dans les deux langues.** Le site les affiche tels quels dans le sélecteur d'écoles, sur la page
+d'accueil et sur la page des films ; si l'un des quatre manque, la page des films refuse de se
+reconstruire et dit ce qui manque.
 
 ```json
-    "iae": { "name": "IAE Bordeaux", "city": "Bordeaux" },
+    "iae": {
+      "name": "IAE Bordeaux",
+      "city": "Bordeaux",
+      "logo": "assets/partners/iae-bordeaux.fr.png",
+      "tagline": {
+        "en": "The University of Bordeaux's public school of management.",
+        "fr": "L'école universitaire de management de l'Université de Bordeaux."
+      }
+    },
 ```
+
+Le logo est un PNG sur fond transparent, déposé dans `assets/partners/` (environ 170 px de haut,
+comme les autres). La phrase de présentation est une seule phrase, qui présente l'école sous son
+meilleur jour.
 
 L'ordre des écoles dans cette section est l'ordre d'affichage sur la page.
