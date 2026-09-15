@@ -22,6 +22,9 @@ Newest first. One entry per shipped change; the commit says how, this says what 
   band of the stage box, not a separate element (Tim's second-pass correction, same day). Rule: every school with a published film carries logo + tagline in both
   languages; `tools/films-pages.py` refuses to build without them. CAFA's logo is the 194x70 png
   from cafa.edu.cn, the only one that is not retina-sharp.
+- **Eyebrow pills gone.** The 36 small rounded labels above headings ("Our Projects", "What We Do",
+  "Since 2007 • Bordeaux" and so on, every page, both languages) are removed; the heading names the
+  section. Kept: "Phase 1 / Phase 2" (a real sequence) and the "Students involved" sub-headings.
 - **Hero polish:** the fade under every hero photo ended on `#F8F7F4`, one shade off the cream,
   which read as a pale band; it lands on the page colour now. The pulse glow on hero buttons is
   gone, shadows are quieter, the home CTA has room above it.
