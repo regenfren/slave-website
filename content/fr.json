@@ -1,0 +1,1030 @@
+{
+  "lang": "fr",
+  "pages": {
+    "404": {
+      "head": {
+        "title": "ASSO S.L.A.V.É. - Savoir • Langue • Art • Voyage • Échange",
+        "tags": [
+          "<meta name=\"description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta name=\"author\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"keywords\" content=\"Association, Education, Culture, Art, Travel, Exchange, Bordeaux, France, Rails of Time, Inter-university, Creative projects\">",
+          "<meta property=\"og:title\" content=\"ASSO S.L.A.V.É. - Savoir • Langue • Art • Voyage • Échange\">",
+          "<meta property=\"og:description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:url\" content=\"https://railsoftime.fr/fr/\">",
+          "<meta property=\"og:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta property=\"og:image:width\" content=\"1200\">",
+          "<meta property=\"og:image:height\" content=\"630\">",
+          "<meta property=\"og:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">",
+          "<meta property=\"og:site_name\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+          "<meta name=\"twitter:title\" content=\"ASSO S.L.A.V.É. - Savoir • Langue • Art • Voyage • Échange\">",
+          "<meta name=\"twitter:description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta name=\"twitter:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta name=\"twitter:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">"
+        ]
+      },
+      "h1": "404",
+      "h2": "Page introuvable",
+      "p": "La page que vous recherchez n'existe pas ou a été déplacée.",
+      "home": {
+        "text": "Retour à l'accueil",
+        "href": "/fr/"
+      },
+      "back": "Retour"
+    },
+    "home": {
+      "head": {
+        "title": "Les Rails du Temps - ASSO S.L.A.V.É.",
+        "tags": [
+          "<link rel=\"canonical\" href=\"https://railsoftime.fr/fr/\">",
+          "<link rel=\"alternate\" hreflang=\"en\" href=\"https://railsoftime.fr/\">",
+          "<link rel=\"alternate\" hreflang=\"fr\" href=\"https://railsoftime.fr/fr/\">",
+          "<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://railsoftime.fr/\">",
+          "<meta name=\"description\" content=\"Les Rails du Temps est un projet inter-universitaire de l'ASSO S.L.A.V.É. : des étudiants conçoivent des itinéraires, tournent des courts-métrages et racontent les histoires vivantes des lieux qui façonnent les territoires français.\">",
+          "<meta name=\"author\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"keywords\" content=\"Association, Education, Culture, Art, Travel, Exchange, Bordeaux, France, Rails of Time, Inter-university, Creative projects\">",
+          "<meta property=\"og:title\" content=\"Les Rails du Temps - ASSO S.L.A.V.É.\">",
+          "<meta property=\"og:description\" content=\"Les Rails du Temps est un projet inter-universitaire de l'ASSO S.L.A.V.É. : des étudiants conçoivent des itinéraires, tournent des courts-métrages et racontent les histoires vivantes des lieux qui façonnent les territoires français.\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:url\" content=\"https://railsoftime.fr/fr/\">",
+          "<meta property=\"og:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta property=\"og:image:width\" content=\"1200\">",
+          "<meta property=\"og:image:height\" content=\"630\">",
+          "<meta property=\"og:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">",
+          "<meta property=\"og:site_name\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+          "<meta name=\"twitter:title\" content=\"Les Rails du Temps - ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:description\" content=\"Les Rails du Temps est un projet inter-universitaire de l'ASSO S.L.A.V.É. : des étudiants conçoivent des itinéraires, tournent des courts-métrages et racontent les histoires vivantes des lieux qui façonnent les territoires français.\">",
+          "<meta name=\"twitter:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta name=\"twitter:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">"
+        ]
+      },
+      "hero": {
+        "h1": "Les Rails du Temps",
+        "lede": "Un projet inter-universitaire incarnant une nouvelle forme d'ingénierie pédagogique innovante fondée sur le design thinking.",
+        "cta": {
+          "text": "Voir les films des étudiants",
+          "href": "#films"
+        }
+      },
+      "films": {
+        "h2": "Les films des étudiants",
+        "lede": "Des courts-métrages réalisés en cours dans nos universités partenaires. Chaque promotion construit un scénario sur un semestre, puis tourne et monte elle-même.",
+        "all": {
+          "text": "Voir tous les films",
+          "href": "/fr/films/"
+        },
+        "search": "Chercher un film, une équipe ou une école"
+      },
+      "about": {
+        "h2": "À propos du projet",
+        "paras": [
+          "Les Rails du Temps est un projet inter-universitaire incarnant une nouvelle forme d'ingénierie pédagogique innovante fondée sur le design thinking.",
+          "Le titre du projet joue sur les mots : « Les Rails du Temps » évoque à la fois un itinéraire réel et un lien métaphorique entre les générations, les cultures et les traditions à travers le temps. En traversant différentes villes françaises, les participants découvrent les traces culturelles du passé et du présent tout en explorant les histoires vivantes de celles et ceux dont la créativité façonne les territoires.",
+          "Le projet prend la forme d'un carnet de voyage nouvelle génération dans lequel les étudiants conçoivent des itinéraires, réalisent des courts-métrages, mènent des entretiens et rédigent des récits de recherche tout en s'immergeant dans la culture locale, l'innovation et les pratiques créatives."
+        ]
+      },
+      "objectives": {
+        "h2": "Objectifs du projet",
+        "items": [
+          {
+            "n": "01",
+            "h3": "Apprendre sur le terrain",
+            "p": "Transformer les travaux universitaires des étudiants en véritable travail de terrain, au contact des territoires, des entreprises et des acteurs locaux."
+          },
+          {
+            "n": "02",
+            "h3": "Compétences créatives & médiatiques",
+            "p": "Développer l’entretien, la réalisation et la communication interculturelle en documentant de vrais « héros » locaux."
+          },
+          {
+            "n": "03",
+            "h3": "Des territoires en transition",
+            "p": "Montrer comment les territoires et les entreprises de toutes tailles portent le changement culturel, économique et écologique."
+          },
+          {
+            "n": "04",
+            "h3": "Transmettre",
+            "p": "Faire des étudiants de Génération U les mentors des plus jeunes et partager leurs créations avec le public."
+          }
+        ]
+      },
+      "outline": {
+        "h2": "Déroulé du projet",
+        "lede": "Le projet se déroule en plusieurs phases complémentaires, conçues comme un parcours progressif de transmission, de création et de dialogue intergénérationnel.",
+        "phases": [
+          {
+            "label": "Phase 1",
+            "h3": "Les Rails du Temps – Génération U",
+            "p": "Les Rails du Temps – Génération U est la première étape du projet. Elle s'adresse aux étudiants des établissements d'enseignement supérieur partenaires et s'intègre à leur parcours académique.",
+            "quote": "Les entreprises et personnalités locales deviennent les « héros » des films réalisés par les étudiants et les sujets d'analyses académiques.",
+            "involvedTitle": "Étudiants impliqués",
+            "involved": [
+              "KEDGE Business School",
+              "CNAM Nouvelle-Aquitaine",
+              "IAE Bordeaux"
+            ]
+          },
+          {
+            "label": "Phase 2",
+            "h3": "Les Rails du Temps – Junior",
+            "p": "Les Rails du Temps – Junior repose sur une approche de transmission intergénérationnelle. Les étudiants de l'enseignement supérieur deviennent tuteurs et médiateurs, accompagnant les collégiens et lycéens tout au long du projet.",
+            "quote": "",
+            "involvedTitle": "Étudiants impliqués",
+            "involved": [
+              "Collèges publics ou privés",
+              "Classes SEGPA et ULIS bienvenues"
+            ]
+          }
+        ]
+      },
+      "team": {
+        "h2": "Équipe & Conseillers",
+        "lede": "",
+        "groups": [
+          {
+            "h3": "Équipe du projet",
+            "people": [
+              {
+                "img": "/assets/team/daria-tsukanova.jpg",
+                "name": "Daria Tsukanova",
+                "role": [
+                  "Responsable du projet"
+                ]
+              },
+              {
+                "img": "/assets/team/alexander-kashin.jpg",
+                "name": "Alexander Kashin",
+                "role": [
+                  "Directeur artistique"
+                ]
+              },
+              {
+                "img": "/assets/team/timofei-golts-dort.jpg",
+                "name": "Tim Dort-Golts",
+                "role": [
+                  "Coordinateur de projets"
+                ]
+              }
+            ]
+          },
+          {
+            "h3": "Conseillers",
+            "people": [
+              {
+                "img": "/assets/adv/dirk-moosmayer.jpg",
+                "name": "Dirk K. Moosmayer",
+                "role": [
+                  "KEDGE Business School"
+                ]
+              },
+              {
+                "img": "/assets/adv/feriel-sayadi.jpg",
+                "name": "Feriel Sayadi",
+                "role": [
+                  "CNAM Nouvelle-Aquitaine"
+                ]
+              },
+              {
+                "img": "/assets/adv/antoine-ertle.jpg",
+                "name": "Antoine Ertle",
+                "role": [
+                  "Université Bordeaux Montaigne"
+                ]
+              },
+              {
+                "img": "/assets/adv/addis-kassegn.jpg",
+                "name": "Addis Kassegn",
+                "role": [
+                  "Consultant & enseignant-chercheur"
+                ]
+              },
+              {
+                "img": "/assets/adv/jan-schaaper.jpg",
+                "name": "Johannes (Jan) Schaaper",
+                "role": [
+                  "IAE Bordeaux"
+                ]
+              },
+              {
+                "img": "/assets/adv/laetitia-mikles.jpg",
+                "name": "Laetitia Mikles",
+                "role": [
+                  "Réalisatrice & enseignante"
+                ]
+              },
+              {
+                "img": "/assets/adv/kristian-feigelson.jpg",
+                "name": "Kristian Feigelson",
+                "role": [
+                  "Sorbonne Nouvelle – Paris 3"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "partners": {
+        "h2": "Institutions partenaires",
+        "logos": []
+      },
+      "cta": {
+        "h2": "Envie de participer ?",
+        "p": "Rejoignez nos projets créatifs et éducatifs. Contactez-nous pour en savoir plus sur les opportunités de partenariat.",
+        "a": {
+          "text": "Contactez-nous",
+          "href": "/fr/contact/"
+        }
+      }
+    },
+    "asso": {
+      "head": {
+        "title": "ASSO S.L.A.V.É. - Savoir • Langue • Art • Voyage • Échange",
+        "tags": [
+          "<link rel=\"canonical\" href=\"https://railsoftime.fr/fr/asso/\">",
+          "<link rel=\"alternate\" hreflang=\"en\" href=\"https://railsoftime.fr/asso/\">",
+          "<link rel=\"alternate\" hreflang=\"fr\" href=\"https://railsoftime.fr/fr/asso/\">",
+          "<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://railsoftime.fr/asso/\">",
+          "<meta name=\"description\" content=\"ASSO S.L.A.V.É. est un laboratoire intellectuel réunissant des personnes de tous horizons autour de projets créatifs, éducatifs et durables.\">",
+          "<meta name=\"author\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"keywords\" content=\"Association, Education, Culture, Art, Travel, Exchange, Bordeaux, France, Rails of Time, Inter-university, Creative projects\">",
+          "<meta property=\"og:title\" content=\"ASSO S.L.A.V.É. - Savoir • Langue • Art • Voyage • Échange\">",
+          "<meta property=\"og:description\" content=\"ASSO S.L.A.V.É. est un laboratoire intellectuel réunissant des personnes de tous horizons autour de projets créatifs, éducatifs et durables.\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:url\" content=\"https://railsoftime.fr/fr/asso/\">",
+          "<meta property=\"og:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta property=\"og:image:width\" content=\"1200\">",
+          "<meta property=\"og:image:height\" content=\"630\">",
+          "<meta property=\"og:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">",
+          "<meta property=\"og:site_name\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+          "<meta name=\"twitter:title\" content=\"ASSO S.L.A.V.É. - Savoir • Langue • Art • Voyage • Échange\">",
+          "<meta name=\"twitter:description\" content=\"ASSO S.L.A.V.É. est un laboratoire intellectuel réunissant des personnes de tous horizons autour de projets créatifs, éducatifs et durables.\">",
+          "<meta name=\"twitter:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta name=\"twitter:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">"
+        ]
+      },
+      "hero": {
+        "h1": "Là où les cultures se rencontrent",
+        "lede": "La rencontre des cultures est une étincelle capable de transformer le monde en nous et autour de nous.",
+        "ctas": [
+          {
+            "text": "Découvrir nos projets",
+            "href": "#featured"
+          },
+          {
+            "text": "En savoir plus sur nous",
+            "href": "#about"
+          }
+        ]
+      },
+      "about": {
+        "h2": "ASSO S.L.A.V.É.",
+        "paras": [
+          "ASSO S.L.A.V.É. est un laboratoire intellectuel réunissant des personnes de tous horizons autour de projets créatifs, éducatifs et durables.",
+          "L'activité principale de l'association est le développement de projets à l'intersection de la science, de l'entrepreneuriat, de la culture, de l'art, du développement durable et de la technologie. Une attention particulière est portée au cinéma, aux médias numériques et à l'intelligence artificielle, ainsi qu'aux pratiques artistiques traditionnelles, en tant qu'outils d'échange interculturel et de développement responsable."
+        ],
+        "img": {
+          "src": "/assets/team-group.webp",
+          "alt": "The S.L.A.V.É. team"
+        },
+        "caption": "L’équipe S.L.A.V.É. — Bordeaux",
+        "history": {
+          "title": "Histoire & Valeurs",
+          "hint": "Fondée en 2007 à l'Université Bordeaux Montaigne. Comment l'association en est arrivée là.",
+          "paras": [
+            "L'association a été fondée en 2007 à l'Université Bordeaux Montaigne par des étudiants et des enseignants passionnés par le dialogue culturel avec l'Europe de l'Est, les pays de l'ex-URSS et le monde slave.",
+            "Dès ses débuts, l'association s'est distinguée par l'organisation de nombreux événements culturels et scientifiques animés par des professionnels des mondes économique, académique et artistique. L'un de ses projets les plus emblématiques fut le concours international de courts-métrages In Ciné Veritas.",
+            "Au fil du temps, l'association a évolué, s'est structurée et a élargi ses activités en développant des ateliers pédagogiques dans divers domaines académiques tels que la communication, le management, l'entrepreneuriat, l'art, les industries créatives et le marketing. Elle mène également des activités de traduction orale et écrite, fidèles à son expertise académique d'origine.",
+            "Ces actions s'appuient sur des méthodes de recherche-action et des approches de design thinking, et se prolongent dans des projets créatifs, la conception d'itinéraires touristiques en France et en Europe, ainsi que la valorisation des territoires et de leurs acteurs économiques, quelle que soit leur taille.",
+            "L'association est également engagée en faveur de l'inclusion et du respect de la dignité humaine, en développant des projets qui favorisent l'accès à la culture, à l'éducation et à la créativité pour des publics variés, tout en valorisant la participation, l'autonomie et l'expression de soi comme moteurs d'un développement responsable et durable.",
+            "Grâce à cette évolution, l'association a dépassé son cadre initial pour devenir une plateforme interdisciplinaire, territoriale et européenne.",
+            "Fidèle à ses racines universitaires et à sa philosophie — l'éducation, la culture et l'art comme outils de transformation —, l'association est devenue une plateforme interculturelle, intergénérationnelle et interdisciplinaire."
+          ]
+        }
+      },
+      "pillars": {
+        "h2": "Nos piliers",
+        "lede": "Cinq domaines à travers lesquels l’association rapproche les cultures.",
+        "items": [
+          {
+            "letter": "S",
+            "h3": "Science",
+            "p": "Ateliers pédagogiques et projets académiques — du management et de l'entrepreneuriat à la linguistique appliquée, l'IA et les industries créatives."
+          },
+          {
+            "letter": "L",
+            "h3": "Langue",
+            "p": "Traduction, interprétation et médiation interculturelle qui rapprochent les personnes, les institutions et les cultures."
+          },
+          {
+            "letter": "A",
+            "h3": "Art",
+            "p": "Cinéma, médias numériques et création audiovisuelle, avec une attention particulière au film et aux nouvelles technologies."
+          },
+          {
+            "letter": "V",
+            "h3": "Voyage",
+            "p": "Itinéraires culturels et touristiques qui révèlent les personnes et les lieux qui façonnent les territoires français."
+          },
+          {
+            "letter": "É",
+            "h3": "Échange",
+            "p": "Mobilité, inclusion et échange — relier des personnes et des communautés diverses par l'expérience partagée."
+          }
+        ]
+      },
+      "featured": {
+        "h2": "Projets phares",
+        "lede": "Deux initiatives phares où se rencontrent culture, éducation et solidarité.",
+        "items": [
+          {
+            "img": {
+              "src": "/assets/cinema-event-4ffR4bAi.webp",
+              "alt": "Les Rails du Temps"
+            },
+            "h3": "Les Rails du Temps",
+            "p": "Un voyage interculturel et éducatif à travers la France — les étudiants conçoivent des itinéraires, réalisent des courts-métrages documentaires et racontent les histoires vivantes des personnes qui façonnent les territoires.",
+            "a": {
+              "text": "Découvrir le projet",
+              "href": "/fr/"
+            }
+          },
+          {
+            "img": {
+              "src": "/assets/women-support-V6SpsjzV.webp",
+              "alt": "Droit à la Dignité"
+            },
+            "h3": "Droit à la Dignité",
+            "p": "Action sociale et accompagnement interculturel auprès des personnes et des familles — traduction, orientation, lien social et solidarité au service de la dignité de chacun.",
+            "a": {
+              "text": "Découvrir l'action",
+              "href": "/fr/dignity/"
+            }
+          }
+        ]
+      },
+      "team": {
+        "h2": "Équipe & Conseillers",
+        "lede": "Les personnes qui animent l’association et les conseillers académiques qui guident nos projets.",
+        "groups": [
+          {
+            "h3": "Équipe",
+            "people": [
+              {
+                "img": "/assets/team/daria-tsukanova.jpg",
+                "name": "Daria Tsukanova",
+                "role": [
+                  "Présidente · Experte en traduction et communication interculturelle"
+                ]
+              },
+              {
+                "img": "/assets/team/ludivine-leclercq.jpg",
+                "name": "Ludivine Leclercq",
+                "role": [
+                  "Secrétaire du bureau"
+                ]
+              },
+              {
+                "img": "/assets/team/natalia-kosak.jpg",
+                "name": "Natalia Kosak",
+                "role": [
+                  "Secrétaire adjointe du bureau",
+                  "Traductrice & interprète experte"
+                ]
+              },
+              {
+                "img": "/assets/team/olivier-lagardere.jpg",
+                "name": "Olivier Lagardère",
+                "role": [
+                  "Trésorier"
+                ]
+              },
+              {
+                "img": "/assets/team/yulia-kopev.jpg",
+                "name": "Yulia Kopev",
+                "role": [
+                  "Trésorière adjointe"
+                ]
+              },
+              {
+                "img": "/assets/team/marina-murano.jpg",
+                "name": "Marina Murano",
+                "role": [
+                  "Trésorière adjointe (stagiaire)"
+                ]
+              },
+              {
+                "img": "/assets/team/marie-france-zimmer.jpg",
+                "name": "Marie-France Zimmer",
+                "role": [
+                  "Directrice"
+                ]
+              },
+              {
+                "img": "/assets/team/alexander-kashin.jpg",
+                "name": "Alexander Kashin",
+                "role": [
+                  "Coordinateur socioculturel & designer de projets"
+                ]
+              },
+              {
+                "img": "/assets/team/timofei-golts-dort.jpg",
+                "name": "Tim Dort-Golts",
+                "role": [
+                  "Coordinateur de projets (stagiaire)"
+                ]
+              },
+              {
+                "img": "/assets/team/elena-tsukanova.jpg",
+                "name": "Elena Tsukanova",
+                "role": [
+                  "Coordinatrice socioculturelle de la médiathèque"
+                ]
+              },
+              {
+                "img": "/assets/team/marie-agnes-chaumette.jpg",
+                "name": "Marie-Agnès Chaumette",
+                "role": [
+                  "Éditrice"
+                ]
+              },
+              {
+                "img": "/assets/team/sylvie-guerra-nedelec.jpg",
+                "name": "Sylvie Guerra Nedelec",
+                "role": [
+                  "Responsable de la bibliothèque"
+                ]
+              },
+              {
+                "img": "/assets/team/alexandra-hutuashvili.jpg",
+                "name": "Alexandra Hutuashvili",
+                "role": [
+                  "Traduction & accompagnement"
+                ]
+              },
+              {
+                "img": "/assets/team/timur-drezov.jpg",
+                "name": "Timur Drezov",
+                "role": [
+                  "Médiation culturelle & aménagement"
+                ]
+              }
+            ]
+          },
+          {
+            "h3": "Conseillers",
+            "people": [
+              {
+                "img": "/assets/adv/dirk-moosmayer.jpg",
+                "name": "Dirk K. Moosmayer",
+                "role": [
+                  "Professeur — marketing numérique & développement durable, KEDGE Business School"
+                ]
+              },
+              {
+                "img": "/assets/adv/feriel-sayadi.jpg",
+                "name": "Feriel Sayadi",
+                "role": [
+                  "Directrice de recherche, CNAM Nouvelle-Aquitaine"
+                ]
+              },
+              {
+                "img": "/assets/adv/antoine-ertle.jpg",
+                "name": "Antoine Ertle",
+                "role": [
+                  "Directeur du Centre de langues étrangères — UBM"
+                ]
+              },
+              {
+                "img": "/assets/adv/addis-kassegn.jpg",
+                "name": "Addis Kassegn",
+                "role": [
+                  "Consultant en commerce international & enseignant-chercheur"
+                ]
+              },
+              {
+                "img": "/assets/adv/jan-schaaper.jpg",
+                "name": "Johannes (Jan) Schaaper",
+                "role": [
+                  "Responsable du master « Management & Commerce », IAE Bordeaux"
+                ]
+              },
+              {
+                "img": "/assets/adv/laetitia-mikles.jpg",
+                "name": "Laetitia Mikles",
+                "role": [
+                  "Réalisatrice & professeure d’histoire du cinéma"
+                ]
+              },
+              {
+                "img": "/assets/adv/kristian-feigelson.jpg",
+                "name": "Kristian Feigelson",
+                "role": [
+                  "Professeur de sociologie du cinéma, Sorbonne Nouvelle – Paris 3"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "partners": {
+        "h2": "Institutions partenaires",
+        "logos": []
+      },
+      "cta": {
+        "h2": "Rejoignez notre communauté",
+        "p": "Contactez-nous pour rejoindre nos projets en cours ou nouer un partenariat.",
+        "a": {
+          "text": "Contact",
+          "href": "/fr/contact/"
+        }
+      }
+    },
+    "dignity": {
+      "head": {
+        "title": "Droit à la Dignité - ASSO S.L.A.V.É.",
+        "tags": [
+          "<link rel=\"canonical\" href=\"https://railsoftime.fr/fr/dignity/\">",
+          "<link rel=\"alternate\" hreflang=\"en\" href=\"https://railsoftime.fr/dignity/\">",
+          "<link rel=\"alternate\" hreflang=\"fr\" href=\"https://railsoftime.fr/fr/dignity/\">",
+          "<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://railsoftime.fr/dignity/\">",
+          "<meta name=\"description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta name=\"author\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"keywords\" content=\"Association, Education, Culture, Art, Travel, Exchange, Bordeaux, France, Rails of Time, Inter-university, Creative projects\">",
+          "<meta property=\"og:title\" content=\"Droit à la Dignité - ASSO S.L.A.V.É.\">",
+          "<meta property=\"og:description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:url\" content=\"https://railsoftime.fr/fr/dignity/\">",
+          "<meta property=\"og:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta property=\"og:image:width\" content=\"1200\">",
+          "<meta property=\"og:image:height\" content=\"630\">",
+          "<meta property=\"og:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">",
+          "<meta property=\"og:site_name\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+          "<meta name=\"twitter:title\" content=\"Droit à la Dignité - ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta name=\"twitter:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta name=\"twitter:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">"
+        ]
+      },
+      "hero": {
+        "h1": "Droit à la Dignité",
+        "lede": "L’association développe des actions concrètes et des projets durables pour accompagner les personnes et les familles, renforcer le lien social et promouvoir la dignité de chacun."
+      },
+      "objectives": {
+        "h2": "Nos objectifs",
+        "items": [
+          {
+            "n": "01",
+            "h3": "Une présence pour chacun",
+            "p": "Solidarité et accompagnement pour les personnes âgées, les enfants et les familles."
+          },
+          {
+            "n": "02",
+            "h3": "Information et orientation",
+            "p": "Faciliter l’intégration des nouveaux arrivants grâce à l’information, à la traduction et à l’interprétariat."
+          },
+          {
+            "n": "03",
+            "h3": "Liens de proximité",
+            "p": "Relier les générations par des ateliers, des activités partagées et une médiathèque associative."
+          },
+          {
+            "n": "04",
+            "h3": "Accompagner, sans se substituer",
+            "p": "Aider dans le respect de la vie privée et de la dignité, sans jamais remplacer les professionnels qualifiés."
+          }
+        ]
+      },
+      "areas": {
+        "h2": "Nos domaines d'action",
+        "lede": "Des actions récurrentes, ponctuelles et de terrain pour soutenir les personnes dans le besoin",
+        "items": [
+          {
+            "imgs": [
+              {
+                "src": "/assets/elderly-visit-flowers-BaSfv5hf.jpeg",
+                "alt": "Support for the Elderly"
+              },
+              {
+                "src": "/assets/elderly-wheelchair-B9rn2Ry-.jpeg",
+                "alt": ""
+              }
+            ],
+            "h3": "Soutien aux personnes âgées",
+            "p": "",
+            "bullets": [
+              "Aide aux déménagements au sein de l'établissement de soins",
+              "Petites réparations de mobilier dans les chambres",
+              "Visites régulières pour lutter contre l'isolement"
+            ]
+          },
+          {
+            "imgs": [
+              {
+                "src": "/assets/family-park-DNlW3_n-.webp",
+                "alt": "Support for Children with Specific Needs or Affected by Illness"
+              },
+              {
+                "src": "/assets/family-picnic-Cd3q2jM4.webp",
+                "alt": ""
+              }
+            ],
+            "h3": "Aux côtés des familles",
+            "p": "Grandir ensemble, ouvrir de nouvelles opportunités.",
+            "bullets": [
+              "Création de liens et partage d’expériences",
+              "Soutien aux projets et aux initiatives familiales"
+            ]
+          },
+          {
+            "imgs": [
+              {
+                "src": "/assets/student-studying-Y_CgzXqo.jpeg",
+                "alt": "Community Library"
+              }
+            ],
+            "h3": "Médiathèque associative",
+            "p": "",
+            "bullets": [
+              "Des livres et des ressources pour s’informer, apprendre et s’inspirer",
+              "Des films et des documentaires à découvrir et à emprunter",
+              "Un espace d'échange et d'apprentissage continu"
+            ]
+          }
+        ]
+      },
+      "furniture": {
+        "h2": "Restauration de mobilier",
+        "lede": "Petites réparations et restauration de mobilier pour les résidents âgés — un exemple concret de notre engagement pour la dignité et le soin.",
+        "items": [
+          {
+            "src": "/assets/furniture-before-DESuuHNe.webp",
+            "label": "Before"
+          },
+          {
+            "src": "/assets/furniture-repair-Bp5Tg9pN.webp",
+            "label": "Restoration"
+          },
+          {
+            "src": "/assets/furniture-restored-BofPJKpX.webp",
+            "label": "After"
+          }
+        ]
+      },
+      "ongoing": {
+        "h2": "Projets en cours",
+        "items": [
+          {
+            "img": {
+              "src": "/assets/intergenerational-dining-ir5U0VLq.webp",
+              "alt": "Intergenerational Support"
+            },
+            "h3": "Soutien intergénérationnel",
+            "p": "Développer la coopération entre jeunes bénévoles et personnes âgées à travers des activités partagées.",
+            "bullets": [
+              "Ateliers culturels",
+              "Activités et sorties partagées",
+              "Aide légère à domicile (réparations, tri, lecture)"
+            ]
+          },
+          {
+            "img": {
+              "src": "/assets/professional-training-Bnyxul_u.webp",
+              "alt": "Career Guidance & Integration"
+            },
+            "h3": "Orientation professionnelle & Insertion",
+            "p": "Construire des parcours professionnels sur mesure pour les personnes.",
+            "bullets": [
+              "Parcours adaptés (ex. professeur d'EPS devenu carreleur, validation de diplômes étrangers via ENIC-NARIC)",
+              "Ateliers de rédaction de CV et de lettres de motivation",
+              "Mise en relation avec des centres de formation (AFPA, CNAM) et des structures d'insertion",
+              "Aide à l'inscription auprès de France Travail"
+            ]
+          }
+        ]
+      },
+      "gallery": {
+        "h2": "Galerie",
+        "imgs": [
+          {
+            "src": "/assets/elderly-social-visit-DRXI5D46.webp",
+            "alt": "Social visit with elderly residents"
+          },
+          {
+            "src": "/assets/classroom-presentation-9Ad2r-YP.webp",
+            "alt": "Classroom presentation and cultural event"
+          },
+          {
+            "src": "/assets/group-visit-BPOp8541.webp",
+            "alt": "Group visit to local enterprises"
+          },
+          {
+            "src": "/assets/cinema-audience-D8psxiYe.webp",
+            "alt": "Cinema audience at cultural screening"
+          },
+          {
+            "src": "/assets/family-picnic-Cd3q2jM4.webp",
+            "alt": "Family outing and social support"
+          },
+          {
+            "src": "/assets/furniture-restored-BofPJKpX.webp",
+            "alt": "Restored traditional furniture"
+          },
+          {
+            "src": "/assets/student-studying-Y_CgzXqo.jpeg",
+            "alt": "Student studying and researching"
+          },
+          {
+            "src": "/assets/exhibition-visit-ubxe73BU.jpeg",
+            "alt": "Exhibition and cultural display"
+          },
+          {
+            "src": "/assets/cinema-event-4ffR4bAi.webp",
+            "alt": "Cultural cinema event with music"
+          },
+          {
+            "src": "/assets/globe-CSHLG6fg.jpeg",
+            "alt": "Globe symbolizing intercultural exchange"
+          },
+          {
+            "src": "/assets/cinema-presentation-69iEr77o.jpeg",
+            "alt": "Cinema presentation and screening"
+          }
+        ]
+      },
+      "scope": {
+        "h3": "Périmètre de notre intervention",
+        "paras": [
+          "Nos actions reposent sur l'engagement de bénévoles et s'inscrivent dans un cadre ponctuel et limité dans le temps.",
+          "Nous accompagnons les personnes dans leurs démarches (traduction, orientation) et les aidons dans la conception et le développement de leurs projets.",
+          "L'association agit dans la limite de ses compétences et de ses ressources, sans se substituer aux professionnels qualifiés (juridiques, médicaux ou sociaux).",
+          "Nous veillons également au strict respect des limites de notre intervention, ainsi que de la vie privée et de l'autonomie des personnes que nous accompagnons."
+        ]
+      },
+      "cta": {
+        "h2": "Envie d'aider ?",
+        "p": "Rejoignez nos actions pour la dignité. Que ce soit comme bénévole, partenaire ou donateur, chaque contribution fait la différence dans la vie des personnes vulnérables.",
+        "a": {
+          "text": "S'engager",
+          "href": "/fr/contact/"
+        }
+      }
+    },
+    "contact": {
+      "head": {
+        "title": "Contact - ASSO S.L.A.V.É.",
+        "tags": [
+          "<link rel=\"canonical\" href=\"https://railsoftime.fr/fr/contact/\">",
+          "<link rel=\"alternate\" hreflang=\"en\" href=\"https://railsoftime.fr/contact/\">",
+          "<link rel=\"alternate\" hreflang=\"fr\" href=\"https://railsoftime.fr/fr/contact/\">",
+          "<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://railsoftime.fr/contact/\">",
+          "<meta name=\"description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta name=\"author\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"keywords\" content=\"Association, Education, Culture, Art, Travel, Exchange, Bordeaux, France, Rails of Time, Inter-university, Creative projects\">",
+          "<meta property=\"og:title\" content=\"Contact - ASSO S.L.A.V.É.\">",
+          "<meta property=\"og:description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:url\" content=\"https://railsoftime.fr/fr/contact/\">",
+          "<meta property=\"og:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta property=\"og:image:width\" content=\"1200\">",
+          "<meta property=\"og:image:height\" content=\"630\">",
+          "<meta property=\"og:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">",
+          "<meta property=\"og:site_name\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+          "<meta name=\"twitter:title\" content=\"Contact - ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:description\" content=\"ASSO S.L.A.V.É. is an intellectual laboratory bringing together people from diverse backgrounds around creative, educational, and sustainable projects.\">",
+          "<meta name=\"twitter:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta name=\"twitter:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">"
+        ]
+      },
+      "hero": {
+        "h1": "Restons en contact",
+        "lede": "Nous serions ravis d'échanger avec vous. Contactez-nous pour discuter de projets, de partenariats ou en savoir plus sur notre association."
+      },
+      "form": {
+        "h2": "Envoyez-nous un message",
+        "fields": [
+          {
+            "label": "Nom complet",
+            "type": "text",
+            "name": "contact-f1",
+            "placeholder": "Votre nom",
+            "required": true
+          },
+          {
+            "label": "Adresse e-mail",
+            "type": "email",
+            "name": "contact-f2",
+            "placeholder": "votre@email.com",
+            "required": true
+          },
+          {
+            "label": "Objet",
+            "type": "text",
+            "name": "contact-f3",
+            "placeholder": "De quoi s’agit-il ?",
+            "required": true
+          },
+          {
+            "label": "Message",
+            "type": "textarea",
+            "name": "contact-f4",
+            "placeholder": "Votre message…",
+            "required": true
+          }
+        ],
+        "button": "Envoyer le message"
+      },
+      "info": {
+        "h2": "Coordonnées",
+        "items": [
+          {
+            "label": "Téléphone",
+            "value": "+33 6 42 00 12 80",
+            "href": "tel:+33642001280"
+          },
+          {
+            "label": "E-mail",
+            "value": "asso.slave@gmail.com",
+            "href": "mailto:asso.slave@gmail.com"
+          },
+          {
+            "label": "Adresse",
+            "value": "Université Bordeaux Montaigne, Bordeaux, France"
+          }
+        ]
+      },
+      "legal": {
+        "h2": "Informations légales",
+        "rows": [
+          [
+            "Date de création :",
+            "16 juin 2007"
+          ],
+          [
+            "Siège social :",
+            "Université Bordeaux Montaigne"
+          ],
+          [
+            "Numéro d'association :",
+            "W332004231"
+          ],
+          [
+            "SIRET:",
+            "928 819 077 00019"
+          ]
+        ]
+      },
+      "since": {
+        "h3": "Depuis 2007",
+        "p": "ASSO S.L.A.V.É. réunit depuis plus de 17 ans des personnes de tous horizons autour de projets créatifs, éducatifs et durables."
+      }
+    },
+    "films": {
+      "head": {
+        "title": "Films des étudiants - ASSO S.L.A.V.É.",
+        "tags": [
+          "<link rel=\"canonical\" href=\"https://railsoftime.fr/fr/films/\">",
+          "<link rel=\"alternate\" hreflang=\"en\" href=\"https://railsoftime.fr/films/\">",
+          "<link rel=\"alternate\" hreflang=\"fr\" href=\"https://railsoftime.fr/fr/films/\">",
+          "<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://railsoftime.fr/films/\">",
+          "<meta name=\"description\" content=\"Des courts-métrages réalisés en cours par les étudiants de KEDGE, du CNAM et de nos autres universités partenaires, dans le cadre des Rails du Temps.\">",
+          "<meta name=\"author\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"keywords\" content=\"Association, Education, Culture, Art, Travel, Exchange, Bordeaux, France, Rails of Time, Inter-university, Creative projects\">",
+          "<meta property=\"og:title\" content=\"Films des étudiants - ASSO S.L.A.V.É.\">",
+          "<meta property=\"og:description\" content=\"Des courts-métrages réalisés en cours par les étudiants de KEDGE, du CNAM et de nos autres universités partenaires, dans le cadre des Rails du Temps.\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:url\" content=\"https://railsoftime.fr/fr/films/\">",
+          "<meta property=\"og:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta property=\"og:image:width\" content=\"1200\">",
+          "<meta property=\"og:image:height\" content=\"630\">",
+          "<meta property=\"og:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">",
+          "<meta property=\"og:site_name\" content=\"ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+          "<meta name=\"twitter:title\" content=\"Films des étudiants - ASSO S.L.A.V.É.\">",
+          "<meta name=\"twitter:description\" content=\"Des courts-métrages réalisés en cours par les étudiants de KEDGE, du CNAM et de nos autres universités partenaires, dans le cadre des Rails du Temps.\">",
+          "<meta name=\"twitter:image\" content=\"https://railsoftime.fr/assets/logo.png\">",
+          "<meta name=\"twitter:image:alt\" content=\"ASSO S.L.A.V.É. - Cultural Association\">"
+        ]
+      },
+      "hero": {
+        "h1": "Les films des étudiants",
+        "lede": "Des courts-métrages réalisés en cours dans nos universités partenaires, dans le cadre des Rails du Temps. Chaque promotion construit un scénario sur un semestre, puis tourne et monte elle-même."
+      },
+      "h2sr": "Les films par école et promotion"
+    }
+  },
+  "brand": "S.L.A.V.É.",
+  "tagline": "Savoir - Langue - Art - Voyage - Échange",
+  "nav": {
+    "asso": {
+      "text": "Asso",
+      "href": "/fr/asso/"
+    },
+    "projects": "Projets",
+    "items": [
+      {
+        "text": "Les Rails du Temps",
+        "href": "/fr/"
+      },
+      {
+        "text": "Droit à la Dignité",
+        "href": "/fr/dignity/"
+      },
+      {
+        "text": "Films",
+        "href": "/fr/films/"
+      }
+    ],
+    "contact": {
+      "text": "Contact",
+      "href": "/fr/contact/"
+    }
+  },
+  "footer": {
+    "brand": "ASSO S.L.A.V.É.",
+    "tagline": "Savoir - Langue - Art - Voyage - Échange",
+    "about": "Un laboratoire intellectuel réunissant des personnes de tous horizons autour de projets créatifs, éducatifs et durables.",
+    "quickTitle": "Liens rapides",
+    "quick": [
+      {
+        "text": "Asso",
+        "href": "/fr/asso/"
+      },
+      {
+        "text": "Les Rails du Temps",
+        "href": "/fr/"
+      },
+      {
+        "text": "Droit à la Dignité",
+        "href": "/fr/dignity/"
+      },
+      {
+        "text": "Films",
+        "href": "/fr/films/"
+      },
+      {
+        "text": "Contact",
+        "href": "/fr/contact/"
+      }
+    ],
+    "contactTitle": "Nous contacter",
+    "contact": [
+      {
+        "text": "+33 6 42 00 12 80",
+        "href": "tel:+33642001280"
+      },
+      {
+        "text": "asso.slave@gmail.com",
+        "href": "mailto:asso.slave@gmail.com"
+      },
+      {
+        "lines": [
+          "Université Bordeaux Montaigne",
+          "Bordeaux, France"
+        ]
+      }
+    ],
+    "copyright": "© 2024 ASSO S.L.A.V.É. Tous droits réservés.",
+    "legal": [
+      "RNA : W332004231",
+      "SIRET: 928 819 077 00019",
+      "Depuis 2007"
+    ]
+  },
+  "partners": [
+    {
+      "href": "https://www.u-bordeaux-montaigne.fr",
+      "name": "Université Bordeaux Montaigne",
+      "img": "/assets/partners/u-bordeaux-montaigne.fr.png"
+    },
+    {
+      "href": "https://www.kedge.edu",
+      "name": "KEDGE Business School",
+      "img": "/assets/partners/kedge.edu.png"
+    },
+    {
+      "href": "https://www.cnam-nouvelle-aquitaine.fr",
+      "name": "CNAM Nouvelle-Aquitaine",
+      "img": "/assets/partners/cnam-nouvelle-aquitaine.fr.png"
+    },
+    {
+      "href": "https://www.iae-bordeaux.fr",
+      "name": "IAE Bordeaux",
+      "img": "/assets/partners/iae-bordeaux.fr.png"
+    },
+    {
+      "href": "https://www.ileri.fr",
+      "name": "ILERI",
+      "img": "/assets/partners/ileri.fr.png"
+    },
+    {
+      "href": "https://www.univ-paris3.fr",
+      "name": "Université Sorbonne Nouvelle – Paris 3",
+      "img": "/assets/partners/sorbonne-nouvelle.fr.png"
+    }
+  ]
+}

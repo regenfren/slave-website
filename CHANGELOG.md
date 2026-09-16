@@ -2,6 +2,24 @@
 
 Newest first. One entry per shipped change; the commit says how, this says what and why.
 
+## 2026-09-16 (evening, branch `rebrand`, not live)
+
+- **The site in the S.L.A.V.É. brand.** Every page rebuilt in the system of the film-led redesign
+  proposal Tim chose: Jost and Literata, ink / rust / paper, the logo recoloured with rust rails, 2px
+  corners, no shadows, no icon tiles, real photos in a duotone print treatment, no stock images. Same
+  pages, same sections in the same order, same words in both languages, captured into
+  `content/{en,fr}.json`; `tools/build.py` writes the pages from them and replaces `tools/nav.py` and
+  `tools/films-pages.py` (moved to `tools/retired/`).
+- **Home header is the student-film reel**, 35 s, slowed 10%, with a caption naming the film on screen.
+  2.2 MB on desktop and 0.9 MB on phones (was 7.1 MB / 2.7 MB), loaded after the page, never with
+  reduced motion or Save-Data, paused when off screen.
+- **About the Project moved above the films** on the home page (Tim).
+- **Partner sections are logos only**, on the home and Asso pages (Tim). The home page had been
+  shipping the partner names as text since the template was built.
+- **About the Project lost its icon illustration.** Every decorative icon on the site is gone.
+- Checked: 0 console errors, every internal link and asset answers 200 (105 URLs), no horizontal
+  scroll at 390 px, paint audit clean against the brand palette, reel caption follows the cuts.
+
 ## 2026-09-16
 
 - **Five colours.** The site painted 72 distinct colours: the original French blue and red, the

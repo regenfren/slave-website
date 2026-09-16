@@ -1,6 +1,6 @@
 // Which colours does the browser actually PAINT on every page? Static paint only (no hover states).
 // usage: node tools/palette-audit.mjs <base-url>     e.g. http://localhost:8767/  or  https://railsoftime.fr/
-// Exit 1 when anything outside the five-colour palette is painted (see tools/palette.py).
+// Exit 1 when anything outside the brand palette in assets/brand/brand.css is painted.
 // A colour within 3 per channel of a palette value counts as that value: hsl() tokens round by one.
 // Proven able to fail 2026-09-16: against the pre-palette live site it reports every stray colour.
 // Needs puppeteer-core and a working Chrome; borrows the verified launcher from the x-post-cards skill.
@@ -54,7 +54,8 @@ for (const p of pages) {
   }
 }
 await browser.close()
-const PALETTE = ['12395f', 'c0521c', 'f7f3eb', 'ede4d3', '7a6e5f', 'ffffff', '000000']
+// Brand palette (2026-09-16): ink, night, rust, rust hover, paper, paper-2, steel, plus white and black.
+const PALETTE = ['111a22', '0b1117', 'c0521c', 'a2441a', 'f2f1ed', 'e6e4dd', '5c6670', 'ffffff', '000000']
 const ch = h => [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16))
 const near = h => PALETTE.some(p => ch(p).every((v, i) => Math.abs(v - ch(h)[i]) <= 3))
 const rows = Object.entries(all).sort((a, b) => b[1].n - a[1].n)
