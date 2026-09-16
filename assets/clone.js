@@ -14,8 +14,8 @@
   document.querySelectorAll('.language-toggle button').forEach(function(b){
     var t=(b.textContent||'').trim(); if(t!=='EN'&&t!=='FR') return;
     var active=(t==='FR')===inFr; b.style.cursor='pointer';
-    if(active){ b.style.background='#A8552F'; b.style.color='#fff'; b.style.borderRadius='8px'; b.style.padding='3px 10px'; b.setAttribute('aria-current','true'); }
-    else { b.style.background='transparent'; b.style.color='#3A2E20'; }
+    if(active){ b.style.background='#c0521c'; b.style.color='#fff'; b.style.borderRadius='8px'; b.style.padding='3px 10px'; b.setAttribute('aria-current','true'); }
+    else { b.style.background='transparent'; b.style.color='#12395f'; }
     b.addEventListener('click',function(e){ e.preventDefault(); if(!active) location.href=counterpart+location.hash; });
   });
 
@@ -43,12 +43,12 @@
     var burger=[].slice.call(header.querySelectorAll('button')).find(function(b){ return b.querySelector('.lucide-menu'); });
     if(burger){
       var panel=document.createElement('div'); panel.id='mobile-menu';
-      panel.style.cssText='display:none;position:absolute;top:100%;left:0;right:0;background:#FAF6EF;border-top:1px solid #EAE0CF;box-shadow:0 14px 28px -14px rgba(58,46,32,.28);padding:.5rem 1.25rem 1.1rem;z-index:60;';
+      panel.style.cssText='display:none;position:absolute;top:100%;left:0;right:0;background:#f7f3eb;border-top:1px solid #ede4d3;box-shadow:0 14px 28px -14px rgba(18, 57, 95,.28);padding:.5rem 1.25rem 1.1rem;z-index:60;';
       var links=[].slice.call(header.querySelectorAll('nav a'));
       var contact=header.querySelector('a[href$="/contact/"]'); if(contact) links.push(contact);
       links.forEach(function(src){
         var a=document.createElement('a'); a.href=src.getAttribute('href'); a.textContent=src.textContent.trim();
-        a.style.cssText='display:block;padding:.8rem .25rem;color:#3A2E20;font-weight:600;border-bottom:1px solid #EAE0CF;text-decoration:none;font-family:inherit;';
+        a.style.cssText='display:block;padding:.8rem .25rem;color:#12395f;font-weight:600;border-bottom:1px solid #ede4d3;text-decoration:none;font-family:inherit;';
         panel.appendChild(a);
       });
       header.style.position='relative'; header.appendChild(panel);

@@ -2,6 +2,20 @@
 
 Newest first. One entry per shipped change; the commit says how, this says what and why.
 
+## 2026-09-16
+
+- **Five colours.** The site painted 72 distinct colours: the original French blue and red, the
+  brown and terracotta laid over them, plus purple on "Dignity", cool Tailwind greys, three browns
+  and four creams. It now paints five, all from the logo or next to it: navy `#12395F` for every dark
+  (headings, body text, dark bands, footer, hero overlays), rust `#C0521C` as the only accent, paper
+  `#F7F3EB`, sand `#EDE4D3`, warm grey `#7A6E5F`. White and black stay. Values only: no layout, copy or
+  class name changed (verified per file). `tools/palette.py` does the rewrite and is safe to re-run;
+  `tools/palette-audit.mjs <url>` reads what the browser actually paints on all eleven pages and
+  fails on anything outside the five (it reported 22 strays against the site before this change).
+  Tailwind class names still read `text-[#0055A4]` and the like, because `site.css` is compiled and
+  a renamed class would have no rule; their declarations now carry navy. Never type a new
+  arbitrary-colour class: there is no build step to make its CSS.
+
 ## 2026-09-15
 
 - **Rails of Time is the home page.** `/` is the old Rails of Time page, with a "Student films"
