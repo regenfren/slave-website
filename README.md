@@ -20,20 +20,28 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
   rust `#C0521C`, paper `#F2F1ED`, paper-2 `#E6E4DD`, steel `#5C6670`. 2px corners, no shadows.
   `node tools/palette-audit.mjs <url>` fails if a page paints any other colour.
 - **Logo:** Kashin's drawing recoloured, book in ink or paper, rails in rust (`assets/brand/img/`).
-- **Photos:** real association photos are served in a duotone print treatment from
-  `assets/brand/photos/` (`map.json` maps each original to its print version). Hero photos stay in colour
-  in `assets/brand/hero/`. No stock and no AI images.
+- **Photos:** real association photos are served in one warm colour film grade from
+  `assets/brand/photos/` (`map.json` maps each original to its graded version), made by
+  `python3 tools/photo-grade.py` from the untouched originals. The Asso and Right to Dignity headers get
+  the same grade. No stock and no AI images.
 - **Behaviour:** `assets/brand/site.js` (Projects dropdown, mobile menu, home reel, contact form note).
 
 ## The home reel
 
-`assets/brand/reel/`: a 35-second silent loop of 19 shots from six student films (Light Weavers,
-Stage Echo, WELL#, Aurelia, Apex, Elofit), 10% slower than the first cut so the caption can be read.
-24 fps H.264, lightly denoised: `reel-1280.mp4` 2.2 MB, `reel-720.mp4` 0.9 MB for phones.
+A 35-second silent loop of 19 shots from six student films (Light Weavers, Stage Echo, WELL#, Aurelia,
+Apex, Elofit), 10% slower than the first cut so the caption can be read. Shot list:
+`tools/reel/shots.txt`. Build: `python3 tools/reel/build.py <path to media/>` (cuts every shot from the
+original files into a lossless master, then encodes once per output; never re-encode an encoded reel).
 
-Loading: the poster frame (26 KB, 14 KB on phones) is the first paint. The video is fetched only after
-the page's load event, never with reduced motion or Save-Data, and it pauses when scrolled away.
-The caption's cut points are `REEL` in `tools/build.py`; change them if the video changes.
+Outputs in `assets/brand/reel/`: a 1920x816 cinema crop for landscape headers and a 642x856 portrait
+crop for phones, each as AV1, HEVC and H.264. `site.js` picks the crop from the header's shape and the
+first codec the browser decodes smoothly and power-efficiently. Settings were calibrated against the
+lossless master (see `QUALITY` in the builder). Frame rate is 27.27 fps: the 30 fps master slowed 10%
+with no duplicated frames. The caption's cut points are written to `tools/reel/cuts.json`.
+
+Loading: the poster frame is the first paint. The video is fetched only after the page's load event,
+never with reduced motion or Save-Data, and it pauses when scrolled away. MP4s are fast-start, so
+playback begins before the file has finished downloading.
 Shots with an AI watermark, stock footage, a TV channel logo, title cards or name tags were left out.
 **Before merging to `main`:** the six film teams' yes, asked by Daria.
 
@@ -60,4 +68,5 @@ locally. It works on GitHub Pages.
 - *Limitless* (CNAM) has no playable original yet; *Nova Night* is still the 8-second teaser; BDX
   Consulting exists only as a 360p student upload.
 - Old template assets (`assets/site.css`, `clone-fixes.css`, `clone.js`, `fonts.css`, the stock hero
-  images) are no longer referenced by any page and can be deleted after the merge.
+  images) and the first low-quality reel files (`assets/brand/reel/reel-1280.mp4`, `reel-720.mp4`,
+  `poster-1280.*`, `poster-720.webp`) are no longer referenced by any page and can be deleted.

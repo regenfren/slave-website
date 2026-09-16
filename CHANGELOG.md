@@ -13,6 +13,12 @@ Newest first. One entry per shipped change; the commit says how, this says what 
 - **Home header is the student-film reel**, 35 s, slowed 10%, with a caption naming the film on screen.
   2.2 MB on desktop and 0.9 MB on phones (was 7.1 MB / 2.7 MB), loaded after the page, never with
   reduced motion or Save-Data, paused when off screen.
+- **Reel rebuilt at high quality** (Tim: "way too low quality"). Cut again from the original films into
+  a lossless master and encoded once: 1920x816 for wide screens and a 642x856 portrait crop for phones,
+  in AV1, HEVC and H.264, picked per browser. The first version had passed through three lossy encodes
+  and a 1280-wide, heavily denoised final.
+- **Photos in a warm colour grade** instead of the grey duotone (Tim): each phone's colour cast removed,
+  then warm highlights, soft blacks and fine grain. `tools/photo-grade.py`.
 - **About the Project moved above the films** on the home page (Tim).
 - **Partner sections are logos only**, on the home and Asso pages (Tim). The home page had been
   shipping the partner names as text since the template was built.

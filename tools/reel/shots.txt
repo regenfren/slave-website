@@ -1,0 +1,21 @@
+# id | source file in media/ | start (s) | duration (s) | film | school key
+# Order is playback order. Durations are at the original speed; the reel is slowed 10% afterwards.
+01|G1 - SG5 LIGHT WEAVERS.MOV|240|3.0|Light Weavers|cafa
+02|G2 - SG4 stage echo.mp4|154.6|2.5|Stage Echo|cafa
+03|APEX.mov|205.4|2.0|Apex|cnam
+04|G2 - SG3 WELL.mov|45|2.2|WELL#|cafa
+05|G1 - SG5 LIGHT WEAVERS.MOV|73|2.2|Light Weavers|cafa
+06|G2 - SG4 stage echo.mp4|188|2.2|Stage Echo|cafa
+07|GR1 aurelia (aurelia O.G(1.1).mp4|1|1.3|Aurelia|kedge
+08|GR1 aurelia (aurelia O.G(1.1).mp4|66|2.0|Aurelia|kedge
+09|ELOFIT.mov|183|1.3|Elofit|cnam
+10|G2 - SG4 stage echo.mp4|373|2.5|Stage Echo|cafa
+11|G2 - SG3 WELL.mov|333|2.5|WELL#|cafa
+12|G1 - SG5 LIGHT WEAVERS.MOV|210|1.8|Light Weavers|cafa
+13|G2 - SG3 WELL.mov|28|1.8|WELL#|cafa
+14|GR1 aurelia (aurelia O.G(1.1).mp4|300|2.0|Aurelia|kedge
+15|G2 - SG4 stage echo.mp4|363|1.6|Stage Echo|cafa
+16|ELOFIT.mov|260|2.0|Elofit|cnam
+17|G2 - SG4 stage echo.mp4|335|2.0|Stage Echo|cafa
+18|G1 - SG5 LIGHT WEAVERS.MOV|283|2.2|Light Weavers|cafa
+19|GR1 aurelia (aurelia O.G(1.1).mp4|376|1.2|Aurelia|kedge

@@ -10,8 +10,8 @@ This script replaces tools/nav.py and tools/films-pages.py: header, footer and n
 written here for every page, and the films.json schools rule from films-pages.py is enforced here.
 
 Brand (Tim, 2026-09-16): the system of the film-led redesign proposal. Jost + Literata, ink / rust /
-paper, the logo recoloured with rust rails, 2px corners, no shadows, real photos in a duotone print
-treatment, the student-film reel as the home header. Two deliberate changes to the old structure,
+paper, the logo recoloured with rust rails, 2px corners, no shadows, real photos in one warm colour
+film grade (tools/photo-grade.py), the student-film reel as the home header. Two deliberate changes to the old structure,
 both Tim's: About the Project sits above the films, and every partner section is logos only.
 """
 import html
@@ -26,15 +26,29 @@ HOST = "https://railsoftime.fr/"
 PHOTOS = json.loads((ROOT / "assets/brand/photos/map.json").read_text())
 _dims = {}
 
-# The reel's cut points, in seconds, after the 10% slowdown (35.2 s loop). Change with the video.
-REEL = [
-    (0, "Light Weavers", "cafa"), (2.92, "Stage Echo", "cafa"), (5.28, "Apex", "cnam"), (7.1, "WELL#", "cafa"),
-    (9.13, "Light Weavers", "cafa"), (11.17, "Stage Echo", "cafa"), (13.2, "Aurelia", "kedge"),
-    (16.06, "Elofit", "cnam"), (17.11, "Stage Echo", "cafa"), (19.47, "WELL#", "cafa"),
-    (21.84, "Light Weavers", "cafa"), (23.43, "WELL#", "cafa"), (25.03, "Aurelia", "kedge"),
-    (26.84, "Stage Echo", "cafa"), (28.21, "Elofit", "cnam"), (30.03, "Stage Echo", "cafa"),
-    (31.85, "Light Weavers", "cafa"), (33.88, "Aurelia", "kedge"),
-]
+# The reel's cut points (seconds, after the 10% slowdown), written by tools/reel/build.py.
+REEL = [tuple(c) for c in json.loads((ROOT / "tools/reel/cuts.json").read_text())]
+REEL_FILES = {  # crop -> [(codec, MIME type with codec string)], in preference order
+    "wide": [("av1", 'video/mp4; codecs="av01.0.08M.10"'), ("hevc", 'video/mp4; codecs="hvc1.1.6.L120.90"'), ("h264", 'video/mp4; codecs="avc1.640028"')],
+    "phone": [("av1", 'video/mp4; codecs="av01.0.04M.10"'), ("hevc", 'video/mp4; codecs="hvc1.1.6.L93.90"'), ("h264", 'video/mp4; codecs="avc1.64001f"')],
+}
+REEL_SIZE = {"wide": (1600, 680), "phone": (642, 856)}
+REEL_SECONDS = 35.2
+
+
+def reel_sources():
+    out = {}
+    for crop, files in REEL_FILES.items():
+        w, h = REEL_SIZE[crop]
+        out[crop] = []
+        for codec, mime in files:
+            f = ROOT / f"assets/brand/reel/reel-{crop}.{codec}.mp4"
+            if f.exists():
+                out[crop].append({"src": f"/assets/brand/reel/reel-{crop}.{codec}.mp4", "type": mime, "w": w, "h": h,
+                                  "bitrate": int(f.stat().st_size * 8 / REEL_SECONDS)})
+    return out
+
+
 UI = {
     "en": {"skip": "Skip to content", "home": "S.L.A.V.É., home", "menu": "Menu", "now": "Now showing", "pause": "Pause",
            "schools": {"cafa": "CAFA, Beijing", "kedge": "KEDGE, Bordeaux", "cnam": "CNAM, Dax"}, "main": "Main"},
@@ -57,7 +71,7 @@ def dims(src):
 
 
 def photo(src, alt="", cls="", lazy=True):
-    """A real photo, served in the print treatment."""
+    """A real photo, served in the warm film grade (tools/photo-grade.py)."""
     s = PHOTOS.get(src, src)
     w, h = dims(s)
     return (f'<img src="{e(s)}" alt="{e(alt)}" width="{w}" height="{h}"'
@@ -81,8 +95,8 @@ def head(C, key, extra=""):
     css = {"home": ["/assets/schools.css", "/assets/showcase.css"], "films": ["/assets/schools.css", "/assets/films.css"]}.get(key, [])
     preload = ""
     if key == "home":
-        preload = ('<link rel="preload" as="image" href="/assets/brand/reel/poster-720.webp" media="(max-width: 760px)" fetchpriority="high">'
-                   '<link rel="preload" as="image" href="/assets/brand/reel/poster-1280.webp" media="(min-width: 761px)" fetchpriority="high">')
+        preload = ('<link rel="preload" as="image" href="/assets/brand/reel/poster-phone.webp" media="(max-width: 760px)" fetchpriority="high">'
+                   '<link rel="preload" as="image" href="/assets/brand/reel/poster-wide.webp" media="(min-width: 761px)" fetchpriority="high">')
     elif key in HERO_IMG:
         n = HERO_IMG[key]
         preload = (f'<link rel="preload" as="image" href="/assets/brand/hero/{n}-960.webp" media="(max-width: 960px)" fetchpriority="high">'
@@ -201,11 +215,10 @@ def page_home(C):
     out = head(C, "home") + header(C, "home") + '<main id="main">\n'
     out += (
         f'<section class="hero hero-home" aria-labelledby="hero-title"><div class="hero-media">'
-        '<picture><source media="(max-width: 760px)" srcset="/assets/brand/reel/poster-720.webp">'
-        '<img src="/assets/brand/reel/poster-1280.webp" alt="" width="1280" height="544" fetchpriority="high"></picture>'
+        '<picture><source media="(max-width: 760px)" srcset="/assets/brand/reel/poster-phone.webp">'
+        '<img src="/assets/brand/reel/poster-wide.webp" alt="" width="1920" height="816" fetchpriority="high"></picture>'
         '<video muted loop playsinline preload="none" aria-hidden="true" '
-        'data-src="/assets/brand/reel/reel-1280.mp4" data-src-small="/assets/brand/reel/reel-720.mp4" '
-        f"data-credits='{e(cuts)}'></video></div>"
+        f"data-sources='{e(json.dumps(reel_sources()))}' data-credits='{e(cuts)}'></video></div>"
         f'<div class="hero-copy"><div class="wrap"><div><h1 id="hero-title">{e(H["h1"])}</h1><p class="lede">{e(H["lede"])}</p>'
         f'<div class="actions"><a class="btn btn-rust" href="{e(H["cta"]["href"])}">{e(H["cta"]["text"])}</a></div></div>'
         f'<div class="credit" aria-live="polite">{e(U["now"])}<strong data-film>{e(first[1])}</strong><span data-school>{e(U["schools"][first[2]])}</span><br>'

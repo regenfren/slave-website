@@ -30,27 +30,48 @@
   }
 
   /* ---------- home reel ----------
-     The poster (a 26 KB image) is the first paint. The video is only fetched after the page has
-     loaded, never with reduced motion or Save-Data on, and it pauses when scrolled out of view. */
-  var video = document.querySelector('.hero-media video[data-src]');
+     Two crops (wide for landscape headers, portrait for phones) in three codecs each. The poster is the
+     first paint; the video is fetched only after the page has loaded, never with reduced motion or
+     Save-Data on. The first codec the browser decodes smoothly and power-efficiently wins, so a
+     laptop without AV1 hardware gets HEVC or H.264 instead of burning its CPU. Pauses off screen. */
+  var video = document.querySelector('.hero-media video[data-sources]');
   if (video) {
     var credit = document.querySelector('.credit');
     var film = credit && credit.querySelector('[data-film]');
     var school = credit && credit.querySelector('[data-school]');
     var toggle = credit && credit.querySelector('button');
     var cuts = JSON.parse(video.getAttribute('data-credits') || '[]');
+    var sources = JSON.parse(video.getAttribute('data-sources'));
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var saveData = navigator.connection && navigator.connection.saveData;
-    var userPaused = false;
+    var conn = navigator.connection;
+    var saveData = conn && (conn.saveData || /(^|-)2g$|^3g$/.test(conn.effectiveType || ''));
+    var userPaused = false, started = false;
     var L = fr ? { pause: 'Pause', play: 'Lecture' } : { pause: 'Pause', play: 'Play' };
 
     function label() { if (toggle) toggle.textContent = video.paused ? L.play : L.pause; }
+    function pick() {
+      var box = video.parentElement.getBoundingClientRect();
+      var list = sources[box.height > box.width * 0.75 ? 'phone' : 'wide'];
+      var playable = list.filter(function (s) { return video.canPlayType(s.type) !== ''; });
+      if (!navigator.mediaCapabilities || !navigator.mediaCapabilities.decodingInfo) return Promise.resolve(playable[0]);
+      return Promise.all(playable.map(function (s) {
+        return navigator.mediaCapabilities.decodingInfo({ type: 'file', video: { contentType: s.type, width: s.w, height: s.h, bitrate: s.bitrate, framerate: 27.27 } })
+          .then(function (r) { return { s: s, r: r }; }, function () { return { s: s, r: { supported: false } }; });
+      })).then(function (res) {
+        var best = res.find(function (x) { return x.r.supported && x.r.smooth && x.r.powerEfficient; }) ||
+                   res.find(function (x) { return x.r.supported && x.r.smooth; }) ||
+                   res.find(function (x) { return x.r.supported; });
+        return best ? best.s : playable[playable.length - 1];
+      });
+    }
     function start() {
-      var small = window.matchMedia('(max-width: 760px)').matches;
-      video.src = video.getAttribute(small ? 'data-src-small' : 'data-src');
-      video.load();
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { label(); });
+      if (started) return; started = true;
+      pick().then(function (s) {
+        if (!s) return;
+        video.src = s.src;
+        var p = video.play();
+        if (p && p.catch) p.catch(label);
+      });
     }
     video.addEventListener('playing', function () { video.classList.add('playing'); label(); });
     video.addEventListener('pause', label);
