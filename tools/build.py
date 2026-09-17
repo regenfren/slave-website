@@ -79,8 +79,9 @@ def photo(src, alt="", cls="", lazy=True):
     w, h = dims(s)
     f = FOCAL.get(s)
     pos = f' style="object-position:{f[0]}% {f[1]}%"' if f else ""
-    return (f'<img src="{e(s)}" alt="{e(alt)}" width="{w}" height="{h}"{pos}'
-            f'{" loading=\"lazy\" decoding=\"async\"" if lazy else ""}{f" class={chr(34)}{cls}{chr(34)}" if cls else ""}>')
+    img = (f'<img src="{e(s)}" alt="{e(alt)}" width="{w}" height="{h}"{pos}'
+           f'{" loading=\"lazy\" decoding=\"async\"" if lazy else ""}>')
+    return f'<span class="plate{" " + cls if cls else ""}">{img}</span>'  # one frame for every photo
 
 
 def url(lang, key):
@@ -144,7 +145,7 @@ def header(C, key):
         f'<nav class="nav" aria-label="{e(U["main"])}">'
         f'<a href="{e(N["asso"]["href"])}"{cur("asso")}>{e(N["asso"]["text"])}</a>'
         f'<div class="nav-projects{" is-current" if in_projects else ""}"><button type="button" aria-haspopup="true" aria-expanded="false">{e(N["projects"])}</button>'
-        f'<div class="nav-menu">{menu}</div></div>'
+        f'<div class="nav-menu"><div class="nav-panel">{menu}</div></div></div>'
         f'{langs}<a class="btn btn-line" href="{e(N["contact"]["href"])}"{cur("contact")}>{e(N["contact"]["text"])}</a>'
         '</nav>'
         f'<button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu">{e(U["menu"])}</button>'
@@ -193,7 +194,7 @@ def people_groups(T, band=""):
     for g in T["groups"]:
         out += f'<div class="group"><h3>{e(g["h3"])}</h3><ul class="people">'
         for p in g["people"]:
-            out += (f'<li class="person"><span class="plate">{photo(p["img"], "")}</span>'
+            out += (f'<li class="person">{photo(p["img"], "")}'
                     f'<b>{e(p["name"])}</b>' + "".join(f"<span>{e(r)}</span>" for r in p["role"]) + "</li>")
         out += "</ul></div>"
     return out + "</div></section>\n"

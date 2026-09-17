@@ -1,3 +1,16 @@
+## 2026-09-17 · softer, and the same frame on every photo
+
+- **Every photo is mounted the same way** (Tim: "asso photos dont have frames"). The mat, hairline and
+  soft corners that the portraits had are now on every picture on the site, written once in `photo()`.
+- **Softer shapes throughout.** One radius scale (10 / 16 / 24px, pill buttons and chips) replaces the
+  2px corners, including the film player, school picker, films page and popup.
+- **Projects menu is usable on hover** (Tim: "when i hover projects don't stay togglen on so i cna't
+  even click"). There was a 10px gap between the button and the panel; crossing it counted as leaving
+  the menu, so it closed before the pointer arrived. The panel now sits inside the menu's own padding,
+  so hover carries from the button to the items. Clicking still pins it open for touch and keyboard.
+- Swept again afterwards: 28 checks pass, including hovering Projects and clicking Right to Dignity
+  without touching the button first.
+
 # Changelog
 
 Newest first. One entry per shipped change; the commit says how, this says what and why.

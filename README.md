@@ -17,15 +17,15 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
   languages in `assets/films.json`.
 - **Brand:** `assets/brand/brand.css`. Jost for titles and interface, Literata for reading (both SIL
   Open Font License, self-hosted in `assets/brand/fonts/`). Colours: ink `#111A22`, night `#0B1117`,
-  rust `#C0521C`, paper `#F2F1ED`, paper-2 `#E6E4DD`, steel `#5C6670`. 2px corners, no shadows.
+  rust `#C0521C`, paper `#F2F1ED`, paper-2 `#E6E4DD`, steel `#5C6670`. Soft corners on one scale (`--r-sm` 10px, `--r` 16px, `--r-lg` 24px, pill buttons), no shadows.
   `node tools/palette-audit.mjs <url>` fails if a page paints any other colour.
 - **Logo:** Kashin's drawing recoloured, book in ink or paper, rails in rust (`assets/brand/img/`).
 - **Photos:** one style for every real photo: a warm colour film grade, and each crop centred on the
   faces in the picture (`tools/faces/facepoint.swift` uses Apple's Vision framework, on this Mac only;
   the points land in `assets/brand/photos/focal.json` and become each image's `object-position`).
-  People are shown in one upright 4:5 portrait format, recropped from the detected face box so every
-  head is the same size on the same eye line, and mounted like a print (paper mat, one hairline) so a
-  dozen different backgrounds stop fighting each other. `FACE_H` / `FACE_Y` in the grader set the crop. Served from
+  EVERY photo is mounted the same way, by `photo()` in the builder: paper mat, one hairline, soft
+  corners (`.plate`). People are shown in one upright 4:5 portrait format, recropped from the detected
+  face box so every head is the same size on the same eye line (`FACE_H` / `FACE_Y` in the grader). Served from
   `assets/brand/photos/` (`map.json` maps each original to its graded version), all written by
   `python3 tools/photo-grade.py` from the untouched originals. The Asso and Right to Dignity headers get
   the same grade. No stock and no AI images.
