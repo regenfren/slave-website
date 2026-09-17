@@ -24,6 +24,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 HOST = "https://railsoftime.fr/"
 PHOTOS = json.loads((ROOT / "assets/brand/photos/map.json").read_text())
+# Where the faces are in each graded photo (tools/photo-grade.py -> Vision). Every crop centres on
+# this point, so no slot on any screen size cuts a face in half.
+FOCAL = json.loads((ROOT / "assets/brand/photos/focal.json").read_text())
 _dims = {}
 
 # The reel's cut points (seconds, after the 10% slowdown), written by tools/reel/build.py.
@@ -71,10 +74,12 @@ def dims(src):
 
 
 def photo(src, alt="", cls="", lazy=True):
-    """A real photo, served in the warm film grade (tools/photo-grade.py)."""
+    """A real photo, served in the warm film grade (tools/photo-grade.py), cropped around its faces."""
     s = PHOTOS.get(src, src)
     w, h = dims(s)
-    return (f'<img src="{e(s)}" alt="{e(alt)}" width="{w}" height="{h}"'
+    f = FOCAL.get(s)
+    pos = f' style="object-position:{f[0]}% {f[1]}%"' if f else ""
+    return (f'<img src="{e(s)}" alt="{e(alt)}" width="{w}" height="{h}"{pos}'
             f'{" loading=\"lazy\" decoding=\"async\"" if lazy else ""}{f" class={chr(34)}{cls}{chr(34)}" if cls else ""}>')
 
 

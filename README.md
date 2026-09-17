@@ -20,8 +20,11 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
   rust `#C0521C`, paper `#F2F1ED`, paper-2 `#E6E4DD`, steel `#5C6670`. 2px corners, no shadows.
   `node tools/palette-audit.mjs <url>` fails if a page paints any other colour.
 - **Logo:** Kashin's drawing recoloured, book in ink or paper, rails in rust (`assets/brand/img/`).
-- **Photos:** real association photos are served in one warm colour film grade from
-  `assets/brand/photos/` (`map.json` maps each original to its graded version), made by
+- **Photos:** one style for every real photo: a warm colour film grade, and each crop centred on the
+  faces in the picture (`tools/faces/facepoint.swift` uses Apple's Vision framework, on this Mac only;
+  the points land in `assets/brand/photos/focal.json` and become each image's `object-position`).
+  People are shown in one upright 4:5 portrait format. Served from
+  `assets/brand/photos/` (`map.json` maps each original to its graded version), all written by
   `python3 tools/photo-grade.py` from the untouched originals. The Asso and Right to Dignity headers get
   the same grade. No stock and no AI images.
 - **Behaviour:** `assets/brand/site.js` (Projects dropdown, mobile menu, home reel, contact form note).

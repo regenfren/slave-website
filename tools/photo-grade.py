@@ -13,6 +13,7 @@ The originals are never modified; outputs keep the paths in assets/brand/photos/
 """
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -68,6 +69,22 @@ def original(src):
     return max(cands, key=lambda c: Image.open(c).size[0] * Image.open(c).size[1])
 
 
+def focal_points(paths):
+    """Where the faces are, as CSS object-position percentages, so no crop cuts a face off.
+    Apple's Vision framework, compiled on demand; nothing leaves the Mac. No faces: no entry."""
+    binary = Path("/tmp/facepoint")
+    src = ROOT / "tools/faces/facepoint.swift"
+    if not binary.exists() or binary.stat().st_mtime < src.stat().st_mtime:
+        subprocess.run(["swiftc", "-O", str(src), "-o", str(binary)], check=True)
+    out = subprocess.run([str(binary), *[str(ROOT / p.lstrip("/")) for p in paths]], capture_output=True, text=True)
+    points = {}
+    for line in out.stdout.splitlines():
+        d = json.loads(line)
+        web = "/" + str(Path(d["path"]).relative_to(ROOT))
+        points[web] = [round(d["x"] * 100, 1), round(d["y"] * 100, 1), d["faces"]]
+    return points
+
+
 def main():
     mapping = json.loads(MAP.read_text())
     sheet_rows = []
@@ -85,7 +102,9 @@ def main():
         for w in (1920, 960):
             c = im.copy(); c.thumbnail((w, w), Image.LANCZOS)
             grade(c).save(ROOT / f"assets/brand/hero/{key}-{w}.webp", quality=80, method=6)
-    print(len(mapping), "photos graded, 2 heroes")
+    points = focal_points(list(mapping.values()))
+    (ROOT / "assets/brand/photos/focal.json").write_text(json.dumps(points, indent=1) + "\n")
+    print(len(mapping), "photos graded, 2 heroes,", len(points), "with faces found")
     if "--sheet" in sys.argv:
         path = sys.argv[sys.argv.index("--sheet") + 1]
         W = 520

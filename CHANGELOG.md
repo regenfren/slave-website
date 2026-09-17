@@ -17,6 +17,11 @@ Newest first. One entry per shipped change; the commit says how, this says what 
   a lossless master and encoded once: 1920x816 for wide screens and a 642x856 portrait crop for phones,
   in AV1, HEVC and H.264, picked per browser. The first version had passed through three lossy encodes
   and a 1280-wide, heavily denoised final.
+- **One photo style, faces centred.** Every real photo now carries a face focal point (Apple Vision,
+  `tools/faces/facepoint.swift`), which becomes its `object-position`, so no crop on any screen cuts a
+  face. People are shown in one upright 4:5 portrait format. 36 of 42 photos have faces.
+- **Rails of Time card** on the Asso page uses a full-resolution frame from Light Weavers (hard hats over
+  a hand-drawn route map) instead of the low-resolution cinema photo (Tim).
 - **Photos in a warm colour grade** instead of the grey duotone (Tim): each phone's colour cast removed,
   then warm highlights, soft blacks and fine grain. `tools/photo-grade.py`.
 - **About the Project moved above the films** on the home page (Tim).

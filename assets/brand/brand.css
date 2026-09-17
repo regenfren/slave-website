@@ -145,7 +145,9 @@ main > section, .band { padding-block: var(--section); }
 .group + .group { margin-top: clamp(40px, 5vw, 64px); }
 .group h3 { font-size: 1.35rem; margin-bottom: 20px; }
 .people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 32px 20px; }
-.person img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; background: var(--paper-2); }
+/* One portrait format across the site: upright 4:5, cropped on the face (the inline
+   object-position comes from tools/photo-grade.py). */
+.person img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--paper-2); }
 .person b { display: block; font-family: var(--display); font-weight: 500; font-size: 1.05rem; line-height: 1.25; margin-top: 12px; }
 .person span { display: block; color: var(--steel); font-size: .92rem; line-height: 1.45; margin-top: 4px; }
 .band-ink .person span { color: rgba(242, 241, 237, .66); }
