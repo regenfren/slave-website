@@ -78,7 +78,11 @@
 /* the screening room */
 .film-dialog{
   border:0; padding:0; background:transparent; max-width:min(1040px,94vw); width:100%; margin:auto;
+  /* the sheet scrolls when the synopsis is long; the bar itself is noise over the film (Tim, 2026-09-17) */
+  max-height:calc(100svh - 3rem); overflow:auto; scrollbar-width:none; -ms-overflow-style:none;
+  overscroll-behavior:contain;
 }
+.film-dialog::-webkit-scrollbar{ width:0; height:0; display:none; }
 .film-dialog::backdrop{ background:rgba(17, 26, 34,.88);  }
 .film-dialog-inner{ background:var(--ink); color:#f2f1ed; border-radius:2px; overflow:hidden; box-shadow:none; }
 .film-player{ position:relative; aspect-ratio:16/9; background:#000; }

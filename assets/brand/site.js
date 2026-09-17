@@ -7,13 +7,20 @@
   /* ---------- Projects dropdown ---------- */
   document.querySelectorAll('.nav-projects').forEach(function (wrap) {
     var btn = wrap.querySelector('button');
+    // Hovering previews the menu; a click pins it open so it stays when the pointer leaves, and a
+    // second click closes it. Without the pin, clicking while already hovering closed it at once.
+    var pinned = false;
     function set(open) { wrap.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
-    btn.addEventListener('click', function (e) { e.stopPropagation(); set(!wrap.classList.contains('open')); });
+    function close() { pinned = false; set(false); }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (pinned) { close(); } else { pinned = true; set(true); }
+    });
     wrap.addEventListener('mouseenter', function () { set(true); });
-    wrap.addEventListener('mouseleave', function () { set(false); });
-    wrap.addEventListener('focusout', function (e) { if (!wrap.contains(e.relatedTarget)) set(false); });
-    document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) set(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); } });
+    wrap.addEventListener('mouseleave', function () { if (!pinned) set(false); });
+    wrap.addEventListener('focusout', function (e) { if (!wrap.contains(e.relatedTarget)) close(); });
+    document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { close(); btn.focus(); } });
   });
 
   /* ---------- mobile menu ---------- */

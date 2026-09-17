@@ -17,6 +17,13 @@ Newest first. One entry per shipped change; the commit says how, this says what 
   a lossless master and encoded once: 1920x816 for wide screens and a 642x856 portrait crop for phones,
   in AV1, HEVC and H.264, picked per browser. The first version had passed through three lossy encodes
   and a 1280-wide, heavily denoised final.
+- **Two bugs Tim caught.** The film popup scrolled as one sheet and showed a scrollbar over the film;
+  it still scrolls, without the bar. The Projects menu closed the moment it was clicked, because
+  hovering had already opened it and the click toggled it shut: a click now pins it open, a second
+  click or Escape or a click outside closes it.
+- Swept every interactive element on desktop and phone afterwards (menus, language switch, film popup
+  and its prev/next, school picker, home stage queue/search/play, hero pause, contact form, History &
+  Values, skip link, 404 back): 27 checks, all passing, no console errors.
 - **One photo style, faces centred.** Every real photo now carries a face focal point (Apple Vision,
   `tools/faces/facepoint.swift`), which becomes its `object-position`, so no crop on any screen cuts a
   face. People are shown in one upright 4:5 portrait format. 36 of 42 photos have faces.
