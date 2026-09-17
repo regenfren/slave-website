@@ -17,6 +17,11 @@ Newest first. One entry per shipped change; the commit says how, this says what 
   a lossless master and encoded once: 1920x816 for wide screens and a 642x856 portrait crop for phones,
   in AV1, HEVC and H.264, picked per browser. The first version had passed through three lossy encodes
   and a 1280-wide, heavily denoised final.
+- **Team and advisor photos reframed** (Tim: "i don't like how team photos appear"). Every portrait is
+  recropped from its detected face box, so the heads are the same size on the same eye line whatever the
+  photographer framed, and each sits in a mounted-print frame (paper mat, one hairline) that quiets the
+  mismatched backgrounds. Columns widened so roles stop wrapping into ribbons. Considered and dropped:
+  arch tops (reads like a wedding) and a heavy ink mount (too loud on the pages that are already dark).
 - **Two bugs Tim caught.** The film popup scrolled as one sheet and showed a scrollbar over the film;
   it still scrolls, without the bar. The Projects menu closed the moment it was clicked, because
   hovering had already opened it and the click toggled it shut: a click now pins it open, a second

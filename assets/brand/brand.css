@@ -144,12 +144,15 @@ main > section, .band { padding-block: var(--section); }
 /* ---------- people ---------- */
 .group + .group { margin-top: clamp(40px, 5vw, 64px); }
 .group h3 { font-size: 1.35rem; margin-bottom: 20px; }
-.people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 32px 20px; }
-/* One portrait format across the site: upright 4:5, cropped on the face (the inline
-   object-position comes from tools/photo-grade.py). */
+.people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(164px, 1fr)); gap: 34px 24px; }
+/* One portrait format across the site: upright 4:5, recropped so every head is the same size on the
+   same eye line (tools/photo-grade.py), mounted like a print: paper mat, one hairline. The mat is what
+   stops a dozen different backgrounds from fighting each other. */
+.person .plate { display: block; background: var(--paper-2); border: 1px solid var(--line); padding: clamp(5px, .55vw, 9px); }
 .person img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--paper-2); }
+.band-ink .person .plate { background: rgba(242, 241, 237, .06); border-color: var(--line-night); }
 .person b { display: block; font-family: var(--display); font-weight: 500; font-size: 1.05rem; line-height: 1.25; margin-top: 12px; }
-.person span { display: block; color: var(--steel); font-size: .92rem; line-height: 1.45; margin-top: 4px; }
+.person span { display: block; color: var(--steel); font-size: .92rem; line-height: 1.45; margin-top: 4px; text-wrap: pretty; }
 .band-ink .person span { color: rgba(242, 241, 237, .66); }
 
 /* ---------- partner logos ---------- */

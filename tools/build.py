@@ -191,7 +191,8 @@ def people_groups(T, band=""):
     for g in T["groups"]:
         out += f'<div class="group"><h3>{e(g["h3"])}</h3><ul class="people">'
         for p in g["people"]:
-            out += f'<li class="person">{photo(p["img"], "")}<b>{e(p["name"])}</b>' + "".join(f"<span>{e(r)}</span>" for r in p["role"]) + "</li>"
+            out += (f'<li class="person"><span class="plate">{photo(p["img"], "")}</span>'
+                    f'<b>{e(p["name"])}</b>' + "".join(f"<span>{e(r)}</span>" for r in p["role"]) + "</li>")
         out += "</ul></div>"
     return out + "</div></section>\n"
 

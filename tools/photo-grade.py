@@ -63,35 +63,61 @@ def grade(im):
     return im
 
 
+PORTRAIT = (440, 550)     # 4:5
+FACE_H = 0.34             # the face fills this much of the frame height, in every portrait
+FACE_Y = 0.42             # ...with its centre this far down
+
+
+def replate(im, face):
+    """One portrait format: same head size, same eye line, whatever the photographer framed."""
+    W, H = im.size
+    crop_h = (face["fh"] * H) / FACE_H
+    crop_w = crop_h * PORTRAIT[0] / PORTRAIT[1]
+    if crop_w > W or crop_h > H:                       # source framed tighter than the target
+        k = min(W / crop_w, H / crop_h)
+        crop_w, crop_h = crop_w * k, crop_h * k
+    cx, cy = face["bx"] * W, face["by"] * H
+    x = max(0, min(W - crop_w, cx - crop_w / 2))
+    y = max(0, min(H - crop_h, cy - crop_h * FACE_Y))
+    return im.crop((round(x), round(y), round(x + crop_w), round(y + crop_h))).resize(PORTRAIT, Image.LANCZOS)
+
+
 def original(src):
     stem = re.sub(r"\.(webp|jpe?g|png)$", "", src.lstrip("/"))
     cands = [ROOT / (stem + e) for e in (".jpg", ".jpeg", ".png", ".webp") if (ROOT / (stem + e)).exists()]
     return max(cands, key=lambda c: Image.open(c).size[0] * Image.open(c).size[1])
 
 
-def focal_points(paths):
+def focal_points(paths, originals=False):
     """Where the faces are, as CSS object-position percentages, so no crop cuts a face off.
     Apple's Vision framework, compiled on demand; nothing leaves the Mac. No faces: no entry."""
     binary = Path("/tmp/facepoint")
     src = ROOT / "tools/faces/facepoint.swift"
     if not binary.exists() or binary.stat().st_mtime < src.stat().st_mtime:
         subprocess.run(["swiftc", "-O", str(src), "-o", str(binary)], check=True)
-    out = subprocess.run([str(binary), *[str(ROOT / p.lstrip("/")) for p in paths]], capture_output=True, text=True)
+    files = [original(p) if originals else ROOT / p.lstrip("/") for p in paths]
+    back = {str(f): p for f, p in zip(files, paths)}
+    out = subprocess.run([str(binary), *[str(f) for f in files]], capture_output=True, text=True)
     points = {}
     for line in out.stdout.splitlines():
         d = json.loads(line)
-        web = "/" + str(Path(d["path"]).relative_to(ROOT))
-        points[web] = [round(d["x"] * 100, 1), round(d["y"] * 100, 1), d["faces"]]
+        key = back.get(d["path"], "/" + str(Path(d["path"]).relative_to(ROOT)))
+        points[key] = d if originals else [round(d["x"] * 100, 1), round(d["y"] * 100, 1), d["faces"]]
     return points
 
 
 def main():
     mapping = json.loads(MAP.read_text())
+    faces_raw = focal_points(list(mapping.keys()), originals=True)
     sheet_rows = []
     for src, out in mapping.items():
         portrait = "/people/" in out
-        im = Image.open(original(src))
-        im.thumbnail((640, 640) if portrait else (1800, 1800), Image.LANCZOS)
+        im = ImageOps.exif_transpose(Image.open(original(src))).convert("RGB")
+        face = faces_raw.get(src)
+        if portrait and face:
+            im = replate(im, face)
+        else:
+            im.thumbnail((640, 640) if portrait else (1800, 1800), Image.LANCZOS)
         g = grade(im)
         g.save(ROOT / out.lstrip("/"), quality=82, method=6)
         if len(sheet_rows) < 8 and not portrait:
