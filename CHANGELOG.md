@@ -17,6 +17,11 @@ Newest first. One entry per shipped change; the commit says how, this says what 
   a lossless master and encoded once: 1920x816 for wide screens and a 642x856 portrait crop for phones,
   in AV1, HEVC and H.264, picked per browser. The first version had passed through three lossy encodes
   and a 1280-wide, heavily denoised final.
+- **Header carries the full lockup** (Tim): a bigger mark, the name, and the association's name spelled
+  out under it (Savoir - Langue - Art - Voyage - Échange), which the rebuild had dropped to the footer.
+  Header height is now one variable (`--header-h`, 108 / 88 / 78px) that the films and 404 tops read, so
+  nothing has to know the number twice. The spelled-out line hides under 620px, where it crowded the
+  menu button, and the top shade over photo headers is deeper so the lockup reads over a bright frame.
 - **Team and advisor photos reframed** (Tim: "i don't like how team photos appear"). Every portrait is
   recropped from its detected face box, so the heads are the same size on the same eye line whatever the
   photographer framed, and each sits in a mounted-print frame (paper mat, one hairline) that quiets the

@@ -19,6 +19,7 @@
   --display: 'Jost', 'Futura', 'Century Gothic', system-ui, sans-serif;
   --text: 'Literata', 'Iowan Old Style', Georgia, serif;
   --gutter: clamp(16px, 4vw, 56px);
+  --header-h: 108px;
   --section: clamp(64px, 10vw, 128px);
 
   /* tokens the film player, school picker and films page read */
@@ -56,10 +57,13 @@ main > section, .band { padding-block: var(--section); }
 
 /* ---------- header ---------- */
 .site-header { position: absolute; inset: 0 0 auto 0; z-index: 20; color: var(--paper); padding-top: env(safe-area-inset-top, 0px); }
-.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 84px; }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand img { height: 40px; width: auto; }
-.brand span { font-family: var(--display); font-weight: 600; font-size: 1.05rem; letter-spacing: .08em; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); }
+/* The lockup: the mark, the name, and the name spelled out. */
+.brand { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+.brand img { height: 62px; width: auto; }
+.brand-name { display: grid; gap: 4px; }
+.brand-name b { font-family: var(--display); font-weight: 600; font-size: 1.5rem; letter-spacing: .1em; line-height: 1; }
+.brand-name em { font-family: var(--display); font-style: normal; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(242, 241, 237, .8); line-height: 1; white-space: nowrap; }
 .nav { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 34px); font-family: var(--display); font-size: .98rem; }
 .nav > a, .nav-projects > button { color: var(--paper); text-decoration: none; opacity: .9; background: none; border: 0; font: inherit; cursor: pointer; padding: 6px 0; }
 .nav > a:hover, .nav-projects > button:hover, .nav a[aria-current="page"], .nav-projects.is-current > button { opacity: 1; text-decoration: underline; text-underline-offset: 7px; text-decoration-color: var(--rust); text-decoration-thickness: 2px; }
@@ -77,12 +81,25 @@ main > section, .band { padding-block: var(--section); }
 .burger { display: none; background: none; border: 1px solid rgba(242, 241, 237, .4); color: var(--paper); font-family: var(--display); font-size: .95rem; padding: 8px 14px; border-radius: 2px; cursor: pointer; }
 .mobile-menu { display: none; }
 @media (max-width: 880px) {
+  :root { --header-h: 88px; }
+  .brand img { height: 50px; }
+  .brand-name b { font-size: 1.2rem; }
+  .brand-name em { font-size: .62rem; letter-spacing: .12em; }
   .nav { display: none; }
   .burger { display: inline-flex; }
-  .mobile-menu { position: absolute; top: 84px; left: 0; right: 0; background: var(--night); border-top: 1px solid var(--line-night); padding: 8px var(--gutter) 20px; font-family: var(--display); }
+  .mobile-menu { position: absolute; top: var(--header-h); left: 0; right: 0; background: var(--night); border-top: 1px solid var(--line-night); padding: 8px var(--gutter) 20px; font-family: var(--display); }
   .mobile-menu.open { display: block; }
   .mobile-menu a { display: block; padding: 14px 0; color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--line-night); font-size: 1.05rem; }
   .mobile-menu .lang { padding-top: 14px; }
+}
+/* The name spelled out needs one line. Below this it crowds the menu button, so the mark and the
+   name carry the header on their own. */
+@media (max-width: 620px) {
+  :root { --header-h: 78px; }
+  .brand img { height: 46px; }
+  .brand { gap: 10px; }
+  .brand-name em { display: none; }
+  .brand-name b { font-size: 1.15rem; }
 }
 
 /* ---------- hero ---------- */
@@ -92,7 +109,7 @@ main > section, .band { padding-block: var(--section); }
 .hero-media video { opacity: 0; transition: opacity .8s ease; }
 .hero-media video.playing { opacity: 1; }
 .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(11,17,23,.6) 0%, rgba(11,17,23,0) 24%),
+  background: linear-gradient(180deg, rgba(11,17,23,.72) 0%, rgba(11,17,23,.28) 16%, rgba(11,17,23,0) 30%),
               linear-gradient(0deg, rgba(11,17,23,.88) 0%, rgba(11,17,23,.38) 42%, rgba(11,17,23,0) 66%); }
 .hero-copy { position: absolute; z-index: 2; inset: auto 0 0 0; padding-bottom: clamp(32px, 7vh, 72px); }
 .hero-copy .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; }
@@ -262,7 +279,7 @@ figcaption { font-family: var(--display); font-size: .9rem; color: var(--steel);
 @media (max-width: 480px) { .facts div { grid-template-columns: 1fr; gap: 2px; } }
 
 /* ---------- films page hero, 404 ---------- */
-.page-top { background: var(--night); color: var(--paper); padding: calc(84px + clamp(48px, 8vw, 104px)) 0 clamp(48px, 7vw, 88px); }
+.page-top { background: var(--night); color: var(--paper); padding: calc(var(--header-h) + clamp(48px, 8vw, 104px)) 0 clamp(48px, 7vw, 88px); }
 .page-top h1 { font-size: clamp(3rem, 8vw, 6.5rem); line-height: .95; letter-spacing: -.03em; }
 .page-top p { margin-top: 18px; max-width: 52ch; color: rgba(242, 241, 237, .8); font-size: 1.12rem; }
 .page-top .films-count { font-family: var(--display); color: var(--paper); font-size: 1rem; min-height: 1.5em; }

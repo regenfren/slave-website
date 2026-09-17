@@ -120,7 +120,7 @@ body.film-dialog-open{ overflow:hidden; }
 }
 
 /* ---------- brand, 2026-09-16 ---------- */
-.films-hero.page-top{ padding:calc(84px + clamp(48px, 8vw, 104px)) 0 clamp(48px, 7vw, 88px); }
+.films-hero.page-top{ padding:calc(var(--header-h) + clamp(48px, 8vw, 104px)) 0 clamp(48px, 7vw, 88px); }
 .films-hero h1{ color:var(--paper); font-family:var(--display); font-weight:500; font-size:clamp(3rem,8vw,6.5rem); line-height:.95; }
 .films-hero p{ color:rgba(242, 241, 237,.8); font-family:var(--text); }
 .films-hero .films-count{ color:var(--paper); font-family:var(--display); }

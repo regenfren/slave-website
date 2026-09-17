@@ -138,7 +138,9 @@ def header(C, key):
     return (
         f'<a class="skip" href="#main">{e(U["skip"])}</a>\n'
         '<header class="site-header"><div class="wrap">'
-        f'<a class="brand" href="{url(lang, "home")}" aria-label="{e(U["home"])}"><img src="/assets/brand/img/mark-paper.webp" alt="" width="70" height="40"><span>{e(C["brand"])}</span></a>'
+        f'<a class="brand" href="{url(lang, "home")}" aria-label="{e(U["home"])}">'
+        f'<img src="/assets/brand/img/mark-paper.webp" alt="" width="122" height="70">'
+        f'<span class="brand-name"><b>{e(C["brand"])}</b><em>{e(C["tagline"])}</em></span></a>'
         f'<nav class="nav" aria-label="{e(U["main"])}">'
         f'<a href="{e(N["asso"]["href"])}"{cur("asso")}>{e(N["asso"]["text"])}</a>'
         f'<div class="nav-projects{" is-current" if in_projects else ""}"><button type="button" aria-haspopup="true" aria-expanded="false">{e(N["projects"])}</button>'
