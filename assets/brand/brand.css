@@ -222,7 +222,7 @@ figcaption { font-family: var(--display); font-size: .9rem; color: var(--steel);
 .pillars p { color: var(--steel); font-size: .98rem; }
 @media (max-width: 1000px) { .pillars { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 36px; } }
 @media (max-width: 600px) { .pillars { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 400px) { .pillars { grid-template-columns: 1fr; } }
+@media (max-width: 340px) { .pillars { grid-template-columns: 1fr; } }
 
 /* ---------- asso: featured projects, dignity: ongoing projects ---------- */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 48px clamp(28px, 5vw, 64px); align-items: start; }
@@ -316,4 +316,46 @@ figcaption { font-family: var(--display); font-size: .9rem; color: var(--steel);
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
   .hero-media video { display: none; }
+}
+
+/* ---------- phones (2026-09-29, Tim: "optimize mobile version") ----------
+   Measured at 390px before this block: the Asso page ran 10,100px, most of it portraits two
+   across. What changes on a phone, and why:
+   - people three across with tighter captions, so a group reads as a group;
+   - a darker scrim under hero copy, because a phone crop puts the headline on the busiest part
+     of the photo (the projected text on the Asso header);
+   - the CTA mark is dropped: the footer shows the same logo one screen further down;
+   - partner logos on an even three-column grid instead of a ragged wrap;
+   - footer link columns side by side;
+   - pillars two across, the fifth (É) spanning the row. */
+@media (max-width: 700px) {
+  .hero::after {
+    background: linear-gradient(180deg, rgba(11,17,23,.72) 0%, rgba(11,17,23,.2) 18%, rgba(11,17,23,0) 30%),
+                linear-gradient(0deg, rgba(11,17,23,.94) 0%, rgba(11,17,23,.76) 50%, rgba(11,17,23,.34) 76%, rgba(11,17,23,0) 92%);
+  }
+  .credit button { min-height: 40px; padding: 8px 20px; }
+  /* A portrait crop of the Contact still keeps the actress's face in frame (face at 71% across). */
+  .hero-contact .hero-media img { object-position: 71% 30%; }
+}
+@media (max-width: 760px) {
+  .cta .mark { display: none; }
+  .site-footer .wrap { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+  .site-footer .wrap > div:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .logos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 18px; align-items: center; justify-items: center; }
+  .logos a { width: 100%; display: flex; justify-content: center; }
+  .logos img { height: 28px; max-width: 100%; }
+}
+@media (max-width: 600px) and (min-width: 341px) {
+  .pillars { grid-template-columns: 1fr 1fr; gap: 32px 18px; }
+  .pillars li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .people { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 12px; }
+  .person .plate { padding: 4px; border-radius: var(--r-sm); }
+  .person .plate img { border-radius: calc(var(--r-sm) - 3px); }
+  .person b { font-size: .9rem; margin-top: 8px; }
+  .person span { font-size: .78rem; line-height: 1.4; margin-top: 2px; }
+  .group h3 { font-size: 1.15rem; margin-bottom: 14px; }
 }

@@ -177,7 +177,7 @@ def footer(C, scripts=""):
 def hero(key, P, lang, actions=""):
     n = HERO_IMG[key]
     return (
-        f'<section class="hero" aria-labelledby="hero-title"><div class="hero-media">'
+        f'<section class="hero hero-{key}" aria-labelledby="hero-title"><div class="hero-media">'
         f'<picture><source media="(max-width: 960px)" srcset="/assets/brand/hero/{n}-960.webp">'
         f'<img src="/assets/brand/hero/{n}-1920.webp" alt="" fetchpriority="high"></picture></div>'
         f'<div class="hero-copy"><div class="wrap"><div><h1 id="hero-title">{e(P["h1"])}</h1><p class="lede">{e(P["lede"])}</p>{actions}</div></div></div></section>\n'

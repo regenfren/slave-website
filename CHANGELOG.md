@@ -1,3 +1,19 @@
+## 2026-09-29 · the phone version
+
+Tim: "optimize mobile version". Measured at 390px, before → after: Asso 10,104 → 7,661px, home
+9,593 → 8,103px, Right to Dignity 8,456 → 8,000px. Nothing removed except a duplicate logo.
+
+- **People three across on phones** with tighter captions (was two across, one face per half-screen).
+- **Headlines readable over every header photo:** a deeper shade under the text on phones (the Asso
+  headline sat on the projected-screen text).
+- **Contact header keeps the face in frame** on a phone crop (she was cut off at the right edge).
+- **The big logo above the footer is gone on phones;** the footer shows the same logo just below.
+- **Partner logos on an even 3 × 2 grid** instead of a ragged wrap.
+- **Footer link columns side by side;** pillars two across with É spanning the row.
+- **Film picker:** the generic film icon above "All schools" is gone on phones (the chips say the same).
+- **Pause button on the home reel** is a proper touch size (40px).
+- Checked: build `--check` clean, palette audit clean, no console errors, no 404s, no sideways scroll.
+
 ## 2026-09-29 · even rows, stale numbers gone, template leftovers deleted
 
 - **People grids sit in full rows.** Seven across on desktop, so the association's 14 are two rows of

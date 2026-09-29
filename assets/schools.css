@@ -57,3 +57,10 @@
   .schools-list button{ border-radius:var(--r-pill); }
   .schools-list button[aria-pressed="true"]{ box-shadow:none; border-color:var(--rust); }
 }
+/* Phones: with every school selected, the details pane repeated the chips below it behind a
+   generic film icon. The icon goes, the pane tightens; a school's own logo still shows. */
+@media(max-width:640px){
+  .schools-logo-all{ display:none; }
+  .schools-detail{ padding:1rem 1.1rem 1.05rem; }
+  .schools-tag{ margin-top:.45rem; font-size:.96rem; }
+}
