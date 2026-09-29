@@ -25,10 +25,10 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
   the points land in `assets/brand/photos/focal.json` and become each image's `object-position`).
   EVERY photo is mounted the same way, by `photo()` in the builder: paper mat, one hairline, soft
   corners (`.plate`). People are shown in one upright 4:5 portrait format, recropped from the detected
-  face box so every head is the same size on the same eye line (`FACE_H` / `FACE_Y` in the grader). Served from
+  face box so every head is the same size on the same eye line (`FACE_H` / `EYE_Y` in the grader). Served from
   `assets/brand/photos/` (`map.json` maps each original to its graded version), all written by
   `python3 tools/photo-grade.py` from the untouched originals. The Asso and Right to Dignity headers get
-  the same grade. No stock and no AI images.
+  the same grade. No stock and no AI-generated images. The only AI pixels on the site are outpainted margins around seven portraits whose originals were too tight to centre (`python3 tools/photo-grade.py --extend <name>`, Gemini via the imagegen skill; which pixels are AI is recorded in `assets/adv/extended/extended.json`). The Contact header and the Rails of Time card are stills cut from the student films by `tools/film-stills.py`; that is the source to reach for when a page needs a sharp, on-topic picture.
 - **Behaviour:** `assets/brand/site.js` (Projects dropdown, mobile menu, home reel, contact form note).
 
 ## The home reel
