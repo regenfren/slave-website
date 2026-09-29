@@ -126,3 +126,39 @@
     b.addEventListener('click', function () { history.length > 1 ? history.back() : (location.href = fr ? '/fr/' : '/'); });
   });
 })();
+
+// Gallery: arrows page the strip by most of its width, the bar shows where you are.
+(function () {
+  document.querySelectorAll('.gallery').forEach(function (sec) {
+    var strip = sec.querySelector('.strip');
+    var prev = sec.querySelector('.gal-nav [data-dir="-1"]');
+    var next = sec.querySelector('.gal-nav [data-dir="1"]');
+    var bar = sec.querySelector('.gal-bar span');
+    if (!strip || !prev || !next) return;
+    function update() {
+      var max = strip.scrollWidth - strip.clientWidth;
+      prev.disabled = strip.scrollLeft <= 2;
+      next.disabled = strip.scrollLeft >= max - 2;
+      if (bar) {
+        var share = strip.clientWidth / strip.scrollWidth;
+        bar.style.width = (share * 100) + '%';
+        bar.style.transform = 'translateX(' + (max > 0 ? (strip.scrollLeft / max) * ((1 - share) / share) * 100 : 0) + '%)';
+      }
+      sec.classList.toggle('gal-static', max <= 2);
+    }
+    function go(dir) {
+      var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      strip.scrollBy({ left: dir * strip.clientWidth * 0.8, behavior: smooth ? 'smooth' : 'auto' });
+    }
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    strip.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    });
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    strip.querySelectorAll('img').forEach(function (img) { if (!img.complete) img.addEventListener('load', update); });
+    update();
+  });
+})();

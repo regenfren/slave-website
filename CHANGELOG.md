@@ -1,3 +1,25 @@
+## 2026-09-29 · Tim's review round, and live
+
+- **Partners** (was "Partner Institutions"): logos in colour, bigger, each on a soft tile, on a slow
+  endless strip that pauses on hover and stands still with reduced motion.
+- **Contact header** is a still from the Apex film (2560px original, TV-channel logo cropped off),
+  the plain wall on its left widened by reflection so the handshake sits clear of the headline
+  (`tools/film-stills.py`). The old header was a 960px frame.
+- **Rails of Time card** on Asso is a real still from Stage Echo (students filming an interview),
+  replacing the rendered hard-hat image.
+- **Pillars read as one word**: the word's own initial large in rust, the rest following it.
+- **Team photo caption** centred, now "The S.L.A.V.É. Bordeaux team". Section subtitles on one line.
+- **Every portrait centred** at one head size and eye line (`tools/photo-grade.py`). Seven photos had
+  too little around the head; their margins were extended with AI outpainting (Gemini, imagegen
+  skill), only outside the original photo, recorded in `assets/adv/extended/extended.json`.
+- **Right to Dignity areas** back to the pre-rebrand arrangement in the new frames: a large photo
+  with a smaller one over its corner, text beside it, rows alternating sides.
+- **Gallery** has arrow buttons and a rust position bar; the scrollbar is hidden.
+- **Copy, both languages:** no em dashes, AI-sounding phrasing rewritten plainly, the English Right
+  to Dignity text brought in line with Daria's June French, leftover English on French pages translated.
+- Checked: build `--check`, palette audit on 9 pages, 0 console errors, 0 HTTP errors, no sideways
+  scroll at 390px.
+
 ## 2026-09-29 · the phone version
 
 Tim: "optimize mobile version". Measured at 390px, before → after: Asso 10,104 → 7,661px, home

@@ -1,37 +1,37 @@
 {
  "/assets/brand/photos/people/addis-kassegn.webp": [
-  50.5,
-  42.1,
+  52.0,
+  59.4,
   1
  ],
  "/assets/brand/photos/people/antoine-ertle.webp": [
-  50.1,
-  59.6,
+  46.7,
+  58.8,
   1
  ],
  "/assets/brand/photos/people/dirk-moosmayer.webp": [
-  49.9,
-  60.2,
+  56.5,
+  59.7,
   1
  ],
  "/assets/brand/photos/people/feriel-sayadi.webp": [
-  50.1,
-  49.2,
+  50.2,
+  59.9,
   1
  ],
  "/assets/brand/photos/people/jan-schaaper.webp": [
-  49.2,
-  60.3,
+  51.5,
+  60.0,
   1
  ],
  "/assets/brand/photos/people/kristian-feigelson.webp": [
-  50.6,
-  55.4,
+  54.9,
+  57.5,
   1
  ],
  "/assets/brand/photos/people/laetitia-mikles.webp": [
-  49.9,
-  59.7,
+  40.0,
+  60.1,
   1
  ],
  "/assets/brand/photos/cinema-audience.webp": [
@@ -100,73 +100,73 @@
   5
  ],
  "/assets/brand/photos/people/alexander-kashin.webp": [
-  50.5,
-  51.6,
+  60.6,
+  62.5,
   1
  ],
  "/assets/brand/photos/people/alexandra-hutuashvili.webp": [
-  50.0,
-  59.7,
+  50.8,
+  59.4,
   1
  ],
  "/assets/brand/photos/people/daria-tsukanova.webp": [
-  49.8,
-  59.7,
+  50.8,
+  59.5,
   1
  ],
  "/assets/brand/photos/people/elena-tsukanova.webp": [
-  50.3,
-  58.1,
+  50.0,
+  58.8,
   1
  ],
  "/assets/brand/photos/people/ludivine-leclercq.webp": [
-  50.6,
-  59.7,
+  49.4,
+  58.8,
   1
  ],
  "/assets/brand/photos/people/marie-agnes-chaumette.webp": [
-  49.3,
-  60.5,
+  43.7,
+  59.0,
   1
  ],
  "/assets/brand/photos/people/marie-france-zimmer.webp": [
-  49.6,
-  59.7,
+  50.5,
+  57.3,
   1
  ],
  "/assets/brand/photos/people/marina-murano.webp": [
-  54.0,
-  51.8,
+  48.7,
+  59.4,
   1
  ],
  "/assets/brand/photos/people/natalia-kosak.webp": [
-  42.7,
-  60.2,
+  47.1,
+  59.1,
   1
  ],
  "/assets/brand/photos/people/olivier-lagardere.webp": [
-  50.1,
-  29.7,
+  46.9,
+  58.0,
   1
  ],
  "/assets/brand/photos/people/sylvie-guerra-nedelec.webp": [
-  49.7,
-  59.9,
+  44.7,
+  59.7,
   1
  ],
  "/assets/brand/photos/people/timofei-golts-dort.webp": [
-  50.0,
   60.4,
+  60.6,
   1
  ],
  "/assets/brand/photos/people/timur-drezov.webp": [
-  51.0,
-  58.7,
+  30.8,
+  61.3,
   1
  ],
  "/assets/brand/photos/people/yulia-kopev.webp": [
-  49.4,
-  63.4,
+  50.9,
+  59.2,
   1
  ],
  "/assets/brand/photos/women-support.webp": [
@@ -178,5 +178,10 @@
   48.9,
   9.9,
   3
+ ],
+ "/assets/brand/photos/film-crew.webp": [
+  52.7,
+  60.4,
+  2
  ]
 }

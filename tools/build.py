@@ -201,12 +201,19 @@ def people_groups(T, band=""):
 
 
 def partners(C, h2, band=""):
-    logos = "".join(
-        f'<a href="{e(l["href"])}" target="_blank" rel="noopener" title="{e(l["name"])}">'
-        f'<img src="{e(l["img"])}" alt="{e(l["name"])}" width="{dims(l["img"])[0]}" height="{dims(l["img"])[1]}" loading="lazy"></a>'
-        for l in C["partners"])
-    return (f'<section class="partners {band}"><div class="wrap"><div class="head"><h2>{e(h2)}</h2></div>'
-            f'<div class="logos">{logos}</div></div></section>\n')
+    """Partner logos in colour on a slow, endless strip (Tim, 2026-09-29: "call it partners, have
+    logos be bigger, colored, and on a carousel"). The set is written twice so the loop has no seam;
+    the second copy is hidden from screen readers and the keyboard. Hover or focus pauses it, and
+    with reduced motion it stands still as a row you can swipe."""
+    def tiles(hidden):
+        attrs = ' aria-hidden="true"' if hidden else ""
+        tab = ' tabindex="-1"' if hidden else ""
+        return (f'<ul class="logo-set"{attrs}>' + "".join(
+            f'<li><a href="{e(l["href"])}" target="_blank" rel="noopener" title="{e(l["name"])}"{tab}>'
+            f'<img src="{e(l["img"])}" alt="{"" if hidden else e(l["name"])}" width="{dims(l["img"])[0]}" height="{dims(l["img"])[1]}" loading="lazy"></a></li>'
+            for l in C["partners"]) + "</ul>")
+    return (f'<section class="partners {band}"><div class="wrap"><div class="head"><h2>{e(h2)}</h2></div></div>'
+            f'<div class="marquee"><div class="marquee-track">{tiles(False)}{tiles(True)}</div></div></section>\n')
 
 
 def cta(T):
@@ -270,7 +277,10 @@ def page_asso(C):
             f'<div class="body">{"".join(para(p) for p in A["history"]["paras"])}</div></details></div></section>\n')
     PI = P["pillars"]
     out += (f'<section class="band-2"><div class="wrap"><div class="head"><div><h2>{e(PI["h2"])}</h2>{para(PI["lede"])}</div></div><ul class="pillars">'
-            + "".join(f'<li><span class="letter" aria-hidden="true">{e(i["letter"])}</span><h3>{e(i["h3"])}</h3>{para(i["p"])}</li>' for i in PI["items"])
+            # The initial is the word's own first letter, set large in rust, and the rest of the word
+            # follows it on the same baseline (Tim, 2026-09-29: "A(orange)rt (black smaller)"). The
+            # word's letter, not the acronym's: in English the É of S.L.A.V.É. heads "Exchange".
+            + "".join(f'<li><h3 class="initial"><span class="letter">{e(i["h3"][0])}</span>{e(i["h3"][1:])}</h3>{para(i["p"])}</li>' for i in PI["items"])
             + "</ul></div></section>\n")
     FE = P["featured"]
     out += f'<section class="band-ink" id="featured"><div class="wrap"><div class="head"><div><h2>{e(FE["h2"])}</h2>{para(FE["lede"])}</div></div><div class="duo">'
@@ -307,8 +317,15 @@ def page_dignity(C):
                 '<ul class="plain-list">' + "".join(f"<li>{e(b)}</li>" for b in it["bullets"]) + "</ul></article>")
     out += "</div></div></section>\n"
     G = P["gallery"]
-    out += (f'<section class="band-ink"><div class="wrap"><div class="head"><h2>{e(G["h2"])}</h2></div>'
-            f'<div class="strip" tabindex="0" role="region" aria-label="{e(G["h2"])}">' + "".join(photo(i["src"], i["alt"]) for i in G["imgs"]) + "</div></div></section>\n")
+    # Arrows and a position bar so it is obvious the strip moves (Tim, 2026-09-29: "add a little scroll
+    # thingy so it's obvious how to navigate the gallery"). Behaviour in site.js; labels are aria only.
+    prev_l, next_l = {"en": ("Previous photos", "Next photos"), "fr": ("Photos précédentes", "Photos suivantes")}[lang]
+    chev = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="{}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    nav = (f'<div class="gal-nav"><button type="button" data-dir="-1" aria-label="{e(prev_l)}" disabled>{chev.format("M15 18l-6-6 6-6")}</button>'
+           f'<button type="button" data-dir="1" aria-label="{e(next_l)}">{chev.format("M9 18l6-6-6-6")}</button></div>')
+    out += (f'<section class="band-ink gallery"><div class="wrap"><div class="head"><h2>{e(G["h2"])}</h2>{nav}</div>'
+            f'<div class="strip" tabindex="0" role="region" aria-label="{e(G["h2"])}">' + "".join(photo(i["src"], i["alt"]) for i in G["imgs"]) + "</div>"
+            '<div class="gal-bar" aria-hidden="true"><span></span></div></div></section>\n')
     S = P["scope"]
     out += (f'<section class="band-2"><div class="wrap intro scope"><h2 class="h2">{e(S["h3"])}</h2><div class="body">'
             f'<p class="lead">{e(S["paras"][0])}</p>{"".join(para(p) for p in S["paras"][1:])}</div></div></section>\n')

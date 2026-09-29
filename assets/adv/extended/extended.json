@@ -1,0 +1,177 @@
+{
+ "feriel-sayadi": {
+  "ai_margin_px": [
+   0,
+   75,
+   0,
+   25
+  ],
+  "from": "assets/adv/feriel-sayadi.jpg",
+  "made": "2026-09-29",
+  "match_error": 2.5,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   0,
+   75,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ },
+ "marie-france-zimmer": {
+  "ai_margin_px": [
+   0,
+   37,
+   0,
+   63
+  ],
+  "from": "assets/team/marie-france-zimmer.jpg",
+  "made": "2026-09-29",
+  "match_error": 2.6,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   0,
+   37,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ },
+ "marina-murano": {
+  "ai_margin_px": [
+   0,
+   115,
+   60,
+   60
+  ],
+  "from": "assets/team/marina-murano.jpg",
+  "made": "2026-09-29",
+  "match_error": 3.8,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   0,
+   115,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ },
+ "natalia-kosak": {
+  "ai_margin_px": [
+   27,
+   13,
+   0,
+   14
+  ],
+  "from": "assets/team/natalia-kosak.jpg",
+  "made": "2026-09-29",
+  "match_error": 1.9,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   27,
+   13,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ },
+ "olivier-lagardere": {
+  "ai_margin_px": [
+   0,
+   183,
+   0,
+   17
+  ],
+  "from": "assets/team/olivier-lagardere.jpg",
+  "made": "2026-09-29",
+  "match_error": 2.8,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   0,
+   183,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ },
+ "timur-drezov": {
+  "ai_margin_px": [
+   0,
+   34,
+   44,
+   10
+  ],
+  "from": "assets/team/timur-drezov.jpg",
+  "made": "2026-09-29",
+  "match_error": null,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original. Record rebuilt 2026-09-29 by locating the original inside this file (exact pixel match); the outpaint's own match_error was not kept",
+  "photo_at": [
+   0,
+   34,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ },
+ "yulia-kopev": {
+  "ai_margin_px": [
+   0,
+   44,
+   0,
+   89
+  ],
+  "from": "assets/team/yulia-kopev.jpg",
+  "made": "2026-09-29",
+  "match_error": 2.3,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   0,
+   44,
+   400,
+   400
+  ],
+  "trim": [
+   0,
+   0,
+   400,
+   400
+  ]
+ }
+}
