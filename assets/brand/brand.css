@@ -170,7 +170,7 @@ main > section, .band { padding-block: var(--section); }
 /* ---------- people ---------- */
 .group + .group { margin-top: clamp(40px, 5vw, 64px); }
 .group h3 { font-size: 1.35rem; margin-bottom: 20px; }
-.people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(164px, 1fr)); gap: 34px 24px; }
+.people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 34px 24px; }
 /* EVERY photo on the site is mounted the same way: paper mat, one hairline, soft corners. The mat is
    what stops a dozen different backgrounds and phone cameras from fighting each other, and it is the
    same frame on a portrait, a project card and a gallery picture (Tim, 2026-09-17). */
@@ -262,8 +262,7 @@ figcaption { font-family: var(--display); font-size: .9rem; color: var(--steel);
 .strip-note { font-family: var(--display); font-size: .9rem; color: rgba(242, 241, 237, .6); margin-top: 10px; }
 
 /* ---------- scope ---------- */
-.scope { max-width: 70ch; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(24px, 3vw, 40px); display: grid; gap: 16px; }
-.scope h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 4px; }
+.scope .body p:not(.lead) { color: var(--steel); max-width: 62ch; }
 
 /* ---------- contact ---------- */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 96px); align-items: start; }

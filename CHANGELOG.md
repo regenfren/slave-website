@@ -1,3 +1,15 @@
+## 2026-09-29 · even rows, stale numbers gone, template leftovers deleted
+
+- **People grids sit in full rows.** Seven across on desktop, so the association's 14 are two rows of
+  seven and the 7 advisors one row, where 6-across left one or two faces alone on the last row.
+- **Right to Dignity: "Scope of Our Intervention" uses the About layout** (title left, text right)
+  instead of a card filling half the width with the other half empty.
+- **No more dates that go stale.** The footer said "© 2024" and Contact said "for over 17 years"
+  (it has been 19). Both now read without a number, in English and French.
+- **Deleted** the old template CSS/JS and the first low-quality reel files; no page loaded them.
+- Checked: build `--check` clean, palette audit clean on 7 pages, no console errors, no 404s,
+  no sideways scroll at 390px.
+
 ## 2026-09-17 · softer, and the same frame on every photo
 
 - **Every photo is mounted the same way** (Tim: "asso photos dont have frames"). The mat, hairline and

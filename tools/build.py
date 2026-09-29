@@ -310,7 +310,8 @@ def page_dignity(C):
     out += (f'<section class="band-ink"><div class="wrap"><div class="head"><h2>{e(G["h2"])}</h2></div>'
             f'<div class="strip" tabindex="0" role="region" aria-label="{e(G["h2"])}">' + "".join(photo(i["src"], i["alt"]) for i in G["imgs"]) + "</div></div></section>\n")
     S = P["scope"]
-    out += f'<section class="band-2"><div class="wrap"><div class="scope"><h2>{e(S["h3"])}</h2>{"".join(para(p) for p in S["paras"])}</div></div></section>\n'
+    out += (f'<section class="band-2"><div class="wrap intro scope"><h2 class="h2">{e(S["h3"])}</h2><div class="body">'
+            f'<p class="lead">{e(S["paras"][0])}</p>{"".join(para(p) for p in S["paras"][1:])}</div></div></section>\n')
     out += cta(P["cta"])
     return out + "</main>\n" + footer(C)
 

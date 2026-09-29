@@ -72,6 +72,8 @@ locally. It works on GitHub Pages.
 - The contact form has no mail backend; submitting shows a note with the email address.
 - *Limitless* (CNAM) has no playable original yet; *Nova Night* is still the 8-second teaser; BDX
   Consulting exists only as a 360p student upload.
-- Old template assets (`assets/site.css`, `clone-fixes.css`, `clone.js`, `fonts.css`, the stock hero
-  images) and the first low-quality reel files (`assets/brand/reel/reel-1280.mp4`, `reel-720.mp4`,
-  `poster-1280.*`, `poster-720.webp`) are no longer referenced by any page and can be deleted.
+- Locally, `films.js` and `showcase.js` also show held films that have a raw `file` on this Mac, so
+  a local preview counts 22 films; the live site shows only films with a `youtube` id (20 of 22 on
+  2026-09-29). Not a bug.
+- The old template CSS/JS and the first low-quality reel files were deleted 2026-09-29; the stock
+  hero images under `assets/` were not checked one by one and may still be unreferenced.
