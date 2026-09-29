@@ -48,7 +48,7 @@ Loading: the poster frame is the first paint. The video is fetched only after th
 never with reduced motion or Save-Data, and it pauses when scrolled away. MP4s are fast-start, so
 playback begins before the file has finished downloading.
 Shots with an AI watermark, stock footage, a TV channel logo, title cards or name tags were left out.
-**Before merging to `main`:** the six film teams' yes, asked by Daria.
+Live since 2026-09-29, approved by Daria the same day. The six film teams' yes for their clips (reel, and the Apex and Stage Echo stills) is not recorded as given.
 
 ## Student films (`/films/`, the home stage)
 
