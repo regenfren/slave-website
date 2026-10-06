@@ -142,3 +142,9 @@ body.film-dialog-open{ overflow:hidden; }
 .film-dialog-nav button, .film-close{ border-radius:50%; }
 .film-close{ background:rgba(11, 17, 23,.8); }
 .films-filters button{ border-radius:var(--r-pill); font-family:var(--display); }
+/* phone audit 2026-10-06: on a phone the close button sat on top of YouTube's own controls (the
+   settings gear), so a tap meant for one hit the other. It gets its own strip above the film. */
+@media(max-width:640px){
+  .film-dialog-inner > div:first-child{ padding-top:56px; }
+  .film-close{ top:8px; right:8px; width:44px; height:44px; }
+}

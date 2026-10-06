@@ -122,7 +122,7 @@
         el('span', { 'class': 'rot-thumb' }, [p ? el('img', { src: p, alt: '', loading: 'lazy', decoding: 'async' }) : null, f.duration ? el('span', { 'class': 'rot-dur', text: mmss(f.duration) }) : null]),
         el('span', { 'class': 'rot-item-text' }, [el('span', { 'class': 'rot-item-title', text: pick(f.title) }), el('span', { 'class': 'rot-item-meta', text: f._where })])
       ]);
-      b.addEventListener('click', function () { select(f, played); });
+      b.addEventListener('click', function () { select(f, played); showPlayer(); });
       items[f.id] = el('li', null, [b]);
       queue.appendChild(items[f.id]);
     });
@@ -153,9 +153,27 @@
       syn.textContent = s; syn.hidden = !s;
       if (f.youtube) { yt.href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(f.youtube); yt.hidden = false; } else { yt.hidden = true; }
       Object.keys(items).forEach(function (id) { items[id].firstChild.setAttribute('aria-current', id === f.id ? 'true' : 'false'); });
-      var li = items[f.id]; if (li && !li.hidden) li.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      var li = items[f.id]; if (li && !li.hidden) reveal(li);
       if (autoplay) mount(f); else showPoster(f);
       syncNav();
+    }
+    // Bring the selected film into view inside the list only. scrollIntoView also scrolls the
+    // page, so on load (when the list sits below the fold) it dragged every visitor down to the
+    // first film instead of the top of the page (Tim's phone, 2026-10-06).
+    function reveal(li) {
+      var q = queue.getBoundingClientRect(), r = li.getBoundingClientRect();
+      if (r.top < q.top) queue.scrollTop += r.top - q.top;
+      else if (r.bottom > q.bottom) queue.scrollTop += r.bottom - q.bottom;
+    }
+    // Stacked layout (phones, tablets): the list sits under the player, so a film picked from it
+    // changed a screen nobody could see, and the text above the list changing height moved the list
+    // under the finger. Bring the player up instead. Side-by-side layout: nothing moves.
+    function showPlayer() {
+      if (!window.matchMedia('(max-width: 960px)').matches) return;
+      var r = screen.getBoundingClientRect();
+      if (r.top >= 0 && r.top < innerHeight * 0.5) return;
+      var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: window.scrollY + r.top - 12, behavior: smooth ? 'smooth' : 'auto' });
     }
     function showPoster(f) {
       screen.innerHTML = '';

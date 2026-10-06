@@ -1,3 +1,29 @@
+## 2026-10-06 · phone audit (Tim: "it starts here when I open page")
+
+- **The home page opened scrolled down to the film list** (English and French, every phone). On load
+  the player marked the first film as selected and scrolled it into view, and that scroll moved the
+  whole page, not just the list. It now scrolls the list only. Measured at 375 and 390px: home loaded
+  at 1,842px down, now 0; every other page was already at the top. A shared `#film=` link still
+  jumps to the player, on purpose.
+- **Picking a film from the home list on a phone** changed a player nobody could see (it sits above
+  the list), and the text above the list changing length moved the list up to 82px under the finger.
+  A tap now brings the player up. Desktop, where the list sits beside the player, does not move.
+- **The phone menu now closes when you tap outside it**; the EN / FR switch lost a stray underline
+  under FR and got a proper tap size.
+- **Contact form sends.** It used to discard what a visitor typed and tell them to write an email;
+  with no mail server on GitHub Pages, it now opens their email app with the message written and
+  addressed to asso.slave@gmail.com (English and French).
+- **Film popup on phones:** the close button sat on YouTube's own settings button; it has its own
+  strip above the film now.
+- **Touch sizes:** footer links, Contact's phone and email, the school chips and the menu button
+  were 23-42px tall; now about 44px (Apple's touch size). The menu button has a light backing so it
+  reads over bright header photos.
+- **Phone held sideways:** the header photo was taller than the screen and hid the headline; it now
+  fits the screen.
+- Checked: every page loads at the top at 375 and 390px, no sideways scroll, no console errors,
+  build `--check` clean, desktop computed styles identical on 6 pages x 4 widths (the only
+  differences also appear when comparing the same code twice: the home reel's caption and timing).
+
 ## 2026-09-29 · Tim's review round, and live
 
 - **Partners** (was "Partner Institutions"): logos in colour, bigger, each on a soft tile, on a slow

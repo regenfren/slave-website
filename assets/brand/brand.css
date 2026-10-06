@@ -396,3 +396,29 @@ figcaption { font-family: var(--display); font-size: .9rem; color: var(--steel);
 @media (min-width: 701px) { .hero-contact .hero-media img { object-position: 100% 40%; } }
 /* A strip that fits on screen has nothing to navigate. */
 .gal-static .gal-nav, .gal-static .gal-bar { display: none; }
+
+/* ---------- phone audit, 2026-10-06 (Tim: "grand audit" of the phone version) ----------
+   All phone-only (max-width or a short landscape screen), so desktop is unchanged.
+   - tap targets: footer links, Contact's phone and email, the menu button and the EN / FR switch
+     were 23-42px tall; links get a larger invisible hit area (::after), so nothing visible moves;
+   - the EN / FR switch in the open menu inherited the menu's row underline, a stray line under FR;
+   - the menu button sits over the hero photo; a light backing keeps it readable on bright photos
+     (Right to Dignity's bookshelf);
+   - a phone held sideways is ~390px tall, and the 520-580px minimum hero hid the headline below
+     the fold. */
+@media (max-width: 880px) {
+  .burger { min-height: 44px; align-items: center; background: rgba(11, 17, 23, .32); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .mobile-menu .lang a { display: inline-block; border-bottom: 0; padding: 12px 8px; }
+  .mobile-menu .lang a:first-child { padding-left: 0; }
+}
+@media (max-width: 760px) {
+  .site-footer li { line-height: 2.8; }
+  .site-footer li:not(:has(a)) { line-height: 1.5; padding-top: 10px; }  /* the two-line address stays one item */
+  .site-footer li a, .facts dd a { position: relative; }
+  .site-footer li a::after { content: ""; position: absolute; inset: -10.5px -6px; }
+  .facts dd a::after { content: ""; position: absolute; inset: -10px -6px; }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero, .hero-home { height: max(340px, 100vh); height: max(340px, 100svh); }
+  .hero-copy { padding-bottom: 20px; }
+}

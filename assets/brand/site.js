@@ -33,7 +33,10 @@
       menu.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
+    function shut() { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(); });
+    // A tap anywhere outside the open menu closes it, as on every phone menu.
+    document.addEventListener('click', function (e) { if (!menu.contains(e.target)) shut(); });
   }
 
   /* ---------- home reel ----------
@@ -112,12 +115,24 @@
     }
   }
 
-  /* ---------- contact form: the site has no mail backend yet ---------- */
+  /* ---------- contact form ----------
+     The site has no mail backend (GitHub Pages). The form used to throw away what a visitor had
+     typed and tell them to write an email instead; it now opens their email app with the message
+     already written, addressed to the association. */
+  var TO = 'asso.slave@gmail.com';
   document.querySelectorAll('form[data-static]').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = f.querySelector('.form-note');
-      if (note) note.textContent = fr ? 'Le formulaire n’est pas encore relié. Écrivez-nous à asso.slave@gmail.com.' : 'This form is not connected yet. Write to us at asso.slave@gmail.com.';
+      var v = [].map.call(f.querySelectorAll('input, textarea'), function (x) { return x.value.trim(); });
+      var name = v[0], email = v[1], subject = v[2], message = v[3];
+      if (!name || !email || !message) {
+        if (note) note.textContent = fr ? 'Merci d’indiquer votre nom, votre e-mail et votre message.' : 'Please fill in your name, email and message.';
+        return;
+      }
+      var body = message + '\n\n' + name + '\n' + email;
+      location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject || (fr ? 'Message depuis le site' : 'Message from the website')) + '&body=' + encodeURIComponent(body);
+      if (note) note.textContent = fr ? 'Votre application e-mail s’ouvre avec votre message. Sinon, écrivez-nous à ' + TO + '.' : 'Your email app opens with your message ready to send. If it does not, write to us at ' + TO + '.';
     });
   });
 
