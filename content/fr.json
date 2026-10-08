@@ -166,6 +166,13 @@
                 "role": [
                   "Coordinateur de projets"
                 ]
+              },
+              {
+                "img": "/assets/team/shri-hari.jpg",
+                "name": "Shri Hari",
+                "role": [
+                  "Stagiaire en recherche"
+                ]
               }
             ]
           },
@@ -434,6 +441,13 @@
                 "name": "Tim Dort-Golts",
                 "role": [
                   "Coordinateur de projets (stagiaire)"
+                ]
+              },
+              {
+                "img": "/assets/team/shri-hari.jpg",
+                "name": "Shri Hari",
+                "role": [
+                  "Stagiaire en recherche"
                 ]
               },
               {
