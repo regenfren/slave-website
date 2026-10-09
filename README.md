@@ -31,6 +31,14 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
   the same grade. No stock and no AI-generated images. The only AI pixels on the site are outpainted margins around seven portraits whose originals were too tight to centre (`python3 tools/photo-grade.py --extend <name>`, Gemini via the imagegen skill; which pixels are AI is recorded in `assets/adv/extended/extended.json`). The Contact header and the Rails of Time card are stills cut from the student films by `tools/film-stills.py`; that is the source to reach for when a page needs a sharp, on-topic picture.
 - **Behaviour:** `assets/brand/site.js` (Projects dropdown, mobile menu, home reel, contact form note).
 
+## Adding a person to the team
+
+1. Put the untouched original in `assets/team/<first-last>.jpg` (the slug is the person's name as Tim spells it: Shrie Hari, not Shri Hari).
+2. Add `"/assets/team/<first-last>.jpg": "/assets/brand/photos/people/<first-last>.webp"` to `assets/brand/photos/map.json` (one-space indent, keep the file's format).
+3. Add `{"img": "/assets/team/<first-last>.jpg", "name": "...", "role": ["..."]}` to `pages.home.team` and/or `pages.asso.team` in BOTH `content/en.json` and `content/fr.json`, with the role in each language. Titles are Daria's call.
+4. `python3 tools/photo-grade.py` (crops to the face, same eye line, same grade; check the "with faces found" count went up), then `git checkout -- assets/brand/hero/` (the run regrades the headers with fresh grain; those diffs are noise).
+5. `python3 tools/build.py` and `python3 tools/build.py --check`, commit the named paths, push to `main` (GitHub Pages serves it in about a minute).
+
 ## The home reel
 
 A 35-second silent loop of 19 shots from six student films (Light Weavers, Stage Echo, WELL#, Aurelia,
