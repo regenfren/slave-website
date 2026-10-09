@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Grade every real association photo the site shows into one warm, colourful film look.
 
-    python3 tools/photo-grade.py            write assets/brand/photos/ from the originals
+    python3 tools/photo-grade.py            write assets/brand/photos/ from the originals (only what changed; --force for all)
     python3 tools/photo-grade.py --sheet P  also write a before/after contact sheet to P
     python3 tools/photo-grade.py --extend [name ...]
                                             widen too-tight portraits by AI outpainting of the margin only
@@ -306,8 +306,18 @@ def main():
     sources = {src: portrait_source(src) for src, out in mapping.items() if "/people/" in out}
     faces = probe([original(src) for src in sources])
     sheet_rows = []
+    # Make-style: an output newer than its original and than this script is left alone. The grain is random
+    # (Image.effect_noise), so regrading an unchanged photo rewrote every file with a new binary diff; adding one
+    # portrait on 2026-10-08 touched all three headers. --force regrades everything.
+    force = "--force" in sys.argv
+    me = Path(__file__).stat().st_mtime
+    def fresh(srcs, outp):
+        o = ROOT / outp.lstrip("/")
+        return (not force) and o.exists() and all(o.stat().st_mtime > max(Path(x).stat().st_mtime, me) for x in srcs)
     for src, out in mapping.items():
         portrait = "/people/" in out
+        if fresh([original(src)], out):
+            continue
         im = ImageOps.exif_transpose(Image.open(sources.get(src) or original(src))).convert("RGB")
         face = faces.get(str(original(src))) if portrait else None
         if face:
@@ -323,6 +333,8 @@ def main():
     heroes = {"asso": "assets/cinema-event-4ffR4bAi.jpg", "dignity": "assets/team-meeting-Bf_2ngHD.jpeg",
               "contact": "assets/film-stills/apex-handshake.jpg"}
     for key, src in heroes.items():
+        if all(fresh([ROOT / src], f"assets/brand/hero/{key}-{w}.webp") for w in (1920, 960)):
+            continue
         im = Image.open(ROOT / src)
         for w in (1920, 960):
             c = im.copy(); c.thumbnail((w, w), Image.LANCZOS)
