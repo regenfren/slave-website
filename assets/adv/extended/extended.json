@@ -1,4 +1,29 @@
 {
+ "alexander-blume": {
+  "ai_margin_px": [
+   121,
+   220,
+   147,
+   316
+  ],
+  "from": "assets/adv/alexander-blume.jpg",
+  "made": "2026-10-10",
+  "match_error": 1.2,
+  "model": "gemini-3-pro-image-preview (Nano Banana Pro), imagegen skill",
+  "note": "only pixels outside photo_at (plus a 6px blended seam) are AI; the rest is the original",
+  "photo_at": [
+   121,
+   220,
+   804,
+   804
+  ],
+  "trim": [
+   0,
+   0,
+   804,
+   804
+  ]
+ },
  "feriel-sayadi": {
   "ai_margin_px": [
    0,
