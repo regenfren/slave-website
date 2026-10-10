@@ -316,7 +316,8 @@ def main():
         return (not force) and o.exists() and all(o.stat().st_mtime > max(Path(x).stat().st_mtime, me) for x in srcs)
     for src, out in mapping.items():
         portrait = "/people/" in out
-        if fresh([original(src)], out):
+        # the AI-widened copy counts too: an --extend run writes it after the output already exists
+        if fresh([original(src)] + ([sources[src]] if sources.get(src) else []), out):
             continue
         im = ImageOps.exif_transpose(Image.open(sources.get(src) or original(src))).convert("RGB")
         face = faces.get(str(original(src))) if portrait else None
