@@ -28,7 +28,7 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
   face box so every head is the same size on the same eye line (`FACE_H` / `EYE_Y` in the grader). Served from
   `assets/brand/photos/` (`map.json` maps each original to its graded version), all written by
   `python3 tools/photo-grade.py` from the untouched originals. The Asso and Right to Dignity headers get
-  the same grade. No stock and no AI-generated images. The only AI pixels on the site are outpainted margins around seven portraits whose originals were too tight to centre (`python3 tools/photo-grade.py --extend <name>`, Gemini via the imagegen skill; which pixels are AI is recorded in `assets/adv/extended/extended.json`). The Contact header and the Rails of Time card are stills cut from the student films by `tools/film-stills.py`; that is the source to reach for when a page needs a sharp, on-topic picture.
+  the same grade. No stock and no AI-generated images. The only AI pixels on the site are outpainted margins around eight portraits whose originals were too tight to centre (`python3 tools/photo-grade.py --extend <name>`, Gemini via the imagegen skill; which pixels are AI is recorded in `assets/adv/extended/extended.json`). The Contact header and the Rails of Time card are stills cut from the student films by `tools/film-stills.py`; that is the source to reach for when a page needs a sharp, on-topic picture.
 - **Behaviour:** `assets/brand/site.js` (Projects dropdown, mobile menu, home reel, contact form note).
 
 ## Adding a person to the team
