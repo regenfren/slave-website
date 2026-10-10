@@ -33,10 +33,10 @@ python3 tools/build.py --check  # fails if a page is out of date with content/ o
 
 ## Adding a person to the team
 
-1. Put the untouched original in `assets/team/<first-last>.jpg` (the slug is the person's name as Tim spells it: Shrie Hari, not Shri Hari).
+1. Put the untouched original in `assets/team/<first-last>.jpg` (advisors: `assets/adv/<first-last>.jpg`) (the slug is the person's name as Tim spells it: Shrie Hari, not Shri Hari). A LinkedIn photo cannot be read out through the Chrome tool (it blocks image URLs and base64): open the photo viewer, navigate the tab to the `displayphoto-shrink_800_800` image's own URL, read that URL with AppleScript (`URL of t` in Google Chrome) and `curl` it. A small one (Alexander Blume's is 268 px) goes through the `upscale` skill first (`remacri-4x`, then Lanczos down to about 800 px).
 2. Add `"/assets/team/<first-last>.jpg": "/assets/brand/photos/people/<first-last>.webp"` to `assets/brand/photos/map.json` (one-space indent, keep the file's format).
 3. Add `{"img": "/assets/team/<first-last>.jpg", "name": "...", "role": ["..."]}` to `pages.home.team` and/or `pages.asso.team` in BOTH `content/en.json` and `content/fr.json`, with the role in each language. Titles are Daria's call.
-4. `python3 tools/photo-grade.py` (crops to the face, same eye line, same grade; check the "with faces found" count went up), then `git checkout -- assets/brand/hero/` (the run regrades the headers with fresh grain; those diffs are noise).
+4. `python3 tools/photo-grade.py` (crops to the face, same eye line, same grade; check the "with faces found" count went up), then `git checkout -- assets/brand/hero/` (the run regrades the headers with fresh grain; those diffs are noise). If it prints `px short ... blurred-mirror fill used`, run `python3 tools/photo-grade.py --extend <first-last>` and then the plain run AGAIN (the extend only writes the widened source), and look at the result before committing. An edit to `tools/photo-grade.py` regrades every photo: restore the other outputs with `git checkout`, and commit any page `build.py` then rewrites (focal points shift by a fraction of a percent).
 5. `python3 tools/build.py` and `python3 tools/build.py --check`, commit the named paths, push to `main` (GitHub Pages serves it in about a minute).
 
 ## The home reel
