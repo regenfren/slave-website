@@ -234,6 +234,13 @@
                 "role": [
                   "Sorbonne Nouvelle – Paris 3"
                 ]
+              },
+              {
+                "img": "/assets/adv/ni-gao.jpg",
+                "name": "Ni Gao",
+                "role": [
+                  "KEDGE Business School"
+                ]
               }
             ]
           }
@@ -551,6 +558,13 @@
                 "name": "Kristian Feigelson",
                 "role": [
                   "Professor of Film Sociology, Sorbonne Nouvelle – Paris 3"
+                ]
+              },
+              {
+                "img": "/assets/adv/ni-gao.jpg",
+                "name": "Ni Gao",
+                "role": [
+                  "Director of the MSc International Business, KEDGE Business School"
                 ]
               }
             ]
